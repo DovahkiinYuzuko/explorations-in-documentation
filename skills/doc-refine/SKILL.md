@@ -93,19 +93,20 @@ Please reply with your preferred action:
 *Detailed specifications: [`references/layer-1-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-1-rules.md)*
 
 - **The 4 Pillars of Above the Fold**: Within the first screenful (top 50 lines / 1080px viewport, which captures **57% of total viewing time**), verify the presence of:
-  1. **One-Liner (Steve Blank Formula)**: Exactly states category, primary input, primary output, and eliminated friction without metaphors.
+  1. **One-Liner (LSP & Steve Blank Formula)**: Exactly states Language + Software Technology + Purpose (ssrn-4543196, median 15–16 words) or category, input, and output without marketing fluff.
   2. **Credibility Signals**: Build status, release version, and license badges.
-  3. **Visual Proof (Picture)**: CLI terminal output, architecture diagram, UI screenshot, or minimal demo GIF.
-  4. **Minimal Quick Start (Push)**: Copy-pasteable verification snippet in $\le$ 3 steps/lines.
+  3. **Visual Proof (Picture)**: CLI terminal output, architecture diagram, UI screenshot, or minimal demo GIF (increases star velocity by 2.4x; 31_679.pdf).
+  4. **Minimal Quick Start (Push)**: Copy-pasteable verification snippet in $\le$ 3 steps/lines using **Basic code constructs ($\ge$ 92% level A; Sitthithanasakul 2023)**.
 - **Hume's Guillotine (Fluff & Sermon Purge)**: Eliminate promotional slogans ("The next generation tool", "Empowering developers") and normative sermons ("Developers ought to..."). State only mechanized functional facts.
-- **False Floor (Illusion of Completeness) Prevention**: Ensure the bottom of the first view visually cuts off or leads into the next section (H2 header) rather than dead-ending with excessive whitespace or terminal dividers.
+- **False Floor (Illusion of Completeness) Prevention**: Ensure the bottom of the first view visually cuts off or leads into the next section (H2 header) rather than dead-ending with excessive whitespace or terminal dividers (`---`).
 
 ### Layer 2: Structure & Progressive Disclosure (Adoption & Scanning)
 *Detailed specifications: [`references/layer-1-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-1-rules.md)*
 
-- **Standard Skeleton Order (Armstrong et al. 2020)**:
+- **Standard Skeleton Order (Prana et al. 2019 / Abdulmajeed 2024)**:
   1. `Title & One-Liner` $\rightarrow$ 2. `Badges & Visual Proof` $\rightarrow$ 3. `Why & Key Features (FAB)` $\rightarrow$ 4. `Quick Start` $\rightarrow$ 5. `Prerequisites & Installation` $\rightarrow$ 6. `Usage & Configuration` $\rightarrow$ 7. `Limitations & Boundaries` $\rightarrow$ 8. `License`.
-- **Supply-Demand Gap Resolution (The Why Factor)**: Explicitly provide a 1-paragraph rationale answering "Why this over alternatives?" (demanded by 59.6% of developers, missing in 81.8% of repos).
+- **Optimal Document Length**: Target **500–1,000 words** (the empirical peak for newcomer attraction at 62.1%; drops to 31.3% when $>8,000$ words; Abdulmajeed 2024/2026).
+- **Supply-Demand Gap Resolution (The Why Factor)**: Explicitly provide a 1-paragraph rationale answering "Why this over alternatives?" (demanded by 59.6% of developers, missing in 74.3% of repos; Prana 2019).
 - **F-Pattern Scanning Optimization (78% of Readers Scan)**:
   - Paragraph text must not exceed **3 consecutive lines**.
   - Bullet points must front-load action verbs or key nouns in the first 3 words.
@@ -134,7 +135,7 @@ This skill synthesizes empirical research and theoretical models across 8 domain
 
 | Domain | Theoretical Basis & Reference | Applied Layer in doc-refine |
 | :--- | :--- | :--- |
-| **GitHub README & OSS Empirical Studies** | Armstrong et al., Prana et al. (Content classification, developer needs) | **L1, L2** (Must-have sections, quick-start priority) |
+| **GitHub README & OSS Empirical Studies** | Prana et al., Gaughan et al., Sitthithanasakul et al., Abdulmajeed, Hellman et al., Fronchetti et al., Dantas et al. | **L1, L2** (Must-have sections, LSP pattern, 500-1000 word sweetspot, basic code snippets) |
 | **Copywriting & Landing Page Patterns** | PASONA, 4P, FAB, Above-the-Fold attention research | **L1** (Scroll engagement, problem-solution pairing) |
 | **Conversion Rate & Bounce Prevention** | Scrolling behavior, Nielsen Norman attention distributions | **L1, L2** (Information placement, scannability) |
 | **Credibility & Signaling Theory** | O'Keefe (Two-sided vs one-sided meta-analysis), Spence signaling | **L3** (Mandatory constraints, cost-bearing honesty) |
