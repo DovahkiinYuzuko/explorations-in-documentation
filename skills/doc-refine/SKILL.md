@@ -85,6 +85,23 @@ Please reply with your preferred action:
 [4] Audit Only (Finish without modifying the document)
 ```
 
+### Phase 3: Refined Rewrite Output (改善リライト出力契約)
+
+When the user selects Full Rewrite (or specifies layers to refine), the agent **MUST** output the complete refined Markdown document conforming strictly to the following structural specifications. Do NOT omit sections or leave 'TODO' placeholders.
+
+#### Structural Template for Refined Output
+
+- **H1 Header & One-Liner**: Project title + Language/Platform/Purpose (LSP pattern) without promotional adjectives.
+- **Badges**: Build status, release version, and license badges.
+- **Visual Proof**: Terminal output, architecture flowchart, or ASCII demonstration.
+- **Core Functions & Overview**: $\\le$ 4 functional bullet points specifying inputs/outputs (Cowan's Capacity).
+- **Quick Start**: Minimal snippet ($\\le$ 3 lines, level A basic syntax) + **Expected Output** (Deterministic terminal output).
+- **Table of Contents**: Required if document contains $\\ge$ 4 H2 headings.
+- **Limitations, Boundaries & Trade-offs**: Mandatory two-sided disclosure following the 3-part refutational tuple: [Constraint Fact] — [Design Rationale / Trade-off] — [Workaround / Recommended Configuration].
+- **Architecture & Proof**: Rationale vs alternatives, Assurance Case (Claim + Argument + Evidence), Gentzen subformula consistency.
+- **Verification & Benchmarks**: Reproducible single-command verification + NaaM 4-item tuple (Hardware, Dataset, Baseline, Variance) if reporting numbers.
+- **Collapsible Appendix (<details>)**: All Tier 3 details, exhaustive CLI flags, full environment variables, and advanced configurations collapsed out of primary reading flow.
+
 ---
 
 ## Detailed Audit Criteria by Layer
@@ -116,6 +133,8 @@ Please reply with your preferred action:
   - 初期のメンタルモデル構築に不要な「破壊的操作、高度な設定変更、詳細なトラブルシューティング」をTier 1/2から排除し、最終セクションまたは `<details>` に隔離する (Muralidhar et al. 2025)。
 - **Structural Table of Contents (構造的目次基準)**:
   - ドキュメント内に **H2見出しが4個以上（Cowan容量超過）** 存在する場合、読者の全体メンタルマップ構築（Su et al. 2012）を担保するため、Tier 1直下にアンカーリンク付き目次を義務付ける (見出し4個以上で欠落 = **L2 WARN**, リンク破損 = **L2 FAIL**)。
+- **Bilingual & Multi-Language Separation (多言語縦積みの分離規範)**:
+  - Stacking complete translations vertically in a single document severely inflates file length, disrupts mental models, and triggers false floors. Enforce language separation into distinct files (e.g., README.md and README.ja.md) connected via top-level switcher links (Vertical multi-language stack = **L2 WARN**).
 - **Physical Integration (空間的一体化による注意分割排除)**:
   - コードブロック内の引数・オプションの解説が無関係な段落や別見出しを跨いで分離記述されている場合、インラインコメントまたは直近マッピングテーブルへの空間的一体化を強制する (Sweller 2011, Oviatt 2006)。
 
@@ -151,8 +170,18 @@ Please reply with your preferred action:
   - コードの字面をなぞっただけの無意味なコメントや説明文（トートロジー）を検出し、前提条件・副作用・例外を含む客観仕様へ書き換えさせる (無意味な反復文 = **L4 WARN**; Börstler & Paech 2016)。
 
 ### Layer 5: Empirical Evidence & Replicability (実証根拠 & 検証可能性)
-- **Verifiable Commands**: Provide explicit CLI commands or test snippets that the reader can execute to verify claims.
-- **Deterministic Outcomes**: State expected terminal output or behavior clearly.
+*Detailed specifications: [`references/layer-5-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-5-rules.md)*
+
+- **Self-Contained Runnable Commands (単体実行可能コマンドの提示義務)**:
+  - Provide copy-pasteable CLI commands or test snippets with explicit inputs, arguments, and required environment flags. Eliminate ambiguous instructions like 'configure properly before running' (Missing command = **L5 FAIL**, undefined prerequisites = **L5 WARN**; Peng 2011).
+- **Deterministic Expected Output (決定論的期待出力の明記)**:
+  - Accompany every verification command with concrete expected terminal outputs, status codes, or file checksums to eliminate subjective ambiguity (Missing test oracle = **L5 WARN**, no success criteria = **L5 FAIL**; Adzic 2011).
+- **NaaM 4-Item Benchmarking Tuple (数値クレームの因果文脈開示)**:
+  - Any performance or resource claim ('10x faster', '90% smaller') must explicitly disclose: **1. Hardware & Runtime**, **2. Workload / Dataset Size**, **3. Baseline Comparison**, and **4. Trials & Variance**. Numbers lacking this context must be converted to an objective condition table or demoted to functional facts (Context-free hype number = **L5 FAIL**; NaaM Framework).
+- **Boundary & Environment Conditions (動作境界の明示)**:
+  - Explicitly document verified OS platforms, minimum language runtimes, and external dependency constraints (Missing environment bounds = **L5 WARN**).
+- **Causal Normalization (条件付き因果文への正規化)**:
+  - Eliminate normative commands ('Users ought to test...') and rephrase into objective conditional statements: 'When executing [command] under [environment], [result] is produced' (Normative sermon = **L5 FAIL**; Hume 1739).
 
 ---
 
