@@ -39,7 +39,7 @@ Do not use this skill for:
 3. **Observation Precedes Evaluation (評価より事実の先行)**:
    Above the fold must state objective functional facts (inputs, processing, outputs) before any qualitative claims.
 4. **Progressive Disclosure & Cognitive Containment (段階的開示と認知的隔離)**:
-   Separate information into 3 tiers. Keep happy paths minimal; isolate exhaustive tables, edge cases, and internals into collapsible sections or appendices.
+   Separate information into 3 tiers. Keep happy paths minimal; isolate exhaustive tables, edge cases, and internals into collapsible sections, appendices, or separate files.
 
 ---
 
@@ -47,11 +47,13 @@ Do not use this skill for:
 
 | Layer | Architecture Layer | Core Focus | Target Questions | Detailed Reference |
 | :---: | :--- | :--- | :--- | :--- |
-| **L1** | **First View & Anti-Abandonment** | Above the Fold / Observation | What is this tool? What are its inputs/outputs? Can a reader identify its essence in under 5 seconds? | [`references/layer-1-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-1-rules.md) |
-| **L2** | **Structure & Progressive Disclosure** | Cognitive Load / Adoption | Is the quick-start minimal ($\le$ 3 lines)? Are deep configs and exhaustive tables collapsed? | [`references/layer-2-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-2-rules.md) |
-| **L3** | **Credibility & Two-Sided Signaling** | Signaling Theory / Constraints | Are boundaries and trade-offs disclosed with counterarguments? Are buzzwords purged? | [`references/layer-3-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-3-rules.md) |
-| **L4** | **Logical Architecture & Proof** | Deductive Logic / Rationale | Why this over alternatives? Are assertions supported by premises (Gentzen subformula property)? | [`references/layer-4-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-4-rules.md) |
-| **L5** | **Empirical Evidence & Replicability** | Validation / Replicability | Are benchmarks accompanied by hardware specs and reproduction commands (NaaM 4-tuple)? | [`references/layer-5-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-5-rules.md) |
+| **L1** | **First View & Anti-Abandonment** | Above the Fold / Observation | What is this tool? What are its inputs/outputs? Can a reader identify its essence in under 5 seconds? | `references/layer-1-rules.md` |
+| **L2** | **Structure & Progressive Disclosure** | Cognitive Load / Adoption | Is the quick-start minimal ($\le$ 3 lines)? Are deep configs and exhaustive tables grouped and isolated via SoC? | `references/layer-2-rules.md` |
+| **L3** | **Credibility & Two-Sided Signaling** | Signaling Theory / Constraints | Are boundaries and trade-offs disclosed with counterarguments? Are buzzwords purged? | `references/layer-3-rules.md` |
+| **L4** | **Logical Architecture & Proof** | Deductive Logic / Rationale | Why this over alternatives? Are assertions supported by premises? Is there fact-value separation? | `references/layer-4-rules.md` |
+| **L5** | **Empirical Evidence & Replicability** | Validation / Replicability | Are benchmarks accompanied by hardware specs and reproduction commands (NaaM 4-tuple)? | `references/layer-5-rules.md` |
+
+*(Note: Path references above and templates below are resolved relative to the directory containing this SKILL.md)*
 
 ---
 
@@ -70,23 +72,24 @@ Agents executing `doc-refine` **MUST** follow this three-phase protocol in seque
 +-----------------+-----------------+
 | Phase 2: Adaptive Elicitation     |
 | - Prompt user for next action     |
-| - Halt and wait for user response |
+| - HARD STOP: End turn immediately |
 +-----------------+-----------------+
                   | (User approves rewrite)
                   v
 +-----------------+-----------------+
 | Phase 3: Refined Rewrite Output   |
-| - Output complete Markdown        |
+| - Output complete document        |
 | - Format via standard template    |
 +-----------------------------------+
 ```
 
 ### Phase 1: Diagnostic Report
 Evaluate the document against Layers 1 through 5 using the specific audit criteria in each reference file.
-Load and adhere strictly to the standardized format defined in [`templates/diagnostic-report-template.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/templates/diagnostic-report-template.md).
+Load and adhere strictly to the standardized format defined in `templates/diagnostic-report-template.md`.
 
-### Phase 2: Adaptive Elicitation & Progression
-After outputting Phase 1, **pause execution** and ask the user how to proceed:
+### Phase 2: Adaptive Elicitation & Progression (Hard Stop)
+**CRITICAL ENFORCEMENT**: After outputting Phase 1, the agent **MUST terminate the turn immediately**. Under NO circumstances should Phase 3 or any rewritten document be generated in the same turn without explicit user selection. Wait for the user's response.
+
 1. **When native question tools (`ask_question`, `AskUserQuestion`) are available:**
    Prompt with options:
    - `(Recommended) Full Rewrite`: Apply all 5-layer recommendations to produce a complete refined document.
@@ -106,7 +109,7 @@ After outputting Phase 1, **pause execution** and ask the user how to proceed:
    ```
 
 ### Phase 3: Refined Rewrite Output
-When the user requests a full or partial rewrite, generate the complete refined document following [`templates/refined-readme-template.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/templates/refined-readme-template.md).
+When the user requests a full or partial rewrite, generate the complete refined document following `templates/refined-readme-template.md`.
 - Do not leave placeholder comments or `TODO` items.
 - Ensure all constraints follow the 3-part refutational tuple: `[Constraint Fact]` — `[Design Rationale / Trade-off]` — `[Workaround / Recommended Configuration]`.
 - Verify that every benchmark number contains the NaaM 4-tuple (Hardware/Runtime, Dataset, Baseline, Variance).
@@ -117,8 +120,8 @@ When the user requests a full or partial rewrite, generate the complete refined 
 
 | Antipattern | Description | Remediation |
 | :--- | :--- | :--- |
-| **Workflow Shortcut** | Jumping straight to rewriting without presenting the Phase 1 diagnosis and obtaining Phase 2 user approval. | Always stop after Phase 1 and wait for explicit user selection. |
+| **Workflow Shortcut / Eager Overrun** | Jumping straight to rewriting without presenting Phase 1 diagnosis and halting for Phase 2 user approval. | Always stop immediately after Phase 1 and wait for explicit user selection. |
 | **Unrefuted Limitation Listing** | Listing limitations as bare bullet points without rationale or workarounds ($r = -.069$ in persuasiveness). | Always apply the 3-part refutational tuple: Fact + Rationale + Workaround. |
 | **Hume's Guillotine Violation** | Inserting normative preachiness ("Developers ought to...", "You should always..."). | Normalize to objective conditional causality: "When [condition], [mechanism] ensures [result]". |
-| **Context Dump (Flat Structure)** | Placing exhaustive CLI flags, full schemas, or troubleshooting steps directly after Quick Start. | Push Tier 3 details into `<details>` collapsible blocks or dedicated reference docs. |
+| **Context Dump (Flat Structure)** | Placing exhaustive CLI flags, full schemas, or troubleshooting steps directly after Quick Start. | Push Tier 3 details into collapsible blocks, appendices, or dedicated reference files via SoC. |
 | **Pseudo-Readability** | Adding comments that merely restate the syntax without explaining preconditions, edge-cases, or rationale. | Replace with concrete operational specs or omit extraneous lines. |
