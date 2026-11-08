@@ -53,8 +53,6 @@ Do not use this skill for:
 | **L4** | **Logical Architecture & Proof** | Deductive Logic / Rationale | Why this over alternatives? Are assertions supported by premises (Gentzen subformula property)? | [`references/layer-4-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-4-rules.md) |
 | **L5** | **Empirical Evidence & Replicability** | Validation / Replicability | Are benchmarks accompanied by hardware specs and reproduction commands (NaaM 4-tuple)? | [`references/layer-5-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-5-rules.md) |
 
-*For complete academic citations and empirical backing across 8 domains, see [`references/theoretical-foundations.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/theoretical-foundations.md).*
-
 ---
 
 ## Execution Protocol
