@@ -105,7 +105,7 @@ Please reply with your preferred action:
 
 - **Standard Skeleton Order (Prana et al. 2019 / Abdulmajeed 2024)**:
   1. `Title & One-Liner` $\rightarrow$ 2. `Badges & Visual Proof` $\rightarrow$ 3. `Why & Key Features (FAB)` $\rightarrow$ 4. `Quick Start` $\rightarrow$ 5. `Prerequisites & Installation` $\rightarrow$ 6. `Usage & Configuration` $\rightarrow$ 7. `Limitations & Boundaries` $\rightarrow$ 8. `License`.
-- **Optimal Scanning Time**: Target ~2–4 minutes of scanning time based on neurocognitive bandwidth (~39 bits/sec; Coupe et al. 2019 / Abdulmajeed 2024). Overly monolithic documentation triggers a **WARN** to recommend progressive disclosure via `<details>` rather than hard failure.
+- **Cognitive Bandwidth & Progressive Disclosure**: Based on neurocognitive bandwidth (~39 bits/sec; Coupe et al. 2019), human capacity to absorb language has an empirical bottleneck. Since reading speed varies across individuals, doc-refine does not enforce rigid reading-time limits or length-based FAILs; instead, overly monolithic documentation without collapsible structures (`<details>`), TOC, or modular separation triggers a **WARN** to recommend progressive disclosure (detailed audit criteria defined in Layer 2 / issue-4).
 - **Supply-Demand Gap Resolution (The Why Factor)**: Explicitly provide a 1-paragraph rationale answering "Why this over alternatives?" (demanded by 59.6% of developers, missing in 74.3% of repos; Prana 2019).
 - **F-Pattern Scanning Optimization (78% of Readers Scan)**:
   - Paragraph text must not exceed **3 consecutive lines**.
