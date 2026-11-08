@@ -1,3 +1,8 @@
+# project:ドキュメント論─個人的な自由研究
 *
 !.gitignore
 # ---AUTO-Generated---
+# .gitignores/skills.gitignore
+!skills/
+!skills/doc-refine/
+!skills/doc-refine/SKILL.md
