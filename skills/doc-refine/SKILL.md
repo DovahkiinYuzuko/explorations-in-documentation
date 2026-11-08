@@ -114,10 +114,20 @@ Please reply with your preferred action:
 - **Information Collapsing**: Detailed parameter tables, exhaustive flag references, and troubleshooting matrices exceeding 20 lines must be placed in `<details><summary>...</summary></details>` blocks or separate reference documents.
 - **TOC Threshold**: Do not include a Table of Contents for documents $\le$ 150 lines (avoids scroll friction); require a TOC only when $> 150$ lines.
 
-### Layer 3: Credibility & Two-Sided Signaling
-- **Mandatory Constraints Section**: Must contain a dedicated section such as `## Limitations & Boundaries` or `## Non-Goals`.
-- **BAKA Words Purge**: Search and remove: "ultimate", "best-in-class", "revolutionary", "flawless", "infinite", "super".
-- **Contextual Numbers**: Any number (e.g., "10x faster", "99% smaller") must include comparison baseline, test data size, and runtime environment. If unsupported, convert to qualitative functional description.
+### Layer 3: Credibility & Two-Sided Signaling (信頼性・両面提示・論証モデル)
+*Detailed specifications: [`references/layer-3-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-3-rules.md)*
+
+- **Mandatory Refutational Constraints (反論あり両面提示の義務化)**:
+  - Must contain a dedicated constraints section (e.g., `## Limitations & Boundaries` or `## Non-Goals`) (Missing = **L3 FAIL**; Prana 2019).
+  - Merely listing limitations without counterarguments degrades persuasiveness ($r = -.060 \sim -.069$; Allen 1991, O'Keefe 1999). Every constraint must follow the **3-Part Tuple**: `[Constraint Fact]` + `[Design Rationale / Trade-off]` + `[Workaround / Recommended Configuration]` (Unrefuted list = **L3 WARN**).
+  - **Moderate Importance Principle**: Disclosed constraints must represent boundary conditions (scale limits, unsupported edge-cases) rather than fatal core flaws (which require code fixes = **L3 FAIL**) or trivial cosmetic notes (which add clutter = **L3 WARN**; Kamins et al. 1989).
+- **Hype Purge (BAKA Words & Cheap Talk Elimination)**:
+  - Detect and purge unsubstantiated marketing adjectives ("ultimate", "blazing fast", "best-in-class", "revolutionary", "flawless", "magic") without objective benchmark data (**L3 FAIL**; Paramitha 2026, Asa & Nautwima 2026).
+  - Contextual Numbers: Any performance metric (e.g., "10x faster", "99% smaller") must specify baseline comparison, dataset size, and hardware environment. Unsupported numbers must be converted to functional facts.
+- **Toulmin Argumentation Coupling (論証構造の結合)**:
+  - Technical claims must satisfy Toulmin's structure: **Claim (主張)** + **Data (実測値)** + **Warrant (推論理由)** + **Backing (裏付け)** + **Rebuttal (例外・無効化条件)**. Fully coupled arguments outperform standard star ratings across competence, integrity, and benevolence ($t \ge 4.89, p < .001$; Rubin & Benbasat 2023).
+- **Deeper System Transparency & Autonomy (深層の透明性と自律性保障)**:
+  - For tools with automated behaviors or telemetry, explicitly disclose internal mechanics, communication destinations, and provide complete opt-out / customization mechanisms (e.g., `--no-telemetry` flag) to protect user autonomy ($\beta = 0.325, p < .05$; Rahman 2025, Cemiloglu 2021).
 
 ### Layer 4: Logical Architecture
 - **Rationale Disclosure**: Clearly articulate why this project exists versus existing standard solutions.
