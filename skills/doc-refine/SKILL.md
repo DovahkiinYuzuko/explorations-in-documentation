@@ -110,14 +110,14 @@ Please reply with your preferred action:
 - **Cowan's Working Memory Capacity (4±1 チャンキング原則)**:
   - 単一見出し直下に並列提示される箇条書き項目、パラメータ一覧、主要機能数は **最大4個（許容上限5個）** に制限する (Cowan 2001, Kalyuga 2011)。
   - 5個以上の並列項目は上位カテゴリによる2階層クラスタリングまたは折りたたみを適用する (未整理な5個以上 = **L2 WARN**, 8個以上 = **L2 FAIL**)。
-- **Quantitative Collapsible Thresholds (定量的折りたたみ基準)**:
-  - 補助コードや設定スキーマが **25行** を超える場合、または例外・代替手順が **3ステップ** を超える場合は、本文から `<details><summary>...</summary></details>` へ折りたたむ (未退避 = **L2 WARN**, 50行超 = **L2 FAIL**; Anik & Bunt 2024)。
+- **Structural Collapsible Triggers (構造的・意味論的折りたたみ基準)**:
+  - 一次的な利用フロー（ハッピーパス）に直接寄与しない付録情報（全CLIフラグ一覧、網羅的環境変数、補助スキーマ、エッジケースのトラブルシューティング）は、本文から `<details><summary>...</summary></details>` へ折りたたむ (付録仕様の平坦露出 = **L2 WARN**, 主文脈を圧迫する露出 = **L2 FAIL**; Anik & Bunt 2024)。
 - **Cognitive Alarm Containment (認知アラーム隔離)**:
   - 初期のメンタルモデル構築に不要な「破壊的操作、高度な設定変更、詳細なトラブルシューティング」をTier 1/2から排除し、最終セクションまたは `<details>` に隔離する (Muralidhar et al. 2025)。
-- **Table of Contents (Su et al. 実務エンジニア行動準拠)**:
-  - 実務エンジニアの100%が目次（TOC）を最初の情報採餌地点とする (Su et al. 2012)。本文が **3スクロール以上（約1,500文字以上または見出し数4以上）** の規模を持つ場合、Tier 1直下にアンカーリンク付き目次を義務付ける (欠落 = **L2 WARN**, リンク破損 = **L2 FAIL**)。
-- **Elimination of Split-Attention Effect (注意分割効果の排除)**:
-  - コードブロック内の引数・オプションの解説がコードから **20行以上離れた位置** に配置されている場合、インラインコメントまたは直近マッピングテーブルへの空間的一体化を強制する (Sweller 2011, Oviatt 2006)。
+- **Structural Table of Contents (構造的目次基準)**:
+  - ドキュメント内に **H2見出しが4個以上（Cowan容量超過）** 存在する場合、読者の全体メンタルマップ構築（Su et al. 2012）を担保するため、Tier 1直下にアンカーリンク付き目次を義務付ける (見出し4個以上で欠落 = **L2 WARN**, リンク破損 = **L2 FAIL**)。
+- **Physical Integration (空間的一体化による注意分割排除)**:
+  - コードブロック内の引数・オプションの解説が無関係な段落や別見出しを跨いで分離記述されている場合、インラインコメントまたは直近マッピングテーブルへの空間的一体化を強制する (Sweller 2011, Oviatt 2006)。
 
 ### Layer 3: Credibility & Two-Sided Signaling (信頼性・両面提示・論証モデル)
 *Detailed specifications: [`references/layer-3-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-3-rules.md)*
@@ -167,7 +167,7 @@ This skill synthesizes empirical research and theoretical models across 8 domain
 | **Conversion Rate & Bounce Prevention** | Scrolling behavior, Nielsen Norman attention distributions | **L1, L2** (Information placement, scannability) |
 | **Credibility & Signaling Theory** | O'Keefe (Two-sided vs one-sided meta-analysis), Spence signaling | **L3** (Mandatory constraints, cost-bearing honesty) |
 | **Argumentation & Persuasive Systems** | Toulmin model, PSD frameworks, explainable persuasion | **L3, L4** (Claim-data-warrant coupling, Jansen demarcation) |
-| **Progressive Disclosure & Info Architecture** | Muralidhar (Selective Transparency), Springer & Whittaker, Anik & Bunt, Su (Foraging) | **L2** (3-tier architecture, <details> thresholds, TOC) |
+| **Progressive Disclosure & Info Architecture** | Muralidhar (Selective Transparency), Springer & Whittaker, Anik & Bunt, Su (Foraging) | **L2** (3-tier architecture, collapsible triggers, structural TOC) |
 | **Cognitive Load & Readability** | Sweller Cognitive Load Theory, Cowan ($4 \pm 1$), Börstler (Readability vs Comprehension) | **L2, L4** (Intrinsic/extraneous load reduction, split-attention, pseudo-readability purge) |
 | **Logic & Formal Verification** | Gentzen (Cut elimination & subformula property), Prawitz (Inference), David Hume | **L4, L5** (Premise-conclusion consistency, Is-Ought filter, assurance cases) |
 | **NaaM Thinking Framework** | Yuzuko Underson (Numbers are a Mirage, 7-layer causal audit) | **L1–L5 Core Backbone** (Unvarnished observation, constraints boundary, validating numbers via causal context) |
