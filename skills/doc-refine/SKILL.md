@@ -93,10 +93,10 @@ Please reply with your preferred action:
 *Detailed specifications: [`references/layer-1-rules.md`](file:///c:/Users/rikui/Documents/VSCode/ドキュメント論─個人的な自由研究/skills/doc-refine/references/layer-1-rules.md)*
 
 - **The 4 Pillars of Above the Fold**: Within the first screenful (top 50 lines / 1080px viewport, which captures **57% of total viewing time**), verify the presence of:
-  1. **One-Liner (LSP & Steve Blank Formula)**: Exactly states Language + Software Technology + Purpose (ssrn-4543196, median 15–16 words) or category, input, and output without marketing fluff.
+  1. **One-Liner (LSP & Steve Blank Formula)**: Exactly states Language + Software Technology + Purpose (or category, input, and output) without marketing fluff (Missing = FAIL, overly verbose = WARN).
   2. **Credibility Signals**: Build status, release version, and license badges.
   3. **Visual Proof (Picture)**: CLI terminal output, architecture diagram, UI screenshot, or minimal demo GIF (increases star velocity by 2.4x; 31_679.pdf).
-  4. **Minimal Quick Start (Push)**: Copy-pasteable verification snippet in $\le$ 3 steps/lines using **Basic code constructs ($\ge$ 92% level A; Sitthithanasakul 2023)**.
+  4. **Minimal Quick Start (Push)**: Copy-pasteable verification snippet in $\le$ 3 steps/lines using **Basic code constructs ($\ge$ 92% level A; Sitthithanasakul 2023)** (Missing = FAIL).
 - **Hume's Guillotine (Fluff & Sermon Purge)**: Eliminate promotional slogans ("The next generation tool", "Empowering developers") and normative sermons ("Developers ought to..."). State only mechanized functional facts.
 - **False Floor (Illusion of Completeness) Prevention**: Ensure the bottom of the first view visually cuts off or leads into the next section (H2 header) rather than dead-ending with excessive whitespace or terminal dividers (`---`).
 
@@ -105,7 +105,7 @@ Please reply with your preferred action:
 
 - **Standard Skeleton Order (Prana et al. 2019 / Abdulmajeed 2024)**:
   1. `Title & One-Liner` $\rightarrow$ 2. `Badges & Visual Proof` $\rightarrow$ 3. `Why & Key Features (FAB)` $\rightarrow$ 4. `Quick Start` $\rightarrow$ 5. `Prerequisites & Installation` $\rightarrow$ 6. `Usage & Configuration` $\rightarrow$ 7. `Limitations & Boundaries` $\rightarrow$ 8. `License`.
-- **Optimal Document Length**: Target **500–1,000 words** (the empirical peak for newcomer attraction at 62.1%; drops to 31.3% when $>8,000$ words; Abdulmajeed 2024/2026).
+- **Optimal Scanning Time**: Target ~2–4 minutes of scanning time based on neurocognitive bandwidth (~39 bits/sec; Coupe et al. 2019 / Abdulmajeed 2024). Overly monolithic documentation triggers a **WARN** to recommend progressive disclosure via `<details>` rather than hard failure.
 - **Supply-Demand Gap Resolution (The Why Factor)**: Explicitly provide a 1-paragraph rationale answering "Why this over alternatives?" (demanded by 59.6% of developers, missing in 74.3% of repos; Prana 2019).
 - **F-Pattern Scanning Optimization (78% of Readers Scan)**:
   - Paragraph text must not exceed **3 consecutive lines**.
