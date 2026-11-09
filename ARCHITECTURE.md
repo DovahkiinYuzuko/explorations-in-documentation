@@ -2,7 +2,7 @@
 
 このドキュメントは、本リポジトリの理論本編である **[`PAPER.md`](./PAPER.md)**（良いドキュメント論）を、AIエージェントが実際に動かせるスキル **[`skills/doc-refine/`](./skills/doc-refine/)** としてどのように設計・実装したのか（「どの部分が、どの論文や仕様のどういう考え方を利用しているのか」）を解説するアーキテクチャ文書です。
 
-研究を始めたきっかけや問題意識については **[`PHILOSOPHY.md`](./PHILOSOPHY.md)** に、理論そのものの体系については **[`PAPER.md`](./PAPER.md)** に、全57文献の書誌情報については **[`CITATIONS.md`](./CITATIONS.md)** にまとめています。
+研究を始めたきっかけや問題意識については **[`PHILOSOPHY.md`](./PHILOSOPHY.md)** に、理論そのものの体系については **[`PAPER.md`](./PAPER.md)** に、全56文献の書誌情報については **[`CITATIONS.md`](./CITATIONS.md)** にまとめています。
 
 ---
 

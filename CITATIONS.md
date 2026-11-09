@@ -145,4 +145,4 @@
 
 ※ **[`PAPER.md`](./PAPER.md)** 第5章の脚注（`[^naam]`）にて言及している、筆者自身の思考フレームワーク（7層モデル：事実の確認 → 合理性の確認 → 時代条件の確認 → 制約の確認 → 普及条件の確認 → 数字の検証 → 再現可能性の確認）の初出記事は以下の通りです。
 
-- Yuzuko Underson. 「[NaaM(Numbers are a Mirage)思考フレームワーク概念定義仕様書](https://note.com/dandy_viper3242/n/na5ceff82ae2e)」. *note* (2026-04-02). （リポジトリ内控: [`references/NaaM思考フレームワーク.md`](./references/NaaM思考フレームワーク.md)）
+- Yuzuko Underson. 「[NaaM(Numbers are a Mirage)思考フレームワーク概念定義仕様書](https://note.com/dandy_viper3242/n/na5ceff82ae2e)」. *note* (2026-04-02). 
