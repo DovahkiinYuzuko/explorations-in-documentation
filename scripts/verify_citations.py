@@ -53,7 +53,7 @@ def main():
         citations_text
     )
 
-    expected_total = 57
+    expected_total = 56
     if len(bib_entries) != expected_total:
         print(f"FAIL: Expected {expected_total} citation entries, but found {len(bib_entries)}", file=sys.stderr)
         sys.exit(1)
@@ -134,7 +134,6 @@ def main():
         "[REF-COPYHACKERS2015]": {"file": "Every Copywriting Formula Ever (or The Ultimate Guide to No-Pain Copywriting).md", "kw": "Copyhackers"},
         "[REF-HUME1739]": {"external": True, "kw": "David Hume"},
         "[REF-PENG2011]": {"external": True, "kw": "Roger D. Peng"},
-        "[REF-NAAM]": {"file": "NaaM思考フレームワーク.md", "kw": "Numbers are a Mirage"},
     }
 
     errors = []

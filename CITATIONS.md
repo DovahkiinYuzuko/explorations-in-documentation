@@ -1,71 +1,71 @@
 # 参考文献公式目録 (CITATIONS & Traceability Matrix)
 
-本ドキュメントは、「ドキュメント論─個人的な自由研究」およびエージェントスキル `doc-refine` の設計基盤となった全学術文献・理論モデル・一次資料の公式文献目録（Bibliography）である。
-全8カテゴリ（全54文献＋3基盤公理）の書誌情報（DOI / 掲載誌 / 著者）、抽出された実測データ・理論モデル、およびドキュメント工学フレームワーク（5層アーキテクチャ: Layer 1〜5）への直接的な作用（Informed Insights & Applied Mechanisms）を決定論的に記録する。
+本ドキュメントは、「ドキュメント論─個人的な自由研究」の全体統括ドキュメント **[`PAPER.md`](./PAPER.md)** およびエージェントスキル `doc-refine` の設計基盤となった学術文献・理論モデル・一次資料の文献目録（Bibliography）です。
+
+8カテゴリ（54文献＋2基盤公理、計56件の外部先行研究）の書誌情報（DOI / 掲載誌 / 著者）、抽出された実測データ・理論モデル、および **[`PAPER.md`](./PAPER.md)** の各章・仮説モデルへの対応関係を記録しています。
 
 ---
 
 ## 1. 導出・作用トレーサビリティマトリクス (Traceability Matrix)
 
-| 文献ID | 領域 | 主要文献・著者 | 抽出実測データ・理論モデル | 5層アーキテクチャへの直接の作用 |
+| 文献ID | 領域 | 主要文献・著者 | 抽出実測データ・理論モデル | `PAPER.md`（良いドキュメント論）における対応箇所 |
 | :--- | :--- | :--- | :--- | :--- |
-| **`[REF-PRANA2019]`** | GitHub/OSS実証 | Prana et al. (2019) | 393リポジトリ解析。Why欠落率74.3%、When欠落率78.6%。 | **L1** Why配置（目的の明示）、**L3** 制約セクション（What-Not）必須化 |
-| **`[REF-SITTHI2023]`** | GitHub/OSS実証 | Sitthithanasakul et al. (2023) | PyPI 1,620件解析。スニペットの92%がBasic構文（Level A: 基本構文）。 | **L1** Quick Start Basic構文規範（Level A強制、技巧的構文排除） |
-| **`[REF-ABDUL2024]`** | GitHub/OSS実証 | Abdulmajeed (2026) | 717リポジトリCatBoost/SHAP解析。README長が静的ドキュメント要因中第1位（平均SHAP 0.420）。中程度の長さでピークに達する非線形関係。 | **L1** ファーストビュー（50行以内）、**L2** 3層情報分離（過長ドキュメントの分割） |
-| **`[REF-HELLMAN2023]`**| GitHub/OSS実証 | Hellman et al. (2023) | GitHub概要欄の実態調査。高品質リポジトリから創発した **LSP（Language, Software technology, Purpose）** パターンが読者に最も好まれることを実証。 | **L1** LSP One-Liner規範（Language + Software technology + Purpose による機能事実の定義） |
-| **`[REF-GAUGHAN2025]`**| GitHub/OSS実証 | Gaughan et al. (2025) | 初版README中央値160語。煩雑な誓約（CLA等）は新規参入者を激減させる。 | **L1/L2** 初動の認知的摩擦・不安喚起の排除規約 |
-| **`[REF-FRONCH2023]`** | GitHub/OSS実証 | Fronchetti et al. (2023) | 65%にCONTRIBUTING欠落、新人の主要障壁（タスク選定・環境構築）の75%以上が放置。 | **L2/L3** オンボーディング導線、ローカルテスト再現手順の明示 |
-| **`[REF-FOUNDJEM]`**   | GitHub/OSS実証 | Foundjem et al. (ICSE) | オンボーディング充実によるバグ14%減少、PR受容率13.5%向上、定着率35%延長。 | **L1〜L5** ドキュメント品質投資によるプロジェクト保守性向上 |
-| **`[REF-DANTAS2023]`** | GitHub/OSS実証 | Dantas et al. (2023) | PR可読性改善370件分析。開発者の83.8%が可読性を重視、直感性・モジュール化・冗長性排除。 | **L4** サンプルコードの直感的命名と冗長性排除 |
-| **`[REF-ALLEN1991]`** | 説得工学 | Allen (1991) | メタ分析（$N=7,547$）。反論なし両面提示 $r=-.060$ vs 反論あり $r=.076$。 | **L3** 反論あり両面提示（3連タプル構文）の義務化 |
-| **`[REF-OKEFE1999]`**  | 説得工学 | O'Keefe (1999) | メタ分析（$N=20,111$）。非広告文書において反論なき弱点開示は説得力を破壊（$r=-.069$）。 | **L3** トレードオフ・解消ロジック併記の必須化 |
-| **`[REF-KAMINS1989]`** | シグナリング | Kamins et al. (1989) | 開示実験（$t=3.27, p<.005$）。「中程度の重要度」の弱点開示のみ信頼性最大化。 | **L3** 開示制約の3水準分類（致命的欠陥/中程度/些細） |
-| **`[REF-PARAM2026]`**  | 信頼性・シグナリング | Paramitha et al. (2026) | 252検索ソース＋870 Redditスレッドの大規模レビュー。スター数・DL数等の安価な信頼シグナル（Cheap Signals）の崩壊とレモン市場化を実証。 | **L3/L5** 安価な自称主張・誇張の排除、再現可能な決定論的検証（Costly Signals）の義務化 |
-| **`[REF-ASA2026]`**    | 信頼性・シグナリング | Asa & Nautwima (2026) | コスト高シグナル（Costly signals）による分離均衡。第三者検証と透明性が信頼を形成。 | **L3/L5** 模倣困難な生テスト・独立検証環境の提示 |
-| **`[REF-TSOY2012]`**   | 信頼性・シグナリング | Tsoy & Staples (Queen's) | OSS参加における第三者評価と客観的実績（$p < .001$）の信頼形成効果。 | **L3** 客観的実績・外部検証キューの明示 |
-| **`[REF-RUBIN2023]`**  | 論証モデル | Eran Rubin & Benbasat (2023) | 3実験研究。Toulminモデルの各要素（Data, Warrant, Backing, Rebuttal）の結合が能力・誠実性・善意の知覚を有意に向上させる。 | **L3/L4** 論証結合構文（Claim-Data-Warrant-Backing-Rebuttal） |
-| **`[REF-REED2005]`**   | 論証モデル | Chris Reed & Glenn Rowe (2005) | トゥールミンモデルと Pollock の Undercutter（論拠切断）の形式化。 | **L4** 論拠（Warrant）への反論に対する事前防御 |
-| **`[REF-NABWIRE2026A]`**| 説得工学 | Sharon Nabwire et al. (2026a) | PSDにおける透明性と控えめさ（低侵襲性）が継続利用意図を高める。 | **L3** 控えめな情報提示とダークパターンの排除 |
-| **`[REF-NABWIRE2026B]`**| 説得工学 | Sharon Nabwire et al. (2026b) | 透明性支援が知覚有効性と信頼性を高める因果関係の実証。 | **L3** プロセス透明性・根拠開示の義務化 |
-| **`[REF-RAHMAN2024]`** | 説得工学 | Parinda Rahman & Ifeoma Adaji (2024)| 倫理的・高信頼な説得技術の設計要件。欺瞞の排除と選択の自由保障。 | **L3** オプトアウト・選択自律性の確保 |
-| **`[REF-RAHMAN2025]`** | 説得工学 | Rahman (2025) | PLS-SEM分析。ユーザーの信頼には透明性（Transparency）と自律性（Autonomy）が決定的な影響を及ぼし、欺瞞的ダークパターンは信頼を破壊する。 | **L3** 深層の透明性とオプトアウト手順の義務化 |
-| **`[REF-BENNER2022]`** | 説得工学 | Dennis Benner et al. (2022) | 倫理的PSD命題（P1: 意図開示, P3: 自律性と自由の確保）。 | **L3** 意図開示とユーザー自律性の保障 |
-| **`[REF-CEMILOGLU2021]`**| 説得工学 | Deniz Cemiloglu & Raian Ali (2021)| 説明可能な説得（Explainable Persuasion）とインフォームド・コンセント。 | **L3** 行動喚起における理由説明義務化 |
-| **`[REF-AMGOUD2009]`** | 論証モデル | Leila Amgoud (2009) / Rahwan | 意思決定のための論証理論。賛成・反対理由の評価と受容性セマンティクス。 | **L4** トレードオフ評価と工学的正当化ステップ |
-| **`[REF-MURALI2025]`** | 段階的開示 | Muralidhar et al. (2025) | 臨床AI診断システムにおける選択的透明性実験。オンデマンドな段階的開示（Progressive Disclosure）が情報過負荷を防ぎ、推論理解を促進する。 | **L2** 3層アーキテクチャ（Tier 1〜3）、オンデマンドな情報開示 |
-| **`[REF-SPRING2020]`** | 段階的開示 | Springer & Whittaker (2020) | 4つの実証実験。透明性の逆説（細かな誤りの即時開示が初期不信を招く現象）。初期はシンプルなヒューリスティックを提示し、詳細はオンデマンドで開示する。 | **L2** 深層詳細・全フラグ一覧のオンデマンド隔離 |
-| **`[REF-ANIK2026]`**   | 段階的開示・情報設計 | Anik & Bunt (2026) | 32名被験者実験。ユーザーは認知負荷が高くても詳細で完全な情報（Information Depth）を強く好む。段階的開示が学習の知覚を有意に向上させる。 | **L2** 情報を削らず深さを保った上での階層的段階開示（SoC × Progressive Disclosure） |
-| **`[REF-NIELSEN2006]`**| 段階的開示 | Jakob Nielsen (2006) | Progressive Disclosure。初見時は基本・必須機能のみ、高度なオプションは要求に応じて開示。 | **L2** 必須手順と詳細設定の階層分離 |
-| **`[REF-HORTON2006]`** | 情報設計 | Sarah Horton (2006) | Access by Design。Webの表層下の情報構造化。 | **L2** 見出しレベルの階層整合性保証 |
-| **`[REF-PROCTER2001]`**| 情報設計 | Chris Procter & Judith Symonds (2001)| Webユーザビリティと情報階層。迷わないナビゲーション構造。 | **L2** 明瞭なディレクトリ・ファイルリンク導線 |
-| **`[REF-MATTYAS2020]`**| 情報設計 | Dóra Mattyasovszky-Philipp et al. (2020)| 認知的情報システムにおけるモデル駆動型アーキテクチャ。 | **L2** 概念モデルとドキュメント構造の整合 |
-| **`[REF-STOREY1997]`** | 認知設計 | Margaret-Anne Storey et al. (1997) | ソフトウェア探索におけるメンタルモデル構築支援要素。 | **L2** トップダウン/ボトムアップ両面探索の支援 |
-| **`[REF-COWAN2001]`**  | 認知負荷 | Cowan (2001) | 未知情報に対する純粋な作業記憶容量（注意の焦点）は $4 \pm 1$（中央値4）。 | **L2** 単一見出し直下の並列項目数上限（$\le 4$ 個） |
-| **`[REF-DURAN2022]`**  | 認知負荷 | Rodrigo Duran et al. (2022) | 計算機科学教育における認知負荷理論の適用。スキーマ構築支援。 | **L2** 初見者の外在性認知負荷の極小化 |
-| **`[REF-SWEL2011]`**   | 認知負荷 | Sweller et al. (2011) / Kalyuga (2011)| 相互依存情報の空間的分離による注意分割効果（Split-Attention）と外在性認知負荷（ECL）の急増。 | **L2** 空間的一体化（コード内注釈・直近対比表） |
-| **`[REF-SU2012]`**     | 情報設計 | Su, Tempero, Hosking, Grundy (2012) | アーキテクチャ文書における情報採餌（Information Foraging）行動調査。読者は目次や構造的手がかりを起点に探索する。 | **L2** 構造的目次（TOC）基準（H2見出し4個以上で必須） |
-| **`[REF-PAECH2016]`**  | ドキュメント可読性 | Barbara Paech et al. (2016) | メソッドチェーンとコメントが可読性・理解度に与える影響の実験。 | **L4** コード例のコメントによる意図開示 |
-| **`[REF-KALYUGA2011]`**| 認知負荷 | Slava Kalyuga (2011) | 専門性の逆転効果（Expertise Reversal Effect）。初心者向け説明と熟達者向け情報。 | **L2** 初心者向けと熟達者向けの分離・階層化 |
-| **`[REF-JACQUETTE2008]`**| 論理学 | Dale Jacquette (2008) | 背理法（Reductio ad Absurdum）の演繹的構造と責任帰属。 | **L4** 背理法によるツッコミどころ排除と前提責任明示 |
-| **`[REF-JANSEN2007]`** | 論理学 | Henrike Jansen (2007) | 背理法（論理矛盾）と結果論証（因果的悪影響）の峻別。 | **L4** 背理法とトレードオフの峻別（絶対的不可能偽装の排除） |
-| **`[REF-RUSHBY2009]`** | 形式検証 | John Rushby (2009) | Assurance Case 3層分離（Claims + Arguments + Evidence）と全称命題の限定（Caveats）。 | **L4/L5** 主張・論証・証拠の3層構文と制約条件明記 |
-| **`[REF-PRAWITZ2018]`**| 証明論 | Dag Prawitz (2018) | 推論の妥当性と証明の認識論的力（Epistemic Power）。 | **L4** 前提から結論への妥当な導出ステップの担保 |
-| **`[REF-VONPLATO2020]`**| 証明論 | Jan von Plato (SEP 2020) | ゲンツェンの自然演繹、迂回（hillock/detours）の除去と正規形（Normal Form）。 | **L4** 無駄な前置きや自明な消費の除去（正規形の維持） |
-| **`[REF-BAIER2024]`**  | 形式検証 | Daniel Baier et al. (CPAchecker, 2024)| 証拠生成（Witness Validation）と反例（Counterexample）可視化。 | **L5** 実行可能な検証Witness（コマンド・テスト）添付 |
-| **`[REF-KNIGHT2010]`** | 形式検証 | Xiang Yin & John Knight (NASA NFM 2010)| 構造的一致仮説（Structural Correspondence）と部分証明。 | **L4/L5** 設計とドキュメントの構造的1対1一致 |
-| **`[REF-SIEG1998]`**   | 証明論 | Wilfried Sieg & John Byrnes | 自然演繹における戦略的証明探索（Intercalation Calculus）。 | **L4** 目標主導型の論理展開 |
-| **`[REF-NIELSEN2018]`**| CVR・視線誘導 | Jakob Nielsen (2018) | NNGroupアイトラッキング（13万点固着解析）。閲覧時間の57%がAbove the Fold、74%が上位2画面に集中。 | **L1** ファーストビュー集中設計（50行以内の密度最大化）、**L2** 視覚動線制御 |
-| **`[REF-MULLIN2023]`** | CVR・視線誘導 | Shanelle Mullin (2023) | Google視認性データ73% vs 44%、NNGroup平均格差84%。False Floor（騙しの床）による離脱。 | **L2** 視覚的連続性（Foldをまたぐ目次・見出しの覗かせ、孤立境界線禁止） |
-| **`[REF-SHAPIRO2020]`**| 離脱防止・LP | Julian Shapiro (2020) | Adoption Rate = Desire × Friction / Effort。5秒テスト（What/Why/Howの即答性）。 | **L1** 5秒テスト適合性監査、専門用語・探索労力の極小化 |
-| **`[REF-DRY2020]`**    | コピー・表現 | Harry Dry (2020) | Jargon（抽象的メタファー）の排除と具体的動作・入出力事実への正規化。 | **L1/L4** 抽象的形容詞の排除、平易な字義通り名詞・動詞規範 |
-| **`[REF-UNBOUNCE2022]`**| CVR・離脱防止 | Unbounce (2022) | 競合するマルチCTAによる決定麻痺（Decision Paralysis）の解明。 | **L1** 単一推奨Quick Start（Primary CTA）の明示、代替手法の段階的隔離 |
-| **`[REF-USERPILOT2026]`**| コピー・便益工学 | Userpilot (2026) | FABモデル。Feature（機能） $\rightarrow$ Advantage（動作機序） $\rightarrow$ Benefit（読者利得）の3段結合。 | **L2** 機能リストにおけるFAB 3要素因果結合の義務化 |
-| **`[REF-KANDA2016]`**  | コピー・課題解決 | 神田昌典 (2016) | 新PASONAの法則。煽り（Agitation）を親近感・技術文脈理解（Affinity）へ昇華。 | **L1/L3** 不安煽りの完全禁止、読者の開発文脈への共感と根本原因提示 |
-| **`[REF-SALESCOPY2026]`**| コピー・構成 | The Sales Copy (2026) | 4Pの法則（Picture, Promise, Proof, Push）。 | **L1/L3/L5** 展望・約束・客観的証拠・行動喚起の一貫結合 |
-| **`[REF-COPYHACKERS2015]`**| コピー・型 | Joanna Wiebe (2015) | Every Copywriting Formula Ever。構造化されたメッセージフレームワーク。 | **L1/L2** 目的に応じたドキュメント構成テンプレートの適用 |
-| **`[REF-HUME1739]`**   | 形式論理・哲学 | David Hume (1739) | 事実命題（is）から客観的導出なしに規範命題（ought）を導く論理的誤謬。 | **L4/L5** ヒュームのギロチン（客観的条件付き因果文への正規化） |
-| **`[REF-PENG2011]`**   | 実証再現性 | Roger D. Peng (2011) | 再現可能な研究の自己完結性、および決定論的テストオラクル。 | **L5** 単体実行可能コマンド、決定論的期待出力の明記 |
-| **`[REF-NAAM]`**       | 思考基盤 | Yuzuko Underson (NaaM) | Numbers are a Mirage（文脈なき単独数値は幻影）。4要素因果文脈の結合。 | **L5** NaaM 4要素ベンチマークタプル（環境・データ・比較・分散） |
+| **`[REF-PRANA2019]`** | GitHub/OSS実証 | Prana et al. (2019) | 393リポジトリ解析。Why欠落率74.3%、When欠落率78.6%。 | **第2章/第4章** Why（目的・動機）と When（適用条件・境界）の明示 |
+| **`[REF-SITTHI2023]`** | GitHub/OSS実証 | Sitthithanasakul et al. (2023) | PyPI 1,620件解析。スニペットの92%がBasic構文（Level A: 基本構文）。 | **第2章** 初動コード例における基本構文（Level A）の優位性と技巧排除 |
+| **`[REF-ABDUL2024]`** | GitHub/OSS実証 | Abdulmajeed (2026) | 717リポジトリCatBoost/SHAP解析。README長が静的ドキュメント要因中第1位（平均SHAP 0.420）。中程度の長さでピークに達する非線形関係。 | **第3章** 過短・過長を避けた情報密度の最適化と段階的分離 |
+| **`[REF-HELLMAN2023]`**| GitHub/OSS実証 | Hellman et al. (2023) | GitHub概要欄の実態調査。高品質リポジトリから創発した **LSP（Language, Software technology, Purpose）** パターンが読者に最も好まれることを実証。 | **第2章** 抽象語を排した具体的要素（言語・技術・目的）による冒頭定義 |
+| **`[REF-GAUGHAN2025]`**| GitHub/OSS実証 | Gaughan et al. (2025) | 初版README中央値160語。煩雑な誓約（CLA等）は新規参入者を激減させる。 | **第2章** 初動の認知的摩擦・参入障壁の低減 |
+| **`[REF-FRONCH2023]`** | GitHub/OSS実証 | Fronchetti et al. (2023) | 65%にCONTRIBUTING欠落、新人の主要障壁（タスク選定・環境構築）の75%以上が放置。 | **第2章/第5章** ローカル環境構築と再現テスト手順の明示 |
+| **`[REF-FOUNDJEM]`**   | GitHub/OSS実証 | Foundjem et al. (ICSE) | オンボーディング充実によるバグ14%減少、PR受容率13.5%向上、定着率35%延長。 | **第2章** ドキュメント品質がプロジェクト保守性に与える実証効果 |
+| **`[REF-DANTAS2023]`** | GitHub/OSS実証 | Dantas et al. (2023) | PR可読性改善370件分析。開発者の83.8%が可読性を重視、直感性・モジュール化・冗長性排除。 | **第4章** サンプルコードの直感的命名と冗長性排除 |
+| **`[REF-ALLEN1991]`** | 説得工学 | Allen (1991) | メタ分析（$N=7,547$）。反論なし両面提示 $r=-.060$ vs 反論あり $r=.076$（有効性約20%向上）。 | **第5章** 反論あり両面提示（制約事実＋設計理由＋回避策）の核となる実証 |
+| **`[REF-OKEFE1999]`**  | 説得工学 | O'Keefe (1999) | メタ分析（$N=20,111$）。非広告文書において反論なき弱点開示は説得力を破壊（$r=-.069$）、反論ありは有意に向上（$r=.081$）。 | **第5章** 単なる弱点列挙の禁止とトレードオフ・解消ロジック併記 |
+| **`[REF-KAMINS1989]`** | シグナリング | Kamins et al. (1989) | 開示実験（$t=3.27, p<.005$）。「中程度の重要度」の弱点開示が信頼性と利用意図を最大化。 | **第5章** コア価値を壊さない中程度のトレードオフ開示による信頼獲得 |
+| **`[REF-PARAM2026]`**  | 信頼性・シグナリング | Paramitha et al. (2026) | 252検索ソース＋870 Redditスレッドの大規模レビュー。スター数・DL数等の安価な信頼シグナル（Cheap Signals）の崩壊とレモン市場化を実証。 | **第5章** 安価な自称主張（チープトーク）の排除とコスト高シグナルの必然性 |
+| **`[REF-ASA2026]`**    | 信頼性・シグナリング | Asa & Nautwima (2026) | コスト高シグナル（Costly signals）による分離均衡。シグナル適合性と模倣困難な誠実性が信頼を形成。 | **第5章** 模倣困難な再現検証手順と境界開示による信頼形成 |
+| **`[REF-TSOY2012]`**   | 信頼性・シグナリング | Tsoy & Staples (Queen's) | OSS参加における第三者評価と客観的実績（$p < .001$）の信頼形成効果。 | **第5章** 客観的実績・外部検証キューの明示 |
+| **`[REF-RUBIN2023]`**  | 論証モデル | Eran Rubin & Benbasat (2023) | 3実験研究。Toulminモデルの各要素（Data, Warrant, Backing, Rebuttal）が能力・誠実さ・好意性の信頼を有意に向上させる。 | **第5章** 例外・境界条件（Rebuttal）の開示による「誠実さ（Integrity）」の獲得 |
+| **`[REF-REED2005]`**   | 論証モデル | Chris Reed & Glenn Rowe (2005) | トゥールミンモデルと Pollock の Undercutter（推論の適用境界）の形式化。 | **第5章** 制約開示を「主張の否定」ではなく「成立境界の明示」として位置づける |
+| **`[REF-NABWIRE2026A]`**| 説得工学 | Sharon Nabwire et al. (2026a) | PSDにおける透明性と控えめさ（低侵襲性）が知覚説得力の65.6%を説明し継続利用意図を高める。 | **第5章** 押し付けがましさを排した控えめな記述と透明性 |
+| **`[REF-NABWIRE2026B]`**| 説得工学 | Sharon Nabwire et al. (2026b) | 透明性が信頼性支援の57.8%を説明し、知覚説得力の69.9%を形成する因果関係の実証。 | **第5章** 内部挙動と前提の透明性による信頼形成 |
+| **`[REF-RAHMAN2024]`** | 説得工学 | Parinda Rahman & Ifeoma Adaji (2024)| 倫理的・高信頼な説得技術の設計要件。明確なメッセージとユーザー自律性のバランス。 | **第4章/第5章** 読者の選択の自由（自律性）の尊重 |
+| **`[REF-RAHMAN2025]`** | 説得工学 | Rahman (2025) | 人気サイトの95%に存在するダークパターンが信頼を破壊。透明なコミュニケーションと自律性が対抗軸となる。 | **第5章** 強迫的ナッジ・誇大誘導の排除と透明な事実提示 |
+| **`[REF-BENNER2022]`** | 説得工学 | Dennis Benner et al. (2022) | 倫理的PSD命題（意図の開示、自律性の保護、検証可能な証拠に基づく議論）。 | **第5章** 意図開示・自律性・検証可能エビデンスの3要件 |
+| **`[REF-CEMILOGLU2021]`**| 説得工学 | Deniz Cemiloglu & Raian Ali (2021)| 説明可能な説得（Explainable Persuasion）とインフォームド・コンセント。 | **第5章** 行動を促す際の理由・メカニズムの説明責任 |
+| **`[REF-AMGOUD2009]`** | 論証モデル | Leila Amgoud (2009) / Rahwan | 意思決定のための論証理論。賛成・反対理由の評価と反論に対する防御可能性。 | **第5章** メリットだけでなく反対理由（デメリット）への対処による意思決定支援 |
+| **`[REF-MURALI2025]`** | 段階的開示 | Muralidhar et al. (2025) | 臨床AI診断システムにおける3層（Summary / Rationale / Exhaustive Evidence）の選択的透明性。 | **第3章** 3層情報アーキテクチャによる認知過負荷防止と監査性の両立 |
+| **`[REF-SPRING2020]`** | 段階的開示 | Springer & Whittaker (2020) | 4つの実証実験。透明性の逆説（初期の過剰な詳細露出が不信を招く現象）とオンデマンド開示の優位性。 | **第3章** 初期はシンプルなメンタルモデルを提示し、詳細はオンデマンドで開示する |
+| **`[REF-ANIK2026]`**   | 段階的開示・情報設計 | Anik & Bunt (2026) | 32名被験者実験。ユーザーは認知負荷が高くても詳細で完全な情報（High Information Depth）を強く好む。段階的開示が学習の知覚を有意に向上（$p<0.05$）。 | **第3章** 情報を削らず深さを保った上での段階的開示（グルーピング × SoC） |
+| **`[REF-NIELSEN2006]`**| 段階的開示 | Jakob Nielsen (2006) | Progressive Disclosure。初見時は基本・必須機能のみ、高度なオプションは要求に応じて開示。 | **第3章** 最短動線（Happy Path）と詳細リファレンスの階層分離 |
+| **`[REF-HORTON2006]`** | 情報設計 | Sarah Horton (2006) | Access by Design。主要なナラティブフローと副次的詳細の分離。 | **第3章** 表層リンクや付録分離による思考フローの維持 |
+| **`[REF-PROCTER2001]`**| 情報設計 | Chris Procter & Judith Symonds (2001)| Webユーザビリティと情報階層。一貫した構造的手がかりによるナビゲーション破綻防止。 | **第3章** 一貫した見出し構造と階層化 |
+| **`[REF-MATTYAS2020]`**| 情報設計 | Dóra Mattyasovszky-Philipp et al. (2020)| 認知的情報システムにおけるモデル駆動型アーキテクチャと視点（Viewpoint）の分離。 | **第3章** 読者の関心空間に応じた情報レイヤーの分離（SoC） |
+| **`[REF-STOREY1997]`** | 認知設計 | Margaret-Anne Storey et al. (1997) | ソフトウェア探索におけるメンタルモデル構築支援（複数の抽象レベルと大域的文脈の維持）。 | **第3章** 局所的詳細を見ても迷子にならない大域ナビゲーション |
+| **`[REF-COWAN2001]`**  | 認知負荷 | Cowan (2001) | 未知情報に対する純粋な作業記憶容量（注意の焦点）は $4 \pm 1$（中央値4）。 | **第3章** フラットな並列項目の抑制と意味的グループ化（チャンキング） |
+| **`[REF-DURAN2022]`**  | 認知負荷 | Rodrigo Duran et al. (2022) | 計算機科学教育における認知負荷理論（ICLとECL）の体系的レビュー、およびOviatt (2006) の構造化効果。 | **第3章** 見せ方の不手際による外在性認知負荷（ECL）の最小化 |
+| **`[REF-SWEL2011]`**   | 認知負荷 | Sweller et al. (2011) / Kalyuga (2011)| 相互依存情報の空間的分離による注意分割効果（Split-Attention）と外在性認知負荷（ECL）の急増。 | **第3章** コードと注釈・コマンドと出力の空間的一体化 |
+| **`[REF-SU2012]`**     | 情報設計 | Su, Tempero, Hosking, Grundy (2012) | アーキテクチャ文書における情報採餌（Information Foraging）行動調査。読者は目次や見出しを起点に跳躍探索する。 | **第3章** 情報の手がかり（Information Scent）としての構造的目次（TOC）と見出し |
+| **`[REF-PAECH2016]`**  | ドキュメント可読性 | Barbara Paech et al. (2016) | 104名被験者実験。「主観的な読みやすさ」と「客観的な理解度」に有意な相関がないことを実証（およびGarousi 2015の実態調査）。 | **第3章** 字面をなぞるだけのトートロジー解説の排除と、前提・副作用の記述 |
+| **`[REF-KALYUGA2011]`**| 認知負荷 | Slava Kalyuga (2011) | 専門性の逆転効果（Expertise Reversal Effect）。初心者向けの丁寧すぎる説明は熟達者の理解を阻害する。 | **第3章** 初心者向け導入と熟達者向け詳細を段階的開示で分離する理論的根拠 |
+| **`[REF-JACQUETTE2008]`**| 論理学 | Dale Jacquette (2008) | 背理法（Reductio ad Absurdum）の演繹的構造と前提への責任帰属。 | **第4章** 代替案の矛盾を示す背理法的説明と前提条件の明示 |
+| **`[REF-JANSEN2007]`** | 論理学 | Henrike Jansen (2007) | 背理法（論理的不可能性）と結果論証（因果的な望ましくない影響・トレードオフ）の厳格な峻別。 | **第4章** 単なる工学的トレードオフを「論理的破綻」と誇張する誤謬の排除 |
+| **`[REF-RUSHBY2009]`** | 形式検証 | John Rushby (2009) | Assurance Case 3層分離（Claims + Arguments + Evidence）と全称命題の限定（Caveats）。 | **第5章** 主張・論証・証拠の結合と、測定環境・前提の但し書き（Caveats） |
+| **`[REF-PRAWITZ2018]`**| 証明論 | Dag Prawitz (2018) | 推論の妥当性と証明の認識論的力（Epistemic Power）。 | **第4章** トートロジーではない妥当な推論ステップによる納得感の形成 |
+| **`[REF-VONPLATO2020]`**| 証明論 | Jan von Plato (SEP 2020) | ゲンツェンの自然演繹、迂回（hillock/detours）の除去と正規形（Normal Form）。 | **第4章** 不要な前置き（迂回）や未定義語彙の唐突な出現の排除 |
+| **`[REF-BAIER2024]`**  | 形式検証 | Daniel Baier et al. (CPAchecker, 2024)| 証拠生成（Witness Validation）と反例（Counterexample）可視化。 | **第5章** 第三者が手元で検証可能な証跡（Witness：実行コマンドとテスト）の提示 |
+| **`[REF-KNIGHT2010]`** | 形式検証 | Xiang Yin & John Knight (NASA NFM 2010)| 構造的一致仮説（Structural Matching Hypothesis）と部分証明。 | **第4章** ドキュメント構造と実際のソフトウェア構造の相似性（Isomorphism） |
+| **`[REF-SIEG1998]`**   | 証明論 | Wilfried Sieg & John Byrnes | 自然演繹における戦略的証明探索（Intercalation Calculus：前提と結論の間隙架橋）。 | **第4章** 読者の前提から結論へと至る段階的な論理の架橋 |
+| **`[REF-NIELSEN2018]`**| CVR・視線誘導 | Jakob Nielsen (2018) | NNGroupアイトラッキング（13万点固着解析）。閲覧時間の57%がAbove the Fold、74%が上位2画面に集中。 | **第2章** 最初の画面（ファーストビュー）における情報伝達と迷いの排除 |
+| **`[REF-MULLIN2023]`** | CVR・視線誘導 | Shanelle Mullin (2023) | Google視認性データ73% vs 44%、NNGroup平均格差84%。False Floor（騙しの床）による離脱。 | **第2章** 視覚的終端の錯覚（False Floor）の排除とスクロール動線の維持 |
+| **`[REF-SHAPIRO2020]`**| 離脱防止・LP | Julian Shapiro (2020) | Adoption Rate = Desire - (Labor + Confusion)。5秒テスト（What/Why/Howの即答性）。 | **第2章** 探索労力と混乱の極小化、冒頭5秒でのWhat/Why/Howの提示 |
+| **`[REF-DRY2020]`**    | コピー・表現 | Harry Dry (2020) | Jargon（抽象的メタファー）の排除と具体的動作・入出力事実への正規化。 | **第2章** 抽象的な宣伝文句を排し、字義通りの名詞と動詞で定義する |
+| **`[REF-UNBOUNCE2022]`**| CVR・離脱防止 | Unbounce (2022) | 競合するマルチCTAによる決定麻痺（Decision Paralysis）の解明。 | **第2章** 初動における単一推奨手順の提示と代替手法の段階的分離 |
+| **`[REF-USERPILOT2026]`**| コピー・便益工学 | Userpilot (2026) | FABモデル。Feature（機能） $\rightarrow$ Advantage（動作機序） $\rightarrow$ Benefit（読者利得）の3段結合。 | **第4章** 機能スペックの羅列ではなく、動作の仕組みから読者の便益へつなぐ因果鎖 |
+| **`[REF-KANDA2016]`**  | コピー・課題解決 | 神田昌典 (2016) | 新PASONAの法則。煽り（Agitation）を親近感・技術文脈理解（Affinity）へ昇華。 | **第4章** 不安煽りを排し、前提となる不便への共感（Affinity）から解決策を導く |
+| **`[REF-SALESCOPY2026]`**| コピー・構成 | The Sales Copy (2026) | 4Pの法則（Picture, Promise, Proof, Push）と証拠の階層。 | **第5章** 主張（Promise）に対する客観的証拠（Proof）の結合 |
+| **`[REF-COPYHACKERS2015]`**| コピー・型 | Joanna Wiebe (2015) | Every Copywriting Formula Ever。構造化されたメッセージフレームワーク（BAB等）。 | **第4章** 導入前の課題から導入後の状態へつなぐ論理的架け橋 |
+| **`[REF-HUME1739]`**   | 形式論理・哲学 | David Hume (1739) | 事実命題（is）から客観的導出なしに規範命題（ought）を導く論理的誤謬。 | **第4章** ヒュームのギロチン（「〜すべき」という説教を排し、仕様事実と条件付き因果文で語る） |
+| **`[REF-PENG2011]`**   | 実証再現性 | Roger D. Peng (2011) | 再現可能な研究の自己完結性、および決定論的テストオラクル。 | **第5章** 読者の手元で追試・再現できるコマンドとコード資産の提示 |
 
 ---
 
@@ -89,7 +89,7 @@
 13. **`[REF-ASA2026]`**: Asa Romeo Asa, Johanna Pangeiko Nautwima. "Corporate digital responsibility and consumer trust: a signaling theory perspective". *Cogent Business & Management*, Vol. 13, No. 1, 2607753 (2026). DOI: [10.1080/23311975.2025.2607753](https://doi.org/10.1080/23311975.2025.2607753).
 14. **`[REF-TSOY2012]`**: Mikhail Tsoy, D. Sandy Staples. "Role of reputation cues in trust formation for a developer's decision to join Open Source Software projects". *Proceedings of the International Conference on Information Systems (ICIS)* (Queen's University).
 15. **`[REF-RUBIN2023]`**: Eran Rubin, Izak Benbasat. "Explaining Explainable Systems: A Toulmin-Based Model and Evaluation of Trustworthiness". *ACM Transactions on Management Information Systems*, Vol. 14, No. 4, Article 35 (2023). DOI: [10.1145/3580479](https://doi.org/10.1145/3580479).
-16. **`[REF-REED2005]`**: Chris Reed, Glenn Rowe. "Translating Toulmin, Diagramming Argument & Pollock's Undercutter". *Argumentation*, Vol. 19, pp. 267–286 (2005).
+16. **`[REF-REED2005]`**: Chris Reed, Glenn Rowe. "Translating Toulmin, Diagramming Argument & Pollock's Undercutter". *Argumentation*, Vol. 19, pp. 267–286 (2025).
 17. **`[REF-NABWIRE2026A]`**: Sharon Nabwire, Eunice Agyei et al. "Evaluating the Influence of Persuasive Systems Design on Continuance Intention and Perceived Effectiveness". (2026).
 18. **`[REF-NABWIRE2026B]`**: Sharon Nabwire, Renata Savian Colvero de Oliveira et al. "Enhancing the perceived effectiveness of health behaviour change support systems through transparency in persuasive systems design". (2026).
 19. **`[REF-RAHMAN2024]`**: Parinda Rahman, Ifeoma Adaji. "Designing Ethical Persuasive Technologies: Requirements and Framework". *ACM Conversational User Interfaces* (2024). DOI: [10.1145/3701571.3703385](https://doi.org/10.1145/3701571.3703385).
@@ -138,4 +138,11 @@
 ### 2.6 哲学的公理・実証再現性基盤
 55. **`[REF-HUME1739]`**: David Hume. *A Treatise of Human Nature*. Book III, Part I, Section I (1739).
 56. **`[REF-PENG2011]`**: Roger D. Peng. "Reproducible Research in Computational Science". *Science*, Vol. 334, No. 6060, pp. 1226–1227 (2011). DOI: [10.1126/science.1213847](https://doi.org/10.1126/science.1213847).
-57. **`[REF-NAAM]`**: Yuzuko Underson. "NaaM (Numbers are a Mirage) 思考フレームワーク：文脈なき単独数値の排斥と4要素因果タプル". (2026).
+
+---
+
+## 3. 付記：筆者自身の関連ノート
+
+※ **[`PAPER.md`](./PAPER.md)** 第5章の脚注（`[^naam]`）にて言及している、筆者自身の思考フレームワーク（7層モデル：事実の確認 → 合理性の確認 → 時代条件の確認 → 制約の確認 → 普及条件の確認 → 数字の検証 → 再現可能性の確認）の初出記事は以下の通りです。
+
+- Yuzuko Underson. 「[NaaM(Numbers are a Mirage)思考フレームワーク概念定義仕様書](https://note.com/dandy_viper3242/n/na5ceff82ae2e)」. *note* (2026-04-02). （リポジトリ内控: [`references/NaaM思考フレームワーク.md`](./references/NaaM思考フレームワーク.md)）
