@@ -126,12 +126,12 @@ Gede Artha Azriadi Pranaら（2019）がGitHubの393リポジトリ・4,226セ�
 初動の5秒を通過して読者が本文を読み始めたとき、次に関わってくるのが人間の脳のメモリ容量です。ここで「読みやすさ」と「情報の網羅性（深さ）」という一見相反する2つの要求をどう両立させるかを考えます。
 
 ### 3.1 ワーキングメモリの「4チャンク限界」と注意分割効果
-よく「人間が一度に覚えられる数は $7 \pm 2$ 個である（Miller, 1956）」と言われますが、認知心理学者の Nelson Cowan（2001）は、数多くの実験を再検討し、 **事前の知識（スキーマ）を持たない初見の情報に対して人間が同時に注意を向けられる純粋な容量は、「$4 \pm 1$（平均4チャンク）」程度である** ことを示しました。
+よく「人間が一度に覚えられる数は $`7 \pm 2`$ 個である（Miller, 1956）」と言われますが、認知心理学者の Nelson Cowan（2001）は、数多くの実験を再検討し、 **事前の知識（スキーマ）を持たない初見の情報に対して人間が同時に注意を向けられる純粋な容量は、「$`4 \pm 1`$（平均4チャンク）」程度である** ことを示しました。
 
 > **(Original)**  
 > *"Miller (1956) summarized evidence that people can remember about seven chunks in short-term memory tasks ... However, when chunking is prevented or controlled, the capacity of the focus of attention is much smaller: about 4 chunks on average in healthy adults. ... The limit of 4 ± 1 chunks holds across a wide variety of circumstances when rehearsal and grouping strategies are disabled."*  
 > **(日本語訳)**  
-> 「ミラー（1956）は、人々が短期記憶課題において約7個のチャンクを保持できるという証拠をまとめた。……しかし、チャンキング（既知の知識による塊化）が防止または制御された場合、注意の焦点の容量ははるかに小さく、健常な成人では平均して約4チャンクである。リハーサルやグループ化の戦略が無効化された場合、$4 \pm 1$ チャンクという限界は多種多様な状況において成立する。」  
+> 「ミラー（1956）は、人々が短期記憶課題において約7個のチャンクを保持できるという証拠をまとめた。……しかし、チャンキング（既知の知識による塊化）が防止または制御された場合、注意の焦点の容量ははるかに小さく、健常な成人では平均して約4チャンクである。リハーサルやグループ化の戦略が無効化された場合、$`4 \pm 1`$ チャンクという限界は多種多様な状況において成立する。」  
 > *(出所: Nelson Cowan, 2001, `[REF-COWAN2001]`)*
 
 初めて触れるツールや仕様書を読むとき、読者の頭の中にはまだそのツールに関する「塊（チャンク）」が形成されていません。その状態で、1つの見出しの下に10個も15個もフラットな箇条書きや設定フラグが並んでいると、読者のワーキングメモリに負荷がかかります。項目が多くなる場合は、意味のある3〜4個の上位グループに分ける（構造化する）ことで、認知的な負担を和らげることができます。
@@ -171,7 +171,7 @@ Ariful Islam Anik & Andrea Bunt（2026）が32名の被験者を対象に「情�
 > **(Original)**  
 > *"Findings from a study with 32 participants show advantages to providing users with comprehensive information on training datasets. Detailed explanations not only enhanced perceived trust, fairness, and understanding, but were also preferred by participants despite the increased cognitive load. While Progressive Disclosure did not effectively mitigate cognitive load, it improved users’ perception of learning. These findings suggest that effective transparency does not come from minimizing detail, but from embracing it, as participants consistently valued clarity and completeness over brevity, even at the cost of higher cognitive load."*  
 > **(日本語訳)**  
-> 「32名の参加者を対象とした調査の結果は、訓練データセットに関する包括的な情報をユーザーに提供することの利点を示している。詳細な説明は、知覚される信頼、公平性、および理解を高めただけでなく、認知負荷の増大にもかかわらず参加者から選好された。段階的開示（Progressive Disclosure）自体は認知負荷を直接軽減しなかったものの、ユーザーの『学習の知覚』を有意に向上させた（$p < 0.05$）。これらの知見は、有効な透明性とは詳細を最小化することから生まれるのではなく、詳細を受け入れることから生まれることを示唆している。参加者は、より高い認知負荷を代償にしてでも、簡潔さより明瞭さと完全性を一貫して重視したからである。」  
+> 「32名の参加者を対象とした調査の結果は、訓練データセットに関する包括的な情報をユーザーに提供することの利点を示している。詳細な説明は、知覚される信頼、公平性、および理解を高めただけでなく、認知負荷の増大にもかかわらず参加者から選好された。段階的開示（Progressive Disclosure）自体は認知負荷を直接軽減しなかったものの、ユーザーの『学習の知覚』を有意に向上させた（$`p < 0.05`$）。これらの知見は、有効な透明性とは詳細を最小化することから生まれるのではなく、詳細を受け入れることから生まれることを示唆している。参加者は、より高い認知負荷を代償にしてでも、簡潔さより明瞭さと完全性を一貫して重視したからである。」  
 > *(出所: Ariful Islam Anik & Andrea Bunt, 2026, `[REF-ANIK2026]`)*
 
 一方で、Aaron Springer & Steve Whittaker（2019, 2020）の4つの実証実験は、 **「透明性の逆説（Paradox of Transparency）」** という現象を報告しています。
@@ -254,7 +254,7 @@ Cowanの容量限界（4項目）を超える規模の文書（目安としてH2
 > **(Original)**  
 > *"By this time, he had noticed that if an introduction, say a derivation of A & B from A and B separately, is followed by the corresponding elimination, say a derivation of A, the formula A & B constitutes a local maximum, a 'hillock', that can be eliminated. He also called such hillocks 'detours', and what is now called a detour conversion removes such unnecessary pairs of introduction-elimination steps. The result of the steps of 'normalization' is a derivation in 'normal form'."*  
 > **(日本語訳)**  
-> 「この時までに彼（ゲンツェン）は、例えば $A$ と $B$ から別個に $A \& B$ を導出する導入規則の後に、対応する除去規則（例えば $A$ の導出）が続く場合、論理式 $A \& B$ は除去可能な局所的極大、すなわち『小丘（hillock）』を構成することに気づいていた。彼はまたそのような小丘を『迂回（detours）』と呼び、現在デツアート変換と呼ばれる操作が、このような不必要な導入・除去ステップのペアを除去する。この『正規化』のステップの結果が、『正規形（normal form）』の導出である。」  
+> 「この時までに彼（ゲンツェン）は、例えば $`A`$ と $`B`$ から別個に $`A \land B`$ を導出する導入規則の後に、対応する除去規則（例えば $`A`$ の導出）が続く場合、論理式 $`A \land B`$ は除去可能な局所的極大、すなわち『小丘（hillock）』を構成することに気づいていた。彼はまたそのような小丘を『迂回（detours）』と呼び、現在デツアート変換と呼ばれる操作が、このような不必要な導入・除去ステップのペアを除去する。この『正規化』のステップの結果が、『正規形（normal form）』の導出である。」  
 > *(出所: Jan von Plato, 2020, `[REF-VONPLATO2020]`)*
 
 これをドキュメントの文章になぞらえると、次の2つの「読みにくさの要因」が見えてきます。
@@ -318,9 +318,9 @@ Ranindya Paramitha, Christian Kästner, Laurie Williams（2026）は、252件の
 > *"Based on three experimental studies ... we show evidence for the different roles Toulmin's statement-types play in enhancing various trusting-beliefs ... (1) Warrants enhance competence beliefs (t = 2.36, p < 0.05). (2) Backings are associated with higher levels of both competence and benevolence beliefs, supporting H2 (t = 4.86, p < 0.01) and H3 (t = 4.03, p < 0.01), respectively. (3) Rebuttals are associated with higher levels of integrity belief supporting H4 (t = 1.99, p < 0.05). Integrity does not imply benevolence or competence ... (4) Data enhances competence, integrity, and benevolence beliefs."*  
 > **(日本語訳)**  
 > 「3つの実験研究に基づき、我々はトゥールミンの命題タイプが多様な信頼信念を高める上で果たす異なる役割の証拠を示す。  
-> (1)  **論拠（Warrants：なぜそう言えるのかの仕組み）** は、能力への信頼を有意に高める（$t = 2.36, p < 0.05$）。  
-> (2)  **裏付け（Backings：理論や実証の背景）** は、能力への信頼（$t = 4.86, p < 0.01$）と好意性・誠意への信頼（$t = 4.03, p < 0.01$）の両方を高める。  
-> (3)  **反論・例外（Rebuttals：どういう場合には成り立たないか）** は、 **誠実さへの信頼（Integrity belief）** を有意に高める（$t = 1.99, p < 0.05$）。  
+> (1)  **論拠（Warrants：なぜそう言えるのかの仕組み）** は、能力への信頼を有意に高める（$`t = 2.36, p < 0.05`$）。  
+> (2)  **裏付け（Backings：理論や実証の背景）** は、能力への信頼（$`t = 4.86, p < 0.01`$）と好意性・誠意への信頼（$`t = 4.03, p < 0.01`$）の両方を高める。  
+> (3)  **反論・例外（Rebuttals：どういう場合には成り立たないか）** は、 **誠実さへの信頼（Integrity belief）** を有意に高める（$`t = 1.99, p < 0.05`$）。  
 > (4)  **データ（Data：客観的事実・数値）** は、能力・誠実さ・好意性のすべての信頼を高める。」    
 > *(出所: Eran Rubin & Izak Benbasat, 2023, `[REF-RUBIN2023]`)*
 
@@ -330,22 +330,22 @@ Ranindya Paramitha, Christian Kästner, Laurie Williams（2026）は、252件の
 
 あらかじめ「この条件では動きません」「この規模を超えると処理時間が伸びます」という境界線（Rebuttal）を開示しておくことで、読者からの「誠実さ（Integrity）への信頼」が高まる効果が期待できます。
 
-また、説得システム設計（PSD）の実証研究である Sharon Nabwireら（2026a, 2026b）のPLS-SEM分析でも、 **「透明性（Transparency）」が信頼性支援の分散の 57.8%（$R^2 = 0.578$）を説明し、控えめさ（Unobtrusiveness：押し付けがましさの抑制）と合わせて知覚された説得力の 65.6%〜69.9% を説明する** という結果が示されています（`[REF-NABWIRE2026A]`, `[REF-NABWIRE2026B]`）。  
+また、説得システム設計（PSD）の実証研究である Sharon Nabwireら（2026a, 2026b）のPLS-SEM分析でも、 **「透明性（Transparency）」が信頼性支援の分散の 57.8%（$`R^2 = 0.578`$）を説明し、控えめさ（Unobtrusiveness：押し付けがましさの抑制）と合わせて知覚された説得力の 65.6%〜69.9% を説明する** という結果が示されています（`[REF-NABWIRE2026A]`, `[REF-NABWIRE2026B]`）。  
 Parinda Rahman（2024, 2025）や Dennis Bennerら（2022）、Deniz Cemiloglu & Raian Ali（2021）の研究でも、人気Webサイトの95%に見られるようなダークパターン（強引な誘導）を避け、透明な説明とユーザーの自律性（Autonomy）を保つことが信頼形成において重視されています（`[REF-RAHMAN2024]`, `[REF-RAHMAN2025]`, `[REF-BENNER2022]`, `[REF-CEMILOGLU2021]`）。
 
 ### 5.3 反論あり両面提示（Refutational Two-Sided Message）の知見
-さらに、弱点や制約を開示する方法について、コミュニケーション学の大規模メタ分析（Mike Allen 1991: 被験者 $N = 7,547$ 名 `[REF-ALLEN1991]`、および Daniel J. O'Keefe 1999: 107研究・被験者 $N = 20,111$ 名 `[REF-OKEFE1999]`）から非常に重要な知見が得られています。それが **「反論あり両面提示 vs 反論なし両面提示」** の違いです。
+さらに、弱点や制約を開示する方法について、コミュニケーション学の大規模メタ分析（Mike Allen 1991: 被験者 $`N = 7,547`$ 名 `[REF-ALLEN1991]`、および Daniel J. O'Keefe 1999: 107研究・被験者 $`N = 20,111`$ 名 `[REF-OKEFE1999]`）から非常に重要な知見が得られています。それが **「反論あり両面提示 vs 反論なし両面提示」** の違いです。
 
 > **(Original)**  
 > *"The results demonstrate that a two-sided message with refutation is more persuasive than a one-sided message while a one-sided message is more persuasive than a two-sided message without refutation. ... The difference between the correlations observed here (-.060 or .076), improved the effectiveness of the message by about 20%."*  
 > **(日本語訳)**  
-> 「結果は、 **反論（Refutation）を伴う両面提示メッセージは片面提示メッセージよりも説得力がある（$r = .076$）一方で、反論を伴わない両面提示メッセージ（$r = -.060$）よりも片面提示メッセージのほうが説得力がある** ことを実証している。ここで観察された相関の差（$-.060$ 対 $.076$）は、メッセージの有効性を約20%向上させた。」  
+> 「結果は、 **反論（Refutation）を伴う両面提示メッセージは片面提示メッセージよりも説得力がある（$`r = .076`$）一方で、反論を伴わない両面提示メッセージ（$`r = -.060`$）よりも片面提示メッセージのほうが説得力がある** ことを実証している。ここで観察された相関の差（$`-.060`$ 対 $`.076`$）は、メッセージの有効性を約20%向上させた。」  
 > *(出所: Mike Allen, 1991, `[REF-ALLEN1991]`)*
 
 > **(Original)**  
 > *"Compared with one-sided messages, refutational two-sided messages on nonadvertising topics enjoy significantly greater credibility and persuasiveness, nonrefutational two-sided messages on nonadvertising topics are not significantly different in credibility and are significantly less persuasive"*  
 > **(日本語訳)**  
-> 「片面提示メッセージと比較して、非広告トピックにおける反論あり両面提示メッセージ（refutational two-sided messages）は有意に高い信頼性（credibility: 平均 $r = .117$）と説得力（persuasiveness: 非広告分野 $r = .081$ / 全体 $r = .08$）を享受する一方、非広告トピックにおける反論なし両面提示メッセージ（nonrefutational two-sided messages）は信頼性において有意差がなく、説得力は有意に低い（非広告分野 $r = -.069$ / 全体 $r = -.05$）。」  
+> 「片面提示メッセージと比較して、非広告トピックにおける反論あり両面提示メッセージ（refutational two-sided messages）は有意に高い信頼性（credibility: 平均 $`r = .117`$）と説得力（persuasiveness: 非広告分野 $`r = .081`$ / 全体 $`r = .08`$）を享受する一方、非広告トピックにおける反論なし両面提示メッセージ（nonrefutational two-sided messages）は信頼性において有意差がなく、説得力は有意に低い（非広告分野 $`r = -.069`$ / 全体 $`r = -.05`$）。」  
 > *(出所: Daniel J. O'Keefe, 1999, `[REF-OKEFE1999]`)*
 
 このメタ分析の結果を技術ドキュメントに当てはめてみると、なぜ単なる「制限事項の箇条書き」がうまくいかないのかが見えてきます。
@@ -353,7 +353,7 @@ Parinda Rahman（2024, 2025）や Dennis Bennerら（2022）、Deniz Cemiloglu &
 
 これに対し、信頼性と説得力の双方を高める効果が報告されている **「反論あり両面提示（Refutational Two-Sided）」** を技術文書で応用する場合、弱点（事実）を単体で置くのではなく、以下の3つの要素を組み合わせて記述するアプローチが考えられます。
 
-1. **制約事実（What-Not / Fact）**: 何ができないのか、どの境界条件で限界に達するのか（なお Kamins et al. 1989 `[REF-KAMINS1989]` の実験では、ツールの核となる価値そのものを否定する致命的欠陥ではなく、「対象規模の特化」や「対応環境の限定」といった中程度の制限を開示した際に、信頼性と利用意図が有意に高まることが示されています：$t = 3.27, p < .005$）。
+1. **制約事実（What-Not / Fact）**: 何ができないのか、どの境界条件で限界に達するのか（なお Kamins et al. 1989 `[REF-KAMINS1989]` の実験では、ツールの核となる価値そのものを否定する致命的欠陥ではなく、「対象規模の特化」や「対応環境の限定」といった中程度の制限を開示した際に、信頼性と利用意図が有意に高まることが示されています：$`t = 3.27, p < .005`$）。
 2. **設計上の理由（Why / Trade-off Rationale）**: なぜその仕様（トレードオフ）を選んだのかという背景（例：「単一プロセスでの起動速度を優先するため、分散ロック機構を省いています」）。
 3. **代替手段・回避策（Workaround / Alternative）**: その制限に該当する場合に読者が採り得る選択肢（例：「WSL経由で実行するか、大規模分散環境では〇〇などのツールが適しています」）。
 
@@ -424,7 +424,7 @@ flowchart LR
 そんな日常の素朴な疑問と「これ面白そうだな！」という好奇心から始まったこの個人的な自由研究は、56件の先行研究という先人たちの知見を手がかりにすることで、ひとつの「良いドキュメント論（仮説モデル）」として輪郭を描くことができました。
 
 - **視線と初動**: 最初の1画面（閲覧時間の約57%が集まる領域）で、「何であり、なぜ必要で、どう動かすか」の迷いを減らす工夫。
-- **認知と構造**: 人間の作業記憶（$4 \pm 1$ チャンク）に配慮し、情報を削るのではなく「グルーピング × 関心事の分離（SoC）」によって段階的に開示する工夫。
+- **認知と構造**: 人間の作業記憶（$`4 \pm 1`$ チャンク）に配慮し、情報を削るのではなく「グルーピング × 関心事の分離（SoC）」によって段階的に開示する工夫。
 - **論理と必然**: 前提となる課題から機能・設計へのつながりを示し、「〜すべき」という説教を控えて事実と因果関係で語る工夫。
 - **信頼と誠実**: 美辞麗句（チープトーク）に頼らず、比較基準、手元で動く再現コマンド、そして「制約＋設計理由＋回避策」の反論あり両面提示によって判断材料を揃える工夫。
 - **文脈への適応**: これらを画一的なテンプレートとして当てはめるのではなく、ドキュメントの目的と読者に合わせて柔軟に引き出す工夫。
