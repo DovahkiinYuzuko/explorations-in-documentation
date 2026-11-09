@@ -1,127 +1,131 @@
 ---
 name: doc-refine
-description: Use when creating, reviewing, auditing, or refining technical documentation, READMEs, API guides, or architecture specifications.
+description: Designs, crafts, audits, and refines technical documentation and READMEs. Converts marketing hyperbole into verifiable facts, applies refutational two-sided constraint disclosure, enforces above-the-fold Quick Starts, and structures documents for cognitive efficiency. Use when writing new READMEs or specifications from scratch (0-to-1), or auditing and rewriting existing technical documents (1-to-10). Triggers on requests like "refine documentation", "write README", "audit technical doc", "eliminate hype", or "structure spec".
 ---
 
 # doc-refine
 
-A universal agent skill for diagnosing, structuring, and refining technical documentation, READMEs, and specifications. It eliminates unsubstantiated hyperbole, enforces refutational two-sided disclosure of constraints, optimizes first-view clarity, and structures documents for cognitive efficiency and empirical reproducibility.
-
-## Overview
-
-High-quality documentation communicates verifiable facts rather than promotional claims. `doc-refine` audits technical documents against a 5-layer architecture and generates structured, two-sided, reproducible documentation that minimizes cognitive load and maximizes developer trust.
+A lightweight operational protocol for drafting, auditing, and refining technical documentation and READMEs. It eliminates promotional hyperbole, enforces refutational two-sided constraint disclosure, optimizes first-view cognitive accessibility, and grounds every claim in verifiable facts.
 
 ## When to Use
 
 Use this skill when:
-- Creating a new README or specification for a project or library
-- Reviewing or auditing existing documentation for technical accuracy, clarity, and trust
-- Pruning unsubstantiated marketing hype, buzzwords, or normative sermons ("ought"/"should")
-- Structuring complex configuration options, flags, and architecture diagrams for cognitive accessibility
-- Establishing reproducible verification commands and empirical benchmarks
+- **0→1 Drafting**: Creating a brand-new README, API guide, or architecture specification from project context or source code.
+- **1→10 Refinement**: Auditing and rewriting existing documentation to prune promotional buzzwords, eliminate normative preachiness ("ought"/"should"), and structure cognitive flow.
+- Preparing documents for public release where developer trust, clarity, and rapid adoption are critical.
 
 ## When NOT to Use
 
 Do not use this skill for:
-- Writing marketing copy, sales landing pages, or promotional blog posts
-- Generating code implementations from scratch (use domain-specific coding skills instead)
-- Managing issues, project task queues, or sprint tracking (use `local-issues` or similar skills)
-- Checking mechanical code formatting or linting errors
+- Writing consumer marketing copy, sales landing pages, or promotional blog posts.
+- Generating application source code (use domain-specific coding workflows).
+- Project task tracking or issue management (use `local-issues` or similar skills).
+- Line-by-line syntax linting or code formatting.
 
 ---
 
-## Core Principles
+## Operational Workflow
 
-1. **No Hype Without Proof (大言壮語の完全排除)**:
-   Eliminate hyperbolic adjectives ("ultimate", "blazing fast", "best-in-class") unless supported by mechanized benchmarks and reproducible test conditions.
-2. **Two-Sided Disclosure (両面提示の原則)**:
-   Every document must articulate boundaries, resource limits, and non-recommended use cases alongside benefits, structured as a 3-part refutational tuple.
-3. **Observation Precedes Evaluation (評価より事実の先行)**:
-   Above the fold must state objective functional facts (inputs, processing, outputs) before any qualitative claims.
-4. **Progressive Disclosure & Cognitive Containment (段階的開示と認知的隔離)**:
-   Separate information into 3 tiers. Keep happy paths minimal; isolate exhaustive tables, edge cases, and internals into collapsible sections, appendices, or separate files.
-
----
-
-## The 5-Layer Documentation Framework
-
-| Layer | Architecture Layer | Core Focus | Target Questions | Detailed Reference |
-| :---: | :--- | :--- | :--- | :--- |
-| **L1** | **First View & Anti-Abandonment** | Above the Fold / Observation | What is this tool? What are its inputs/outputs? Can a reader identify its essence in under 5 seconds? | `references/layer-1-rules.md` |
-| **L2** | **Structure & Progressive Disclosure** | Cognitive Load / Adoption | Is the quick-start minimal ($\le$ 3 lines)? Are deep configs and exhaustive tables grouped and isolated via SoC? | `references/layer-2-rules.md` |
-| **L3** | **Credibility & Two-Sided Signaling** | Signaling Theory / Constraints | Are boundaries and trade-offs disclosed with counterarguments? Are buzzwords purged? | `references/layer-3-rules.md` |
-| **L4** | **Logical Architecture & Proof** | Deductive Logic / Rationale | Why this over alternatives? Are assertions supported by premises? Is there fact-value separation? | `references/layer-4-rules.md` |
-| **L5** | **Empirical Evidence & Replicability** | Validation / Replicability | Are benchmarks accompanied by hardware specs and reproduction commands (NaaM 4-tuple)? | `references/layer-5-rules.md` |
-
-*(Note: Path references above are resolved relative to the directory containing this SKILL.md)*
-
----
-
-## Execution Protocol
-
-Agents executing `doc-refine` **MUST** follow this three-phase protocol in sequence. Never skip Phase 2 to produce an unapproved rewrite.
+Agents executing `doc-refine` follow this 3-step sequence:
 
 ```
-+-----------------------------------+
-| Phase 1: Diagnostic Report        |
-| - Evaluate target across L1-L5    |
-| - Output 5-layer audit summary    |
-+-----------------+-----------------+
-                  |
-                  v
-+-----------------+-----------------+
-| Phase 2: Adaptive Elicitation     |
-| - Prompt user for next action     |
-| - HARD STOP: End turn immediately |
-+-----------------+-----------------+
-                  | (User approves rewrite)
-                  v
-+-----------------+-----------------+
-| Phase 3: Refined Rewrite Output   |
-| - Output complete refined document|
-| - Structure via 5-layer rules     |
-+-----------------------------------+
+[1. Mode Selection & Analysis]
+       |
+       +---> Mode A: 0→1 Drafting (From scratch)
+       +---> Mode B: 1→10 Refinement (Existing text)
+       |
+[2. Plan Presentation & User Confirmation (Hard Stop)]
+       |
+       v (User approves plan)
+[3. Structured Document Generation]
 ```
 
-### Phase 1: Diagnostic Report
-Evaluate the document against Layers 1 through 5 using the specific audit criteria in each reference file.
-Output a structured report summarizing the audit results for each layer (PASS / WARN / FAIL), detailing critical issues with quoted text, and outlining a remediation roadmap.
+### Step 1: Mode Selection & Analysis
 
-### Phase 2: Adaptive Elicitation & Progression (Hard Stop)
-**CRITICAL ENFORCEMENT**: After outputting Phase 1, the agent **MUST terminate the turn immediately**. Under NO circumstances should Phase 3 or any rewritten document be generated in the same turn without explicit user selection. Wait for the user's response.
+Determine the operational mode based on user intent and target files:
 
-1. **When native question tools (`ask_question`, `AskUserQuestion`) are available:**
-   Prompt with options:
-   - `(Recommended) Full Rewrite`: Apply all 5-layer recommendations to produce a complete refined document.
-   - `Interactive Step-by-Step`: Refine layer by layer interactively.
-   - `Target Specific Layers`: Refine only selected layers (e.g., L1 and L3).
-   - `Audit Only`: Keep the diagnosis report and finish without text edits.
-2. **When native question tools are unavailable (Fallback text):**
-   Append a structured selection menu to the response and end turn:
-   ```markdown
-   ---
-   **Next Step Selection:**
-   Please reply with your preferred action:
-   [1] Full Rewrite (Recommended: Generate complete refined Markdown incorporating all 5 layers)
-   [2] Interactive Step-by-Step (Review and approve changes layer by layer)
-   [3] Target Specific Layers (Specify which layers to refine, e.g., L1 and L3 only)
-   [4] Audit Only (Finish without modifying the document)
-   ```
+1. **Mode A: 0→1 Drafting (New Document)**
+   - Analyze source code, package manifests, and project context.
+   - Load patterns from `references/patterns-0to1-creation.md`.
+   - Identify: (a) Axiomatic problem (Why), (b) LSP Pattern, (c) Level A minimal example, (d) Known constraints.
 
-### Phase 3: Refined Rewrite Output
-When the user requests a full or partial rewrite, generate the complete refined document applying the 5-layer specifications.
-- Do not leave placeholder comments or `TODO` items.
-- Ensure all constraints follow the 3-part refutational tuple: `[Constraint Fact]` — `[Design Rationale / Trade-off]` — `[Workaround / Recommended Configuration]`.
-- Verify that every benchmark number contains the NaaM 4-tuple (Hardware/Runtime, Dataset, Baseline, Variance).
+2. **Mode B: 1→10 Refinement (Existing Document)**
+   - Inspect existing documentation.
+   - Load patterns from `references/patterns-1to10-refinement.md`.
+   - Scan for:
+     - Undefined comparative adjectives ("fast", "lightweight", "best-in-class").
+     - Normative moralizing statements ("developers ought to...", "you should always...").
+     - Unrefuted bare limitations (negative bullets without rationale or workarounds).
+     - Flat cognitive overload (H2 $\ge$ 4 without TOC, lists $> 5$ items without chunking).
+
+### Step 2: Plan Presentation & User Confirmation (Hard Stop)
+
+**MANDATORY STOP**: Present a concise strategy plan to the user before writing or rewriting full documents:
+- Identified mode (Drafting or Refinement).
+- Key patterns to apply (e.g., LSP formulation, 3-element constraint tuples, TOC restructuring).
+- Target files and proposed structural outline.
+- **End turn immediately and wait for user approval.**
+
+### Step 3: Structured Document Generation
+
+Upon user confirmation, output the complete, production-ready document adhering to `references/readme-template.md`:
+- Do not output placeholders or unexpanded `TODO` markers.
+- Keep Tier 1 concise ($\le$ 50 lines before Quick Start).
+- Isolate Tier 3 technical depths (exhaustive CLI flags, schemas) inside `<details>` blocks or separate files.
 
 ---
 
-## Common Mistakes & Antipatterns
+## Core Execution Rules
+
+### 1. The LSP One-Liner Pattern
+The very first sentence under the project header must follow the LSP formula:
+```
+[Language / Environment] + [Software Category] + [Specific Problem Solved / Purpose]
+```
+*Example*: "A zero-dependency Python 3.11+ CLI tool that audits OpenAPI schemas against breaking changes."
+
+### 2. Level A Quick Start
+Quick Start snippets must use only elementary syntax (assignments, imports, attribute access). Avoid complex list comprehensions, lambdas, or unneeded async boilerplate. Keep runnable in $\le$ 3 lines.
+
+### 3. Refutational Two-Sided Disclosure
+Never list technical limitations as bare negative bullets. Every constraint must be formulated as a 3-element tuple:
+1. **Fact**: Exact limitation, boundary, or non-recommended environment.
+2. **Rationale**: Architectural trade-off or engineering reason.
+3. **Alternative**: Recommended workaround or alternative configuration.
+
+### 4. Hume's Guillotine (Fact-Value Separation)
+Eliminate all normative preaching ("should", "ought", "must", "best practice"). Replace with objective conditional causality:
+- *Bad*: "You must always set the pool size to 10."
+- *Good*: "To prevent connection exhaustion under burst traffic, configure the connection pool size to 10 or higher."
+
+### 5. Baselines for Benchmarks
+Never write "blazing fast" or "10x performance" without an explicit baseline and hardware note:
+```markdown
+> [!NOTE]
+> Tested on AMD Ryzen 9 7950X, Ubuntu 24.04 with a 10MB dataset. Processing time was 42ms vs 89ms on v1.2 (2.1x speedup). Results vary by hardware and dataset structure.
+```
+
+### 6. Cognitive Chunking & Progressive Disclosure
+- Restrict parallel bullet points under any single heading to $4 \pm 1$ items.
+- Provide a Markdown Table of Contents (TOC) whenever a document contains 4 or more H2 headings.
+- Move exhaustive tables, full schemas, and low-level diagnostic guides into collapsible `<details>` tags or external files.
+
+---
+
+## Antipatterns to Avoid
 
 | Antipattern | Description | Remediation |
 | :--- | :--- | :--- |
-| **Workflow Shortcut / Eager Overrun** | Jumping straight to rewriting without presenting Phase 1 diagnosis and halting for Phase 2 user approval. | Always stop immediately after Phase 1 and wait for explicit user selection. |
-| **Unrefuted Limitation Listing** | Listing limitations as bare bullet points without rationale or workarounds ($r = -.069$ in persuasiveness). | Always apply the 3-part refutational tuple: Fact + Rationale + Workaround. |
-| **Hume's Guillotine Violation** | Inserting normative preachiness ("Developers ought to...", "You should always..."). | Normalize to objective conditional causality: "When [condition], [mechanism] ensures [result]". |
-| **Context Dump (Flat Structure)** | Placing exhaustive CLI flags, full schemas, or troubleshooting steps directly after Quick Start. | Push Tier 3 details into collapsible blocks, appendices, or dedicated reference files via SoC. |
-| **Pseudo-Readability** | Adding comments that merely restate the syntax without explaining preconditions, edge-cases, or rationale. | Replace with concrete operational specs or omit extraneous lines. |
+| **Premature Execution** | Rewriting entire documents without presenting Step 2 plan and waiting for user approval. | Halt after Step 2 plan output and wait for explicit confirmation. |
+| **Bare Limitation Dumping** | Listing limitations without architectural rationale or workarounds ($r = -.060$ in persuasiveness). | Formulate as 3-element tuple: Fact + Rationale + Alternative. |
+| **Unanchored Adjectives** | Using "fast", "simple", "scalable" without baselines or mechanisms. | State the concrete mechanism (e.g., "in-memory index") and provide test baselines with `[!NOTE]`. |
+| **Normative Sermonizing** | Lecturing developers on how they "should" build software. | Convert to conditional causality: "When [condition], [mechanism] produces [result]." |
+| **Context Dump** | Dumping 20 CLI flags or full configuration schemas directly after the introduction. | Encapsulate Tier 3 data within `<details>` or separate reference files. |
+
+---
+
+## Reference Guides
+
+- [0→1 Drafting Patterns](references/patterns-0to1-creation.md): In-depth guide for axiomatic Why, LSP pattern, and Level A code design.
+- [1→10 Refinement Patterns](references/patterns-1to10-refinement.md): Replacement catalogs for hyperbolic adjectives, Hume's guillotine, and chunking.
+- [Standard README Template](references/readme-template.md): Complete, copy-pasteable Markdown template.
