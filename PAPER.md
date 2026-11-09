@@ -303,11 +303,11 @@ Ranindya Paramitha, Christian Kästner, Laurie Williams（2026）は、252件の
 
 では、表面的な言葉の装飾だけでは模倣しにくい **「コスト高シグナル（Costly Signals：裏付けを作るのに相応のコストや実装が伴う証拠）」** にはどのようなものがあるでしょうか。技術ドキュメントにおいては、以下の3つが有効な候補になると考えられます（4Pの法則における「Proof（証拠）」の考え方とも重なります、`[REF-SALESCOPY2026]`）。
 
-1. **比較対象（Baseline）と測定環境が明記されたデータ**
+1. **比較対象（Baseline）と測定環境が明記されたデータ**  
    単に「高速に動作します」「処理時間を80%削減」とだけ書かれた数字は、文脈がなければ検証しにくいものです。「何（どのツールのどのバージョン）と比べての結果なのか」「どのCPU・OS・データセットで計測したのか」という前提条件と、環境によって変動する旨の但し書き（Caveats: John Rushby 2009 が Assurance Case で指摘した「過度な全称主張の限定と前提の明示」、`[REF-RUSHBY2009]`）を添えることで、数字の客観性が高まります[^naam]。
-2. **読者の手元で追試できる「再現コマンドと証跡（Witness）」**
+2. **読者の手元で追試できる「再現コマンドと証跡（Witness）」**  
    計算科学における再現性研究（Roger D. Peng 2011, Science誌 `[REF-PENG2011]`）およびソフトウェア形式検証における「証跡検証（Witness Validation）」（Daniel Baier, Dirk Beyer et al. 2024, CPAchecker 3.0 `[REF-BAIER2024]`）が示すように、強い説得力を持つのは「ローカル環境でこのコマンドを実行すれば、テストや計測を追試できる」という具体的な検証手順です。
-3. **自らの「弱点・制約・できないこと」の具体的開示**
+3. **自らの「弱点・制約・できないこと」の具体的開示**  
    そして3つ目のコスト高シグナルが、次に紹介する「トゥールミンモデルに基づく例外の開示」と「反論あり両面提示」です。
 
 ### 5.2 トゥールミン論証モデルと「誠実さ（Integrity）」の知覚
@@ -317,7 +317,7 @@ Ranindya Paramitha, Christian Kästner, Laurie Williams（2026）は、252件の
 > **(Original)**  
 > *"Based on three experimental studies ... we show evidence for the different roles Toulmin's statement-types play in enhancing various trusting-beliefs ... (1) Warrants enhance competence beliefs (t = 2.36, p < 0.05). (2) Backings are associated with higher levels of both competence and benevolence beliefs, supporting H2 (t = 4.86, p < 0.01) and H3 (t = 4.03, p < 0.01), respectively. (3) Rebuttals are associated with higher levels of integrity belief supporting H4 (t = 1.99, p < 0.05). Integrity does not imply benevolence or competence ... (4) Data enhances competence, integrity, and benevolence beliefs."*  
 > **(日本語訳)**  
-> 「3つの実験研究に基づき、我々はトゥールミンの命題タイプが多様な信頼信念を高める上で果たす異なる役割の証拠を示す。
+> 「3つの実験研究に基づき、我々はトゥールミンの命題タイプが多様な信頼信念を高める上で果たす異なる役割の証拠を示す。  
 > (1)  **論拠（Warrants：なぜそう言えるのかの仕組み）** は、能力への信頼を有意に高める（$t = 2.36, p < 0.05$）。  
 > (2)  **裏付け（Backings：理論や実証の背景）** は、能力への信頼（$t = 4.86, p < 0.01$）と好意性・誠意への信頼（$t = 4.03, p < 0.01$）の両方を高める。  
 > (3)  **反論・例外（Rebuttals：どういう場合には成り立たないか）** は、 **誠実さへの信頼（Integrity belief）** を有意に高める（$t = 1.99, p < 0.05$）。  
