@@ -71,9 +71,9 @@ Jakob Nielsen（Nielsen Norman Group, 2018）が120名の被験者・数千サ�
 また、ここで意識しておきたいのが **「騙しの床（False Floor）」** と呼ばれる現象です。
 
 > **(Original)**  
-> *"Users do scroll, but only if what's above the fold promises enough value to make scrolling worthwhile. ... Beware of the 'false floor'—a visual boundary, white space, or design element that creates the illusion that there is no more content below."*  
+> *"Users do scroll, but only if what’s above the fold is promising enough. What is visible on the page without requiring any action is what encourages us to scroll. ... When you have a false bottom, you don’t give visitors a reason to believe there is something below the fold. As a result, they will attempt to scroll less often."*  
 > **(日本語訳)**  
-> 「ユーザーはスクロールするが、それはファーストビューにある情報が『スクロールするだけの価値がある』と約束している場合だけである。……『騙しの床（false floor）』に注意せよ。それは、これより下にコンテンツが存在しないという錯覚を生み出す視覚的境界線、巨大な余白、あるいはデザイン要素のことである。」  
+> 「ユーザーはスクロールするが、それはファーストビューにある情報が十分に期待を持たせる（promising enough）場合だけである。何の操作も要さずに画面上で見えているものこそが、我々にスクロールを促す。……『騙しの底（false bottom / false floor）』があると、訪問者に折り目の下にまだ何かが存在すると信じる理由を与えられない。結果として、彼らがスクロールを試みる頻度は低下する。」  
 > *(出所: Shanelle Mullin, 2023, `[REF-MULLIN2023]`)*
 
 ドキュメントの冒頭直後に、大きな余白や孤立した水平線（`---`）を引いてしまうと、読者が「ここで情報がひと区切りついた（終わった）」と錯覚し、スクロールを止めてしまう要因になり得ます。初動の画面下端には、次のセクションの見出しや目次が自然に覗くような視覚的連続性を持たせることで、スクロールの停滞を防ぎやすくなると考えられます。
@@ -85,9 +85,9 @@ Julian Shapiro（2020）は、ランディングページにおける意思決�
 $$\text{Adoption Rate (導入率)} = \text{Desire / Utility (欲求・実効的効用)} - (\text{Labor (探索労力)} + \text{Confusion (混乱)})$$
 
 > **(Original)**  
-> *"Within 5 seconds of landing on your page, a visitor must be able to answer three questions: 1. What is it? 2. Why does it matter to me? 3. How do I get started? Detouring from this structure dramatically increases bounce rates."*  
+> *"Generally, the more you detour from the template, the more confused the average visitor becomes. Think of your landing page from the perspective of a visitor's likelihood to purchase: Purchase Rate = Desire - (Labor + Confusion). ... Decrease labor— Reduce the work your visitors have to perform so they don't get tired or annoyed. Be concise and ensure every word and element is of value. Decrease confusion— Don't confuse visitors with obscure or verbose messaging. Ensure every sentence can be easily understood."*  
 > **(日本語訳)**  
-> 「ページに着地してから5秒以内に、訪問者は次の3つの問いに答えられなければならない。1. これは何か？ 2. なぜ自分にとって重要か？ 3. どうやって始めるのか？ この構造から寄り道（Detour）すると、直帰率は大きく跳ね上がる。」  
+> 「一般に、基本構造（テンプレート）から寄り道（detour）すればするほど、平均的な訪問者はより混乱するようになる。訪問者の購買可能性という観点からランディングページを考えてみよう。Purchase Rate = Desire - (Labor + Confusion) である。……労力（Labor）を減らすこと——訪問者が疲れや苛立ちを感じないよう、彼らが遂行しなければならない作業を減らせ。簡潔にし、すべての単語と要素に価値があるようにせよ。混乱（Confusion）を減らすこと——曖昧または冗長なメッセージで訪問者を混乱させるな。すべての文が容易に理解できるようにせよ。」  
 > *(出所: Julian Shapiro, 2020, `[REF-SHAPIRO2020]`)*
 
 この「1. これは何か？（What is it?）」を伝える際、作り手がついやってしまいがちなのが、「次世代のオーケストレーション・パラダイム」といった抽象的なメタファー（Jargon）や、「超高速・軽量」といった形容詞で飾ってしまうことです。
@@ -101,9 +101,9 @@ $$\text{Adoption Rate (導入率)} = \text{Desire / Utility (欲求・実効的�
 Gede Artha Azriadi Pranaら（2019）がGitHubの393リポジトリ・4,226セクションを手動アノテーションして分類した研究を見てみましょう。
 
 > **(Original)**  
-> *"Based on the consideration of files in our sample, 97% of the files contain at least one section describing the 'What' of the repository and 88.5% offer some 'How' content. Other categories, such as 'Contribution', 'Why', and 'When', were much less common. ... 'Why' was present in only 25.7% of README files (accounting for only 2.7% of all sections), while 'When' was present in only 21.4% of files (4.3% of sections)."*  
+> *"We find that information discussing the ‘What’ and ‘How’ of a repository is very common, while many README files lack information regarding the purpose and status of a repository. ... Based on the consideration of files in our sample (fourth column of Table 3), 97% of the files contain at least one section describing the ‘What’ of the repository and 88.5% offer some ‘How’ content. Other categories, such as ‘Contribution’, ‘Why’, and ‘When’, were much less common."*  
 > **(日本語訳)**  
-> 「サンプル内のファイルを分析した結果、97%のファイルがリポジトリの『What（何であるか）』を説明するセクションを少なくとも1つ含み、88.5%が『How（使い方）』のコンテンツを提供していた。……しかし『Why（なぜ存在するのか・目的）』はREADMEファイルのわずか25.7%にしか存在せず（全セクションの2.7%）、『When（いつ使うか・適用条件やステータス）』はわずか21.4%のファイルにしか存在しなかった（全セクションの4.3%）。」  
+> 「リポジトリの『What（何であるか）』と『How（使い方）』を論じる情報は非常に一般的である一方、多くのREADMEファイルはリポジトリの目的（Why）やステータス・適用時期（When）に関する情報を欠いていることが判明した。……サンプル内のファイルを分析した結果（Table 3の第4列）、97%のファイルがリポジトリの『What』を説明するセクションを少なくとも1つ含み、88.5%が何らかの『How』コンテンツを提供していた。一方、『Contribution』『Why』『When』といった他のカテゴリははるかに少なかった（Table 3の実測値において、『Why』はREADMEファイルの25.7%・全セクションの2.7%、『When』はファイルの21.4%・全セクションの4.3%にとどまる）。」  
 > *(出所: Gede Artha Azriadi Prana et al., 2019, `[REF-PRANA2019]`)*
 
 調査されたREADMEの約75%〜80%近くにおいて、 **「なぜ既存のやり方ではなくこのツールを作ったのか（Why）」** と **「どういう条件・規模なら適していて、どういう場合には向かないのか（When）」** が記載されていませんでした。これらを意識して補うことで、読者が自分の用途に合うかを判断しやすくなると期待できます。
@@ -140,10 +140,10 @@ Gede Artha Azriadi Pranaら（2019）がGitHubの393リポジトリ・4,226セ�
 ドキュメントにおいて外在性認知負荷（ECL）を増やす大きな要因が、 **「注意分割効果（Split-Attention Effect）」** です。
 
 > **(Original)**  
-> *"When multiple sources of information are physically separated in space or time, learners must split their visual attention and mentally integrate them, placing unnecessary extraneous cognitive load on working memory."*  
+> *"When learners process text and visuals that cannot be understood in isolation, the mental integration of verbal and pictorial representations is required. When text and pictures are not located close to each other or not synchronized in time, integrating these referring representations may increase cognitive load and decrease learning. ... physically integrated or embedded representations were demonstrated to be an effective alternative to 'split-source' instructional format (split-attention effect)."*  
 > **(日本語訳)**  
-> 「複数の情報源が空間的または時間的に分離されている場合、学習者は視覚的注意を分割して脳内で統合しなければならず、ワーキングメモリに無用な外在性認知負荷を課すことになる。」  
-> *(出所: John Sweller et al., 2011, `[REF-SWEL2011]`)*
+> 「学習者が単独では理解できないテキストと視覚情報を処理する際、言語的表現と視覚的表現の脳内統合が要求される。テキストと図表が互いに近くに配置されていない、あるいは時間的に同期していない場合、これらの参照し合う表現を統合することは認知負荷を増大させ、学習を低下させ得る。……物理的に統合された、あるいは埋め込まれた表現は、『情報源が分離した（split-source）』提示形式に対する有効な代替手段であることが実証されている（注意分割効果：split-attention effect）。」  
+> *(出所: Slava Kalyuga, 2011 / John Sweller et al., 2011, `[REF-SWEL2011]`, `[REF-KALYUGA2011]`)*
 
 たとえば、長いコードブロックを貼ったあと、そこから何十行も離れた場所で「上のコードの3行目の引数は〜」と解説したり、コマンド例と実行結果の出力が別々のセクションに離れていたりする構成です。読者は画面を上下にスクロールして視線を往復させることになり、疲れやすくなります。  
 
@@ -169,17 +169,17 @@ Gede Artha Azriadi Pranaら（2019）がGitHubの393リポジトリ・4,226セ�
 Ariful Islam Anik & Andrea Bunt（2026）が32名の被験者を対象に「情報の深さ（Low Depth vs High Depth）」と「段階的開示（Progressive Disclosure の有無）」の影響を調べた実験では、次のような結果が出ています。
 
 > **(Original)**  
-> *"Despite incurring higher subjective cognitive load, participants strongly favored High Information Depth because it provided the necessary completeness and technical context to evaluate the dataset. ... Progressive Disclosure significantly enhanced participants' perceived learning (p < 0.05) and effectively mitigated the potential usability penalties of presenting high-depth technical information."*  
+> *"Findings from a study with 32 participants show advantages to providing users with comprehensive information on training datasets. Detailed explanations not only enhanced perceived trust, fairness, and understanding, but were also preferred by participants despite the increased cognitive load. While Progressive Disclosure did not effectively mitigate cognitive load, it improved users’ perception of learning. These findings suggest that effective transparency does not come from minimizing detail, but from embracing it, as participants consistently valued clarity and completeness over brevity, even at the cost of higher cognitive load."*  
 > **(日本語訳)**  
-> 「主観的認知負荷が高くなるにもかかわらず、参加者は高情報深度（High Information Depth: 詳細で完全な情報）を強く支持した。なぜなら、対象を評価するために必要な完全性と技術的文脈が提供されたからである。……段階的開示（Progressive Disclosure）は、参加者の『学習の知覚』を有意に向上させ（$p < 0.05$）、高深度な技術情報を提示する際に生じる潜在的なユーザビリティ上の不利益を効果的に緩和した。」  
+> 「32名の参加者を対象とした調査の結果は、訓練データセットに関する包括的な情報をユーザーに提供することの利点を示している。詳細な説明は、知覚される信頼、公平性、および理解を高めただけでなく、認知負荷の増大にもかかわらず参加者から選好された。段階的開示（Progressive Disclosure）自体は認知負荷を直接軽減しなかったものの、ユーザーの『学習の知覚』を有意に向上させた（$p < 0.05$）。これらの知見は、有効な透明性とは詳細を最小化することから生まれるのではなく、詳細を受け入れることから生まれることを示唆している。参加者は、より高い認知負荷を代償にしてでも、簡潔さより明瞭さと完全性を一貫して重視したからである。」  
 > *(出所: Ariful Islam Anik & Andrea Bunt, 2026, `[REF-ANIK2026]`)*
 
 一方で、Aaron Springer & Steve Whittaker（2019, 2020）の4つの実証実験は、 **「透明性の逆説（Paradox of Transparency）」** という現象を報告しています。
 
 > **(Original)**  
-> *"Across four empirical studies, we demonstrate the 'paradox of transparency': providing detailed algorithm explanations upfront can degrade user trust and increase perceived error rates. ... Instead, users benefit from a progressive disclosure approach: providing a simple, high-level heuristic model initially, and offering deeper, low-level operational details on-demand when users encounter unexpected outcomes or actively seek validation."*  
+> *"We assess user reactions to transparency feedback in four studies of an emotional analytics system. In Study 1, users anticipated that a transparent system would perform better but unexpectedly retracted this evaluation after experience with the system. Study 2 offers an explanation for this paradox by showing that the benefits of transparency are context dependent. On the one hand, transparency can help users form a model of the underlying algorithm’s operation. On the other hand, positive accuracy perceptions may be undermined when transparency reveals algorithmic errors. ... Results again suggest that users may benefit from initially simplified feedback that hides potential system errors and assists users in building working heuristics about system operation."*  
 > **(日本語訳)**  
-> 「4つの実証実験を通じて、我々は『透明性の逆説』を実証した。すなわち、最初から詳細なアルゴリズム解説を全面的に提示すると、ユーザーの信頼が低下し、知覚されるエラー率が増加してしまう。代わりに、ユーザーは段階的開示アプローチから恩恵を受ける。初期にはシンプルで高水準なヒューリスティック（大枠のメンタルモデル）を提示し、ユーザーが予期せぬ結果に直面したり積極的に検証を求めたときに、より深い低水準の運用詳細をオンデマンドで提供することである。」  
+> 「我々は感情分析システムに関する4つの研究において、透明性フィードバックに対するユーザーの反応を評価した。研究1では、ユーザーは透明性の高いシステムほど優れた性能を発揮すると期待していたが、実際にシステムを体験した後には予想外にもその評価を撤回した。研究2は、透明性の利点が文脈依存であることを示すことで、この逆説（paradox）に対する説明を提供する。一方で、透明性はユーザーが背後にあるアルゴリズムの動作モデルを形成するのを助けることができる。他方で、透明性がアルゴリズムの誤差を露呈させると、肯定的な精度知覚が損なわれる場合がある。……結果は、潜在的なシステム誤差を初期段階では隠し、システム動作に関する実用的なヒューリスティックの構築を支援する『最初は簡略化されたフィードバック（段階的開示）』からユーザーが恩恵を受け得ることを重ねて示唆している。」  
 > *(出所: Aaron Springer & Steve Whittaker, 2020, `[REF-SPRING2020]`)*
 
 さらに、Kalyuga（2011）が指摘する **「専門性逆転効果（Expertise Reversal Effect）」** （初心者向けの丁寧な基礎解説が、熟練者にとってはかえって邪魔になる現象、`[REF-KALYUGA2011]`）や、Ashraf Abdulmunim Abdulmajeed（2026）が717リポジトリの機械学習（CatBoost/SHAP）解析で示した「READMEの長さは短すぎても長すぎても新規参入者を遠ざけ、中程度の長さで魅力がピークに達する（静的要因中SHAP値第1位: 0.420）」（`[REF-ABDUL2024]`）というデータも、共通の方向性を示唆しています。
@@ -343,9 +343,9 @@ Parinda Rahman（2024, 2025）や Dennis Bennerら（2022）、Deniz Cemiloglu &
 > *(出所: Mike Allen, 1991, `[REF-ALLEN1991]`)*
 
 > **(Original)**  
-> *"A refutational two-sided message was significantly more persuasive than its one-sided counterpart (mean r = .08) ... but a nonrefutational two-sided message was significantly less persuasive than its one-sided counterpart (mean r = -.05) ... Thus across the broad run of persuasion situations, refutational two-sided messages are dependable persuasive instruments, but nonrefutational two-sided messages are dependable detriments to persuasion."*  
+> *"Compared with one-sided messages, refutational two-sided messages on nonadvertising topics enjoy significantly greater credibility and persuasiveness, nonrefutational two-sided messages on nonadvertising topics are not significantly different in credibility and are significantly less persuasive"*  
 > **(日本語訳)**  
-> 「反論あり両面提示メッセージは、片面提示メッセージと比較して有意に説得力が高かった（平均 $r = .08$ / 非広告分野 $r = .081$、信頼性 $r = .117$）。しかし、反論なし両面提示メッセージは、片面提示メッセージと比較して有意に説得力が低かった（平均 $r = -.05$ / 非広告分野 $r = -.069$）。したがって、広範な説得状況を通じて、反論あり両面提示は安定した説得手段となるが、反論なし両面提示は説得を損なう要因となる。」  
+> 「片面提示メッセージと比較して、非広告トピックにおける反論あり両面提示メッセージ（refutational two-sided messages）は有意に高い信頼性（credibility: 平均 $r = .117$）と説得力（persuasiveness: 非広告分野 $r = .081$ / 全体 $r = .08$）を享受する一方、非広告トピックにおける反論なし両面提示メッセージ（nonrefutational two-sided messages）は信頼性において有意差がなく、説得力は有意に低い（非広告分野 $r = -.069$ / 全体 $r = -.05$）。」  
 > *(出所: Daniel J. O'Keefe, 1999, `[REF-OKEFE1999]`)*
 
 このメタ分析の結果を技術ドキュメントに当てはめてみると、なぜ単なる「制限事項の箇条書き」がうまくいかないのかが見えてきます。
