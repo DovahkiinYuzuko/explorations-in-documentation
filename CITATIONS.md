@@ -37,7 +37,7 @@
 | **`[REF-SPRING2020]`** | 段階的開示 | Springer & Whittaker (2020) | 4つの実証実験。透明性の逆説（初期の過剰な詳細露出が不信を招く現象）とオンデマンド開示の優位性。 | **第3章** 初期はシンプルなメンタルモデルを提示し、詳細はオンデマンドで開示する |
 | **`[REF-ANIK2026]`**   | 段階的開示・情報設計 | Anik & Bunt (2026) | 32名被験者実験。ユーザーは認知負荷が高くても詳細で完全な情報（High Information Depth）を強く好む。段階的開示が学習の知覚を有意に向上（$p<0.05$）。 | **第3章** 情報を削らず深さを保った上での段階的開示（グルーピング × SoC） |
 | **`[REF-NIELSEN2006]`**| 段階的開示 | Jakob Nielsen (2006) | Progressive Disclosure。初見時は基本・必須機能のみ、高度なオプションは要求に応じて開示。 | **第3章** 最短動線（Happy Path）と詳細リファレンスの階層分離 |
-| **`[REF-HORTON2006]`** | 情報設計 | Sarah Horton (2006) | Access by Design。主要なナラティブフローと副次的詳細の分離。 | **第3章** 表層リンクや付録分離による思考フローの維持 |
+| **`[REF-HORTON2006]`** | 情報設計 | Sarah Horton (2006) | "Designing Beneath the Surface of the Web" / *Access by Design*。主要なナラティブフローと副次的詳細・構造の分離。 | **第3章** 表層リンクや付録分離による思考フローの維持 |
 | **`[REF-PROCTER2001]`**| 情報設計 | Chris Procter & Judith Symonds (2001)| Webユーザビリティと情報階層。一貫した構造的手がかりによるナビゲーション破綻防止。 | **第3章** 一貫した見出し構造と階層化 |
 | **`[REF-MATTYAS2020]`**| 情報設計 | Dóra Mattyasovszky-Philipp et al. (2020)| 認知的情報システムにおけるモデル駆動型アーキテクチャと視点（Viewpoint）の分離。 | **第3章** 読者の関心空間に応じた情報レイヤーの分離（SoC） |
 | **`[REF-STOREY1997]`** | 認知設計 | Margaret-Anne Storey et al. (1997) | ソフトウェア探索におけるメンタルモデル構築支援（複数の抽象レベルと大域的文脈の維持）。 | **第3章** 局所的詳細を見ても迷子にならない大域ナビゲーション |
@@ -78,41 +78,41 @@
 4. **`[REF-HELLMAN2023]`**: Jazlyn Hellman, Eunbee Jang, Christoph Treude, Chenzhun Huang, Jin L.C. Guo. "Describing GitHub Repositories". *SSRN Electronic Journal* (2023). SSRN: [4543196](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4543196).
 5. **`[REF-GAUGHAN2025]`**: Matthew Gaughan, Kaylea Champion, Sohyeon Hwang, Aaron Shaw. "The Introduction of README and CONTRIBUTING Files in Open Source Software Development". arXiv: [2502.18440](https://arxiv.org/abs/2502.18440) (2025).
 6. **`[REF-FRONCH2023]`**: Felipe Fronchetti, David C. Shepherd, Igor Wiese, Christoph Treude, Marco Aurélio Gerosa, Igor Steinmacher. "Do CONTRIBUTING Files Provide Information about OSS Newcomers’ Onboarding Barriers?". *ESEC/FSE 2023*, pp. 1–13 (2023). DOI: [10.1145/3611643.3616288](https://doi.org/10.1145/3611643.3616288).
-7. **`[REF-FOUNDJEM]`**: Armstrong Foundjem, Ellis E. Eghan, Bram Adams. "Onboarding vs. Diversity, Productivity, and Quality – Empirical Study of the OpenStack Ecosystem". *3611643.3616288*.
+7. **`[REF-FOUNDJEM]`**: Armstrong Foundjem, Ellis E. Eghan, Bram Adams. "Onboarding vs. Diversity, Productivity, and Quality – Empirical Study of the OpenStack Ecosystem". *Proceedings of the 43rd International Conference on Software Engineering (ICSE '21)*, pp. 1033–1045 (2021). DOI: [10.1109/ICSE43902.2021.00097](https://doi.org/10.1109/ICSE43902.2021.00097).
 8. **`[REF-DANTAS2023]`**: Carlos Eduardo C. Dantas et al. "How do Developers Improve Code Readability? An Empirical Study of Pull Requests". arXiv: [2309.02594](https://arxiv.org/abs/2309.02594) (2023).
 
 ### 2.2 信頼性・シグナリング & 説得工学
 9. **`[REF-ALLEN1991]`**: Mike Allen. "Meta-Analysis Comparing the Persuasiveness of One-Sided and Two-Sided Messages". *Western Journal of Speech Communication*, Vol. 55, No. 4, pp. 390–404 (1991). DOI: [10.1080/10570319109374395](https://doi.org/10.1080/10570319109374395).
 10. **`[REF-OKEFE1999]`**: Daniel J. O'Keefe. "How to Handle Opposing Arguments in Persuasive Messages: A Meta-Analytic Review of the Effects of One-Sided and Two-Sided Messages". *Annals of the International Communication Association*, Vol. 22, No. 1, pp. 209–249 (1999). DOI: [10.1080/23808985.1999.11678963](https://doi.org/10.1080/23808985.1999.11678963).
 11. **`[REF-KAMINS1989]`**: Michael A. Kamins, Meribeth J. Brand, Stuart A. Hoeke, John C. Moe. "Two-Sided Versus One-Sided Celebrity Endorsements: The Impact on Advertising Effectiveness and Credibility". *Journal of Advertising*, Vol. 18, No. 2, pp. 4–10 (1989). DOI: [10.1080/00913367.1989.10673146](https://doi.org/10.1080/00913367.1989.10673146).
-12. **`[REF-PARAM2026]`**: Ranindya Paramitha, Christian Kästner, Laurie Williams. "A Lemon Market in Open-Source Software? A Call to Action for Software Supply Chain Research". arXiv: [2608.20678](https://arxiv.org/abs/2608.20678) (2026).
+12. **`[REF-PARAM2026]`**: Ranindya Paramitha, Christian Kästner, Laurie Williams. "The Software Supply Chain as a Market for Lemons: A Multivocal Review of Trust Signal Collapse". arXiv: [2608.20678](https://arxiv.org/abs/2608.20678) (2026).
 13. **`[REF-ASA2026]`**: Asa Romeo Asa, Johanna Pangeiko Nautwima. "Corporate digital responsibility and consumer trust: a signaling theory perspective". *Cogent Business & Management*, Vol. 13, No. 1, 2607753 (2026). DOI: [10.1080/23311975.2025.2607753](https://doi.org/10.1080/23311975.2025.2607753).
 14. **`[REF-TSOY2012]`**: Mikhail Tsoy, D. Sandy Staples. "Role of reputation cues in trust formation for a developer's decision to join Open Source Software projects". *Proceedings of the International Conference on Information Systems (ICIS)* (Queen's University).
-15. **`[REF-RUBIN2023]`**: Eran Rubin, Izak Benbasat. "Explaining Explainable Systems: A Toulmin-Based Model and Evaluation of Trustworthiness". *ACM Transactions on Management Information Systems*, Vol. 14, No. 4, Article 35 (2023). DOI: [10.1145/3580479](https://doi.org/10.1145/3580479).
-16. **`[REF-REED2005]`**: Chris Reed, Glenn Rowe. "Translating Toulmin, Diagramming Argument & Pollock's Undercutter". *Argumentation*, Vol. 19, pp. 267–286 (2025).
-17. **`[REF-NABWIRE2026A]`**: Sharon Nabwire, Eunice Agyei et al. "Evaluating the Influence of Persuasive Systems Design on Continuance Intention and Perceived Effectiveness". (2026).
-18. **`[REF-NABWIRE2026B]`**: Sharon Nabwire, Renata Savian Colvero de Oliveira et al. "Enhancing the perceived effectiveness of health behaviour change support systems through transparency in persuasive systems design". (2026).
-19. **`[REF-RAHMAN2024]`**: Parinda Rahman, Ifeoma Adaji. "Designing Ethical Persuasive Technologies: Requirements and Framework". *ACM Conversational User Interfaces* (2024). DOI: [10.1145/3701571.3703385](https://doi.org/10.1145/3701571.3703385).
+15. **`[REF-RUBIN2023]`**: Eran Rubin, Izak Benbasat. "Using Toulmin's Argumentation Model to Enhance Trust in Analytics-Based Advice Giving Systems". *ACM Transactions on Management Information Systems*, Vol. 14, No. 3, Article 22, pp. 1–28 (2023). DOI: [10.1145/3580479](https://doi.org/10.1145/3580479).
+16. **`[REF-REED2005]`**: Chris Reed, Glenn Rowe. "Translating Toulmin, Diagramming Argument & Pollock's Undercutter". *Argumentation*, Vol. 19, pp. 267–286 (2005).
+17. **`[REF-NABWIRE2026A]`**: Sharon Nabwire, Eunice Agyei et al. "Evaluating the influence of persuasive systems design on continuance intention, perceived effectiveness, and weight loss". *Digital Health*, Vol. 12, pp. 1–18 (2026). DOI: [10.1177/20552076261461365](https://doi.org/10.1177/20552076261461365).
+18. **`[REF-NABWIRE2026B]`**: Sharon Nabwire, Renata Savian Colvero de Oliveira et al. "Enhancing the perceived effectiveness of health behaviour change support systems through transparency in persuasive systems design". *Behaviour & Information Technology*, Vol. 45, No. 18, pp. 4431–4445 (2026). DOI: [10.1080/0144929X.2026.2638915](https://doi.org/10.1080/0144929X.2026.2638915).
+19. **`[REF-RAHMAN2024]`**: Parinda Rahman, Ifeoma Adaji. "Designing Ethical and Trustworthy Persuasive Technologies". *International Conference on Mobile and Ubiquitous Multimedia (MUM '24)*, pp. 1–3 (2024). DOI: [10.1145/3701571.3703385](https://doi.org/10.1145/3701571.3703385).
 20. **`[REF-RAHMAN2025]`**: Parinda Rahman. "Ethics and Trust in Persuasive Technology Design". Ph.D. Thesis, University of British Columbia (2025).
 21. **`[REF-BENNER2022]`**: Dennis Benner, Sofia Marlena Schöbel, Andreas Janson, Jan Marco Leimeister. "How to Achieve Ethical Persuasive Design: A Review and Theoretical Propositions for Information Systems". *AIS Transactions on Human-Computer Interaction*, Vol. 14, No. 4, pp. 548–577 (2022). DOI: [10.17705/1thci.00179](https://doi.org/10.17705/1thci.00179).
 22. **`[REF-CEMILOGLU2021]`**: Deniz Cemiloglu, Raian Ali. "Explainable Persuasion in Interactive Design". *IEEE International Conference on Systems, Man, and Cybernetics (SMC)* (2021).
 23. **`[REF-AMGOUD2009]`**: Leila Amgoud. "Argumentation for Decision Making". In: Iyad Rahwan, Guillermo R. Simari (Eds.), *Argumentation in Artificial Intelligence*, Chapter 15, pp. 301–320, Springer-Verlag Berlin Heidelberg (2009). DOI: [10.1007/978-0-387-98197-0_15](https://doi.org/10.1007/978-0-387-98197-0_15).
 
 ### 2.3 段階的開示・情報設計 & 認知負荷
-24. **`[REF-MURALI2025]`**: Deepa Muralidhar et al. "Operationalizing Selective Transparency in Clinical AI". (2025).
-25. **`[REF-SPRING2020]`**: Aaron Springer, Steve Whittaker. "Progressive Disclosure and the Transparency Paradox in AI-Assisted Decision Making". *ACM Transactions on Computer-Human Interaction*, Vol. 27, No. 4, pp. 1–32 (2020). DOI: [10.1145/3374218](https://doi.org/10.1145/3374218).
-26. **`[REF-ANIK2026]`**: Ariful Islam Anik, Andrea Bunt. "Information Depth and Progressive Disclosure in Explainable Interfaces". *ACM Transactions on Interactive Intelligent Systems* (2026). DOI: [10.1145/3742413.3789087](https://doi.org/10.1145/3742413.3789087).
+24. **`[REF-MURALI2025]`**: Deepa Muralidhar, Rafik Belloum, Ashwin Ashok. "Operationalizing selective transparency using progressive disclosure in artificial intelligence clinical diagnosis systems". HAL: [hal-05331557v2](https://hal.science/hal-05331557v2) (2025).
+25. **`[REF-SPRING2020]`**: Aaron Springer, Steve Whittaker. "Progressive Disclosure: When, Why, and How Do Users Want Algorithmic Transparency Information?". *ACM Transactions on Interactive Intelligent Systems*, Vol. 10, No. 4, Article 29, pp. 1–32 (2020). DOI: [10.1145/3374218](https://doi.org/10.1145/3374218).
+26. **`[REF-ANIK2026]`**: Ariful Islam Anik, Andrea Bunt. "Designing Effective Training Dataset Explanations: The Impact of Information Depth and Progressive Disclosure". *31st International Conference on Intelligent User Interfaces (IUI '26)*, pp. 1–16 (2026). DOI: [10.1145/3742413.3789087](https://doi.org/10.1145/3742413.3789087).
 27. **`[REF-NIELSEN2006]`**: Jakob Nielsen. "Progressive Disclosure". *Nielsen Norman Group Articles* (2006).
-28. **`[REF-HORTON2006]`**: Sarah Horton. *Access by Design: A Guide to Universal Usability for Web Designers*. New Riders (2006). DOI: [10.1145/1133219.1133221](https://doi.org/10.1145/1133219.1133221).
+28. **`[REF-HORTON2006]`**: Sarah Horton. "Designing Beneath the Surface of the Web". *Proceedings of the 2006 International Cross-Disciplinary Workshop on Web Accessibility (W4A '06)*, pp. 1–5 (2006). DOI: [10.1145/1133219.1133221](https://doi.org/10.1145/1133219.1133221) (および *Access by Design: A Guide to Universal Usability for Web Designers*, New Riders, 2006).
 29. **`[REF-PROCTER2001]`**: Chris Procter, Judith Symonds. "Designing for web site usability". (2001).
-30. **`[REF-MATTYAS2020]`**: Dóra Mattyasovszky-Philipp, Bálint Molnár. "Architectural approach to cognitive information systems". (2020).
+30. **`[REF-MATTYAS2020]`**: Dóra Mattyasovszky-Philipp, Bálint Molnár. "An Architectural Approach to Cognitive Information Systems". *Acta Polytechnica Hungarica*, Vol. 17, No. 2, pp. 237–253 (2020). DOI: [10.12700/APH.17.2.2020.2.13](https://doi.org/10.12700/APH.17.2.2020.2.13).
 31. **`[REF-STOREY1997]`**: Margaret-Anne D. Storey, F. David Fracchia, Hausi A. Müller. "Cognitive Design Elements to Support the Construction of a Mental Model During Software Exploration". *Journal of Systems and Software* (1997).
 32. **`[REF-COWAN2001]`**: Nelson Cowan. "The Magical Number 4 in Short-Term Memory: A Reconsideration of Mental Storage Capacity". *Behavioral and Brain Sciences*, Vol. 24, No. 1, pp. 87–185 (2001).
-33. **`[REF-DURAN2022]`**: Rodrigo Duran, Albina Zavgorodniaia, Juha Sorva. "Cognitive Load Theory in Computing Education Research: A Review". *ACM Transactions on Computing Education* (2022). DOI: [10.1145/1180639.1180831](https://doi.org/10.1145/1180639.1180831).
+33. **`[REF-DURAN2022]`**: Rodrigo Duran, Albina Zavgorodniaia, Juha Sorva. "Cognitive Load Theory in Computing Education Research: A Review". *ACM Transactions on Computing Education*, Vol. 22, No. 4, Article 40, pp. 1–27 (2022). DOI: [10.1145/3483843](https://doi.org/10.1145/3483843) (および併録一次資料: Sharon Oviatt. "Human-Centered Design Meets Cognitive Load Theory: Designing Interfaces that Help People Think". *ACM Multimedia '06*, pp. 871–880 (2006). DOI: [10.1145/1180639.1180831](https://doi.org/10.1145/1180639.1180831)).
 34. **`[REF-SWEL2011]`**: John Sweller, Paul Ayres, Slava Kalyuga. *Cognitive Load Theory*. Springer New York (2011).
-35. **`[REF-SU2012]`**: Moon Ting Su, Ewan Tempero, John Hosking, John Grundy. "An Eye-Tracking Study on How Developers Read Architectural Documentation". (2012).
-36. **`[REF-PAECH2016]`**: Barbara Paech et al. "The Role of Method Chains and Comments in Software Readability and Comprehension: An Experiment". *IEEE Transactions on Software Engineering* (2016).
-37. **`[REF-KALYUGA2011]`**: Slava Kalyuga. "Cognitive Load Theory: How to Manage Working Memory Load in Instructional Design". *Information Systems Journal* (2011).
+35. **`[REF-SU2012]`**: Moon Ting Su, Ewan Tempero, John Hosking, John Grundy. "A study of architectural information foraging in software architecture documents". *Joint Working IEEE/IFIP Conference on Software Architecture and European Conference on Software Architecture (WICSA/ECSA)*, pp. 141–150 (2012). DOI: [10.1109/WICSA-ECSA.212.22](https://doi.org/10.1109/WICSA-ECSA.212.22).
+36. **`[REF-PAECH2016]`**: Jürgen Börstler, Barbara Paech. "The Role of Method Chains and Comments in Software Readability and Comprehension—An Experiment". *IEEE Transactions on Software Engineering*, Vol. 42, No. 9, pp. 886–898 (2016). DOI: [10.1109/TSE.2016.2527791](https://doi.org/10.1109/TSE.2016.2527791).
+37. **`[REF-KALYUGA2011]`**: Slava Kalyuga. "Informing: A Cognitive Load Perspective". *Informing Science: The International Journal of an Emerging Transdiscipline*, Vol. 14, pp. 33–45 (2011). DOI: [10.28945/1349](https://doi.org/10.28945/1349).
 
 ### 2.4 論理学・形式証明
 38. **`[REF-JACQUETTE2008]`**: Dale Jacquette. "Mathematical Proof and Discovery: Reductio ad Absurdum". *Informal Logic*, Vol. 28, No. 3, pp. 242–261 (2008).
@@ -120,15 +120,15 @@
 40. **`[REF-RUSHBY2009]`**: John Rushby. "Software Verification and System Assurance". *7th IEEE International Conference on Software Engineering and Formal Methods (SEFM)*, pp. 3–10 (2009).
 41. **`[REF-PRAWITZ2018]`**: Dag Prawitz. "The Fundamental Problem of General Proof Theory". *Studia Logica*, Vol. 107, pp. 11–29 (2019, Online 2018). DOI: [10.1007/s11225-018-9785-9](https://doi.org/10.1007/s11225-018-9785-9).
 42. **`[REF-VONPLATO2020]`**: Jan von Plato. "The Development of Proof Theory". *Stanford Encyclopedia of Philosophy* (2008 / substantive revision 2020).
-43. **`[REF-BAIER2024]`**: Daniel Baier, Dirk Beyer et al. "Software Verification with CPAchecker 3.0: Tutorial and User Guide". *Formal Methods (FM 2024)*, LNCS 14934, pp. 543–570 (2025).
-44. **`[REF-KNIGHT2010]`**: Xiang Yin, John Knight. "Practical Certification: Formal Methods and the Structural Correspondence Hypothesis". *NASA Formal Methods (NFM 2010)* (20100018552).
+43. **`[REF-BAIER2024]`**: Daniel Baier, Dirk Beyer et al. "Software Verification with CPAchecker 3.0: Tutorial and User Guide". *Formal Methods (FM 2024)*, LNCS 14934, pp. 543–570 (2025). DOI: [10.1007/978-3-031-71177-0_30](https://doi.org/10.1007/978-3-031-71177-0_30).
+44. **`[REF-KNIGHT2010]`**: Xiang Yin, John Knight. "Formal Verification of Large Software Systems". *NASA Formal Methods Symposium (NFM 2010)*, NASA/CP-2010-216215 (20100018552) (2010).
 45. **`[REF-SIEG1998]`**: Wilfried Sieg, John Byrnes. "Normal Natural Deduction Proofs (in classical logic)". *Studia Logica*.
 
 ### 2.5 CVR・離脱防止 & コピー・LPの型
 46. **`[REF-NIELSEN2018]`**: Jakob Nielsen. "Scrolling and Attention: Increasing Engagement Below the Fold". *Nielsen Norman Group Research Reports* (2018).
 47. **`[REF-MULLIN2023]`**: Shanelle Mullin. "Above the Fold vs. Below the Fold: How To Encourage Scrolling". *CXL Institute* (2023).
 48. **`[REF-SHAPIRO2020]`**: Julian Shapiro. "Startup Handbook: Landing Page Copywriting & Conversion Optimization". (2020).
-49. **`[REF-DRY2020]`**: Harry Dry. "Rewriting Landing Pages: 10 Rules for Converting Copy". *Marketing Examples* (2020).
+49. **`[REF-DRY2020]`**: Harry Dry. "Rewriting landing pages with a pro copywriter". *Marketing Examples* (2020).
 50. **`[REF-UNBOUNCE2022]`**: Unbounce. "High-Converting Landing Pages: Anatomy, Structure & Design Guidelines". (2022).
 51. **`[REF-USERPILOT2026]`**: Userpilot. "Features, Advantages & Benefits: The FAB Model for Product Onboarding". (2026).
 52. **`[REF-KANDA2016]`**: 神田昌典. 『稼ぐ言葉の法則――「新・PASONAの法則」と売れる公式41』. ダイヤモンド社 (2016).
