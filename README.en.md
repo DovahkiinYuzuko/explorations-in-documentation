@@ -11,12 +11,14 @@ An independent exploratory study synthesizing 56 primary sources across 8 domain
 ---
 
 ### Table of Contents
-- [Overview](#overview)
-- [Repository Document Architecture (The 5 Pillars)](#repository-document-architecture-the-5-pillars)
-- [Core Principles Proposed in This Study (Hypothesis Model)](#core-principles-proposed-in-this-study-hypothesis-model)
-- [Installing the `doc-refine` Agent Skill](#installing-the-doc-refine-agent-skill)
-- [Limitations, Boundaries & Trade-offs](#limitations-boundaries--trade-offs)
-- [LICENSE](#license)
+- [explorations-in-documentation / ドキュメント論─個人的な自由研究](#explorations-in-documentation--ドキュメント論個人的な自由研究)
+    - [Table of Contents](#table-of-contents)
+    - [Overview](#overview)
+    - [Repository Document Architecture (The 5 Pillars)](#repository-document-architecture-the-5-pillars)
+    - [Core Principles Proposed in This Study (Hypothesis Model)](#core-principles-proposed-in-this-study-hypothesis-model)
+    - [Installing the `doc-refine` Agent Skill](#installing-the-doc-refine-agent-skill)
+    - [Limitations, Boundaries \& Trade-offs](#limitations-boundaries--trade-offs)
+    - [LICENSE](#license)
 
 ---
 
@@ -60,28 +62,15 @@ While detailed in **[`PAPER.md`](./PAPER.md)**, the hypothesis model proposed in
 
 ### Installing the `doc-refine` Agent Skill
 
-Add the skill to your agent environment using one of the methods below:
-
 **General Agent Environments (Skills CLI Compatible):**
 ```bash
 npx skills add DovahkiinYuzuko/explorations-in-documentation --skill doc-refine
 ```
 
-> [!WARNING]
-> **Scope Boundaries Between Skills CLI and Antigravity**
-> `npx skills add` installs skills into `.agents/skills/` of the current project or the proprietary paths of supported clients (e.g., Claude Code, Cursor).
-> Even when executing `npx skills add -g`, **it does not register skills into Antigravity's global configuration directory (`~/.gemini/config/skills/`)**. To utilize the skill globally across all Antigravity workspaces, refer to the Antigravity-specific setup instructions below.
-
-<details>
-<summary>Installation and Usage in Antigravity Environments</summary>
-
-To install as a global plugin in Antigravity, run:
+**Installation in Antigravity Environments:**
 ```bash
 agy plugin install DovahkiinYuzuko/explorations-in-documentation
 ```
-
-Alternatively, copy the `skills/doc-refine/` directory from this repository directly into `.agents/skills/` at your workspace root for immediate local recognition.
-</details>
 
 ---
 

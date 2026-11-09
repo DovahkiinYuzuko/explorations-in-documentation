@@ -11,12 +11,14 @@
 ---
 
 ### 目次
-- [概要](#概要)
-- [リポジトリ内の文書体系（5つの柱）](#リポジトリ内の文書体系5つの柱)
-- [本自由研究で提案する設計原則（仮説モデル）の要点](#本自由研究で提案する設計原則仮説モデルの要点)
-- [エージェントスキル `doc-refine` の導入方法](#エージェントスキル-doc-refine-の導入方法)
-- [制約事項とトレードオフ](#制約事項とトレードオフ)
-- [LICENSE](#license)
+- [ドキュメント論─個人的な自由研究 / explorations-in-documentation](#ドキュメント論個人的な自由研究--explorations-in-documentation)
+    - [目次](#目次)
+    - [概要](#概要)
+    - [リポジトリ内の文書体系（5つの柱）](#リポジトリ内の文書体系5つの柱)
+    - [本自由研究で提案する設計原則（仮説モデル）の要点](#本自由研究で提案する設計原則仮説モデルの要点)
+    - [エージェントスキル `doc-refine` の導入方法](#エージェントスキル-doc-refine-の導入方法)
+    - [制約事項とトレードオフ](#制約事項とトレードオフ)
+    - [LICENSE](#license)
 
 ---
 
@@ -60,28 +62,16 @@
 
 ### エージェントスキル `doc-refine` の導入方法
 
-お使いのAIエージェント環境に応じて、以下のいずれかの方法でスキルを追加できます。
-
 **汎用エージェント環境（Skills CLI 対応環境）:**
 ```bash
 npx skills add DovahkiinYuzuko/explorations-in-documentation --skill doc-refine
 ```
 
-> [!WARNING]
-> **Skills CLI と Antigravity のスコープ境界に関する注意**
-> `npx skills add`（Skills CLI）は、カレントプロジェクトの `.agents/skills/` または対応クライアント（Claude Code, Cursor等）の固有ディレクトリにスキルを配置する仕様です。
-> `npx skills add -g` を実行した場合でも、**Antigravity のグローバル設定領域（`~/.gemini/config/skills/`）には自動登録されません**。Antigravity 環境全体で常時利用する場合は、以下の個別手順を参照してください。
+**Antigravity 環境でのインストール**
 
-<details>
-<summary>Antigravity 環境でのインストール・利用手順</summary>
-
-Antigravity でグローバルプラグインとして利用する場合は以下のコマンドを実行します：
 ```bash
 agy plugin install DovahkiinYuzuko/explorations-in-documentation
 ```
-
-または、対象ワークスペース直下の `.agents/skills/` ディレクトリ内に本リポジトリの `skills/doc-refine/` フォルダを配置することで、ワークスペースローカルスキルとして即時認識されます。
-</details>
 
 ---
 
@@ -101,10 +91,6 @@ agy plugin install DovahkiinYuzuko/explorations-in-documentation
   - *制約事実*: `<details>` タグによるアコーディオン開閉表現は、MarkdownおよびHTMLレンダラを備えた環境に依存します。
   - *設計理由*: 初見読者のワーキングメモリを保護しつつ、同一ページ内で能動的に深層情報へアクセスできるUI実装としてマークアップ構文を利用しているためです。
   - *代替策・推奨構成*: プレーンテキスト（.txt）、RFC、コード内コメント等の非マークアップ環境では、基本構造である「グルーピング × 関心事の分離（SoC）」を維持したまま、末尾付録（Appendix）への分離または外部ファイルポインタ分離として適用できます。
-- **エージェント環境間のスキル配布先分断**:
-  - *制約事実*: Skills CLI（`npx skills add`）によるグローバルインストールは、Antigravity のグローバル設定ディレクトリ（`~/.gemini/config/skills/`）に対応していません。
-  - *設計理由*: 各エージェントエコシステムごとにスキル配置仕様が標準化途上であり、ディレクトリ探索優先度が異なっているためです。
-  - *代替策・推奨構成*: Antigravity 環境では `agy plugin install` を使用するか、ワークスペース直下の `.agents/skills/` に配置する構成をとります。
 
 ---
 
