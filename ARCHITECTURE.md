@@ -234,6 +234,146 @@ NaaMの「因果の解読」と「再現可能性」をドキュメントの記�
 
 ---
 
+## 第6章 ドキュメント工学パターンカタログ（0→1設計 & 1→10改善）
+
+ドキュメントの作成およびレビュー・推敲を誰でも決定論的に再現できるよう、読者と作り手の摩擦を解消する具体的な設計パターンをカタログとして体系化しました。
+何もない白紙からドキュメントを書き起こすための**「0→1設計パターン（P-01〜P-05）」**と、既存のドキュメントを診断・推敲するための**「1→10改善パターン（P-06〜P-10）」**の2つのフェーズで構成されています。
+
+```mermaid
+flowchart TD
+    subgraph ZeroToOne["0→1 新規設計フェーズ (書き起こしの型)"]
+        P01["P-01: LSP One-Liner Pattern<br>(機能事実の1行定義)"]
+        P02["P-02: Level A Quick Start Pattern<br>(認知負荷極小化コード)"]
+        P03["P-03: Affinity Problem-Solving Pattern<br>(新PASONA型共感導入)"]
+        P04["P-04: Refutational Limitation Tuple Pattern<br>(反論あり両面提示)"]
+        P05["P-05: NaaM 4-Tuple Benchmark Pattern<br>(文脈付き実証データ)"]
+    end
+
+    subgraph OneToTen["1→10 改善・推敲フェーズ (監査と剪定の型)"]
+        P06["P-06: Detour Elimination Pattern<br>(迂回の正規化除去)"]
+        P07["P-07: False Floor Buster Pattern<br>(騙しの床の解消)"]
+        P08["P-08: Selective Transparency Folding Pattern<br>(3層情報の分離)"]
+        P09["P-09: Hume's Guillotine Normalization Pattern<br>(規範文から因果文への変換)"]
+        P10["P-10: Costly Signal Witness Pattern<br>(チープトーク排除と証拠添付)"]
+    end
+
+    ZeroToOne --> OneToTen
+```
+
+---
+
+### A. 0→1 新規設計パターン群（新規作成の型）
+
+#### P-01: LSP One-Liner Pattern（機能事実の1行定義）
+- **摩擦の解消**: 冒頭に主観的宣伝文句（「究極のツール」「超高速」）が置かれ、何をするソフトウェアか分からない認知摩擦を解消する。
+- **構文テンプレート**:
+  ```markdown
+  [Language / Environment] implementation of [Specific Software Technology] for [Primary Target / Purpose].
+  ```
+- **適用例**:
+  - *Bad*: 「超高速で最強のドキュメント最適化ツールです！」
+  - *Good*: 「Python implementation of deterministic AST rule verification for Markdown technical documentation.」
+- **理論根拠**: Hellman et al. (2023) `[REF-HELLMAN2023]`, Harry Dry (2020) `[REF-DRY2020]`.
+
+#### P-02: Level A Quick Start Pattern（認知負荷極小化コード）
+- **摩擦の解消**: 技巧的・難解な構文（Level C）により、読者が初動で挫折・離脱する摩擦を解消する。
+- **構文テンプレート**:
+  ```markdown
+  ## クイックスタート
+  
+  ```bash
+  pip install <tool-name>
+  ```
+  
+  ```python
+  import <tool>
+  result = <tool>.run("input.txt")
+  print(result)
+  ```
+  ```
+- **規約要件**: 外部環境設定を前提とせず、単純代入と1行実行（Level A構文）のみで完結すること。
+- **理論根拠**: Sitthithanasakul et al. (2023) `[REF-SITTHI2023]`, Jakob Nielsen (2018) `[REF-NIELSEN2018]`.
+
+#### P-03: Affinity Problem-Solving Pattern（新PASONA型共感導入）
+- **摩擦の解消**: 「なぜ作ったのか（Why）」が共有されず、読者が自分に関係あるツールだと気付けない摩擦を解消する。不安を煽る（Agitation）のではなく、開発者が共有する不便の公理（Affinity）から設計解へと結合する。
+- **構文テンプレート**:
+  ```markdown
+  ## なぜ作ったのか (Motivation)
+  
+  日常の開発において、[読者が直面する避けがたい不便・公理 A] があります。
+  この課題に対処するため、[中核アプローチ B] を採用した本ツールを開発しました。
+  さらに、[特定環境・条件における柔軟性] を確保するために [アーキテクチャ設計 C] を選択しています。
+  ```
+- **理論根拠**: 神田昌典 (2016) `[REF-KANDA2016]`, ユズコ原初メモ（ログ0: ビッグバン）`USER_TRANSCRIPT.md`.
+
+#### P-04: Refutational Limitation Tuple Pattern（反論あり両面提示）
+- **摩擦の解消**: 良いことしか書かないドキュメントへの不信感（レモン市場の警戒）、および単に弱点を並べて離脱される逆効果を同時に解消する。
+- **構文テンプレート**:
+  ```markdown
+  ## 制約事項と適用限界 (Limitations)
+  
+  | 制約・非対応（Fact） | 発生要因・動作機序（Why） | 推奨回避策・代替手段（Workaround） |
+  | :--- | :--- | :--- |
+  | 100MB超の単一ファイル処理 | 全文をインメモリAST展開するため | 大規模ログは前処理で分割して入力する |
+  | Windows非UTF-8環境での色出力 | ANSIエスケープシーケンス非対応 | `--no-color` フラグを指定する |
+  ```
+- **規約要件**: 制約（Fact）の提示には、必ず工学的理由（Why）と回避策（Workaround）を1対1で直結させること。
+- **理論根拠**: O'Keefe (1999) `[REF-OKEFE1999]`, Mike Allen (1991) `[REF-ALLEN1991]`, Kamins et al. (1989) `[REF-KAMINS1989]`.
+
+#### P-05: NaaM 4-Tuple Benchmark Pattern（文脈付き実証データ）
+- **摩擦の解消**: 「何と比べてやねん！」という比較対象なき数値主張（幻影: Numbers are a Mirage）を封殺する。
+- **構文テンプレート**:
+  ```markdown
+  ## ベンチマーク検証 (Benchmark)
+  
+  本測定は、以下の4条件のもとで再現可能です：
+  - **環境**: AMD Ryzen 9 5900X, 32GB RAM, Ubuntu 22.04 LTS, Python 3.11.5
+  - **データセット**: 100万行のランダム生成JSON（合計128MB）
+  - **比較対象**: 標準ライブラリ `json` (v3.11) vs 本実装 (v1.0.0)
+  - **統計結果**: 100試行平均: 124ms ± 3.2ms（標準ライブラリ: 412ms ± 8.1ms）
+  ```
+- **理論根拠**: Yuzuko Underson (NaaM) `[REF-NAAM]`, Roger D. Peng (2011) `[REF-PENG2011]`.
+
+---
+
+### B. 1→10 推敲・改善パターン群（既存ドキュメントの監査と剪定）
+
+#### P-06: Detour Elimination Pattern（迂回の正規化除去）
+- **診断基準**: 導入した概念を直後に自明に消費しているだけの前置き文言言や、「〇〇とは何か」を長々と語る不要な迂回（hillock/detours）が存在する。
+- **処方手順**:
+  1. 読者が即座に行動（または本題の理解）に移る上で寄与しない段落を特定する。
+  2. 導入・除去の冗長なペアを削除し、前提命題から直接結論へ繋がる正規形（Normal Form）へ書き換える。
+- **理論根拠**: Gentzen / Jan von Plato (2020) `[REF-VONPLATO2020]`, Börstler & Paech (2016) `[REF-PAECH2016]`.
+
+#### P-07: False Floor Buster Pattern（騙しの床の解消）
+- **診断基準**: ファーストビュー（冒頭50行以内）の境界付近に孤立した水平線（`---`）が置かれ、読者が「ページが終了した」と錯覚してスクロールを停止する。
+- **処方手順**:
+  1. ファーストビュー直下の区切り線（`---`）を撤去する。
+  2. スクロール前の画面下端に次のセクション見出し（H2）の頭が少し覗くレイアウトに調整し、視線誘導を継続させる。
+- **理論根拠**: Shanelle Mullin (2023) `[REF-MULLIN2023]`, Jakob Nielsen (2018) `[REF-NIELSEN2018]`.
+
+#### P-08: Selective Transparency Folding Pattern（3層情報の分離）
+- **診断基準**: 単一見出しの下に並列項目が5個以上羅列されているか、または高度な設定オプション一覧がフラットに展開されて作業記憶を圧迫している。
+- **処方手順**:
+  1. 並列項目数を Cowan の純粋容量上限である **$\le 4$ 個** にグループ化・階層化する。
+  2. エッジケース・詳細設定表・内部実装仕様を `<details><summary>詳細仕様</summary>...</details>` または別ファイル（`docs/...`）へと段階的に隔離（Progressive Disclosure）する。
+- **理論根拠**: Deepa Muralidhar et al. (2025) `[REF-MURALI2025]`, Nelson Cowan (2001) `[REF-COWAN2001]`, Ariful Islam Anik & Andrea Bunt (2026) `[REF-ANIK2026]`.
+
+#### P-09: Hume's Guillotine Normalization Pattern（規範文から因果文への変換）
+- **診断基準**: 「開発者は〇〇すべきである（ought）」「〇〇を設定しなければならない」という主観的規範・お説教が含まれている。
+- **処方手順**:
+  - 文面を「事実 $P$ のもとで、目的 $Q$ を期待する場合、手段 $R$ を設定する」という**客観的な条件付き因果文**に置換する。
+- **理論根拠**: David Hume (1739) `[REF-HUME1739]`, Henrike Jansen (2007) `[REF-JANSEN2007]`.
+
+#### P-10: Costly Signal Witness Pattern（チープトーク排除と証拠添付）
+- **診断基準**: 「高品質」「堅牢」「安全」などの主観的形容詞が単独で置かれ、第三者が検証可能なエビデンス（Witness）が欠落している。
+- **処方手順**:
+  1. 根拠なき自称形容詞をすべて削除する。
+  2. 読者のローカル端末で1行で実行できる検証コマンドと、決定論的な期待出力を添付（Witness Validation）する。
+- **理論根拠**: Ranindya Paramitha et al. (2026) `[REF-PARAM2026]`, Asa & Nautwima (2026) `[REF-ASA2026]`, Daniel Baier et al. (CPAchecker, 2024) `[REF-BAIER2024]`.
+
+---
+
 ## おわりに
 
 技術ドキュメントの改善は、難しい学術用語で着飾ることでも、精神論で「良い文章を書く」ことでもありません。
