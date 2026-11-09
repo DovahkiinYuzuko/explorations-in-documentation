@@ -32,6 +32,16 @@
 | **`[REF-RUSHBY2009]`** | 形式検証 | Rushby (2009) / Knight & Yin (2010)| 高信頼システムの保証論証における Claim + Argument + Evidence の3層分離。 | **L4** Assurance Case 3層分離（主張・論証・証拠） |
 | **`[REF-PENG2011]`**   | 実証再現性 | Peng (2011) / Adzic (2011) | 再現可能な研究の自己完結性、および決定論的テストオラクル。 | **L5** 単体実行可能コマンド、決定論的期待出力の明記 |
 | **`[REF-NAAM]`**       | 思考基盤 | Yuzuko Underson (NaaM) | Numbers are a Mirage（文脈なき単独数値は幻影）。4要素因果文脈の結合。 | **L5** NaaM 4要素ベンチマークタプル（環境・データ・比較・分散） |
+| **`[REF-NIELSEN2018]`**| CVR・視線誘導 | Jakob Nielsen (2018) | NNGroupアイトラッキング（13万点固着解析）。閲覧時間の57%がAbove the Fold、74%が上位2画面に集中。 | **L1** ファーストビュー集中設計（50行以内の密度最大化）、**L2** 視覚動線制御 |
+| **`[REF-MULLIN2023]`** | CVR・視線誘導 | Shanelle Mullin (2023) | Google視認性データ73% vs 44%、NNGroup平均格差84%。False Floor（騙しの床）による離脱。 | **L2** 視覚的連続性（Foldをまたぐ目次・見出しの覗かせ、孤立境界線禁止） |
+| **`[REF-SHAPIRO2020]`**| 離脱防止・LP | Julian Shapiro (2020) | Adoption Rate = Utility - (Labor + Confusion)。5秒テスト（What/Why/Howの即答性）。 | **L1** 5秒テスト適合性監査、専門用語・探索労力の極小化 |
+| **`[REF-DRY2020]`**    | コピー・表現 | Harry Dry (2020) | Jargon（抽象的メタファー）の排除と具体的動作・入出力事実への正規化。 | **L1/L4** 抽象的形容詞の排除、平易な字義通り名詞・動詞規範 |
+| **`[REF-UNBOUNCE2022]`**| CVR・離脱防止 | Unbounce (2022) | 競合するマルチCTAによる決定麻痺（Decision Paralysis）の解明。 | **L1** 単一推奨Quick Start（Primary CTA）の明示、代替手法の段階的隔離 |
+| **`[REF-USERPILOT2026]`**| コピー・便益工学 | Userpilot (2026) | FABモデル。Feature（機能） $\rightarrow$ Advantage（動作機序） $\rightarrow$ Benefit（読者利得）の3段結合。 | **L2** 機能リストにおけるFAB 3要素因果結合の義務化 |
+| **`[REF-KANDA2016]`**  | コピー・課題解決 | 神田昌典 (2016) | 新PASONAの法則。煽り（Agitation）を親近感・技術文脈理解（Affinity）へ昇華、CVR 2.8倍。 | **L1/L3** 不安煽りの完全禁止、読者の開発文脈への共感と根本原因提示 |
+| **`[REF-FRONCH2023]`** | GitHub/OSS実証 | Fronchetti et al. (2023) | 65%にCONTRIBUTING欠落、新人の主要障壁（タスク選定・環境構築）の75%以上が放置。 | **L2/L3** オンボーディング導線、ローカルテスト再現手順の明示 |
+| **`[REF-FOUNDJEM]`**   | GitHub/OSS実証 | Foundjem et al. (ICSE) | オンボーディング充実によるバグ14%減少、PR受容率13.5%向上、定着率35%延長。 | **L1〜L5** ドキュメント品質投資によるプロジェクト保守性向上 |
+| **`[REF-DANTAS2023]`** | GitHub/OSS実証 | Dantas et al. (2023) | PR可読性改善370件分析。開発者の83.8%が可読性を重視、直感性・モジュール化・冗長性排除。 | **L4** サンプルコードの直感的命名と冗長性排除 |
 
 ---
 
@@ -43,6 +53,9 @@
 3. **`[REF-ABDUL2024]`**: Ashraf Abdulmunim Abdulmajeed. "A Software Engineering Perspective on Documentation Quality: Predicting Newcomer Attraction in Open-Source Projects". *Statistics, Optimization and Information Computing*, Vol. x, pp. 1–24 (2026).
 4. **`[REF-HELLMAN2023]`**: Jazlyn Hellman, Eunbee Jang, Christoph Treude, Chenzhun Huang, Jin L.C. Guo. "Describing GitHub Repositories". *SSRN Electronic Journal* (2023). SSRN: [4543196](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4543196).
 5. **`[REF-GAUGHAN2025]`**: Matthew Gaughan, Kaylea Champion, Sohyeon Hwang, Aaron Shaw. "The Introduction of README and CONTRIBUTING Files in Open Source Software Development". arXiv: [2502.18440](https://arxiv.org/abs/2502.18440) (2025).
+6. **`[REF-FRONCH2023]`**: Felipe Fronchetti, David C. Shepherd, Igor Wiese, Christoph Treude, Marco Aurélio Gerosa, Igor Steinmacher. "Do CONTRIBUTING Files Provide Information about OSS Newcomers’ Onboarding Barriers?". *ESEC/FSE 2023*, pp. 1–13 (2023). DOI: [10.1145/3611643.3616288](https://doi.org/10.1145/3611643.3616288).
+7. **`[REF-FOUNDJEM]`**: Armstrong Foundjem, Ellis E. Eghan, Bram Adams. "Onboarding vs. Diversity, Productivity, and Quality – Empirical Study of the OpenStack Ecosystem". *ICSE*.
+8. **`[REF-DANTAS2023]`**: Carlos Eduardo C. Dantas et al. "How do Developers Improve Code Readability? An Empirical Study of Pull Requests". arXiv: [2309.02594](https://arxiv.org/abs/2309.02594) (2023).
 
 ### 2.2 信頼性・シグナリング & 説得工学
 6. **`[REF-ALLEN1991]`**: Mike Allen. "Meta-Analysis Comparing the Persuasiveness of One-sided and Two-sided Messages". *Western Journal of Speech Communication*, Vol. 55, No. 4, pp. 390–404 (1991). DOI: [10.1080/10570319109374395](https://doi.org/10.1080/10570319109374395).
@@ -67,3 +80,17 @@
 21. **`[REF-RUSHBY2009]`**: John Rushby. "Software Verification and System Assurance". *7th IEEE International Conference on Software Engineering and Formal Methods (SEFM)*, pp. 3–10 (2009).
 22. **`[REF-PENG2011]`**: Roger D. Peng. "Reproducible Research in Computational Science". *Science*, Vol. 334, No. 6060, pp. 1226–1227 (2011). DOI: [10.1126/science.1213847](https://doi.org/10.1126/science.1213847).
 23. **`[REF-NAAM]`**: Yuzuko Underson. "Numbers are a Mirage (NaaM) Framework: 7-Layer Causal Audit for Technical Metrics". Personal Research Archive (2026).
+
+### 2.5 視線誘導・CVR・離脱防止工学
+24. **`[REF-NIELSEN2018]`**: Jakob Nielsen. "Scrolling and Attention". *Nielsen Norman Group (NNGroup)* (2018). URL: https://www.nngroup.com/articles/scrolling-and-attention/
+25. **`[REF-MULLIN2023]`**: Shanelle Mullin. "Mastering above the fold: how to encourage scrolling (and converting)". *CXL* (2023).
+26. **`[REF-SHAPIRO2020]`**: Julian Shapiro. *Startup Handbook: Landing Page Copywriting* / *My step-by-step guide to landing pages that convert* (2020).
+27. **`[REF-DRY2020]`**: Harry Dry. "Rewriting landing pages with a pro copywriter". *Copywriting Examples* (2020).
+28. **`[REF-UNBOUNCE2022]`**: Unbounce. "How to Build a High-Converting Landing Page: Anatomy, Structure & Design" (2022).
+
+### 2.6 コピーライティング・便益工学・課題解決構成
+29. **`[REF-USERPILOT2026]`**: Userpilot. "Features, Advantages & Benefits: FAB Model + Examples" (2026). URL: https://userpilot.com/blog/features-advantages-benefits/
+30. **`[REF-KANDA2016]`**: 神田昌典. 『稼ぐ言葉の法則――「新・PASONAの法則」と売れる公式41』. ダイヤモンド社 (2016).
+31. **`[REF-SALESCOPY2026]`**: The Sales Copy. "4Pの法則：LP、セールスレターの構成で迷ったらこれ" (2026). URL: https://thesalescopy.com/4p/
+32. **`[REF-WIEBE2015]`**: Joanna Wiebe. "Every Copywriting Formula Ever (or The Ultimate Guide to No-Pain Copywriting)". *Copyhackers* (2015).
+33. **`[REF-FARN2014]`**: Demian Farnworth. "Master This Copywriting Formula to Dominate Any Social Media Platform". *Copyblogger* (2014).
