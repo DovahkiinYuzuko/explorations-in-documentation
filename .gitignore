@@ -2,7 +2,16 @@
 *
 !.gitignore
 # ---AUTO-Generated---
+# .gitignores/root.gitignore
+!README.md
+!README.*.md
+!LICENSE.*
+!ARCHITECTURE.md
+!PHILOSOPHY.md
+!CITATIONS.md
 # .gitignores/skills.gitignore
 !skills/
 !skills/doc-refine/
 !skills/doc-refine/SKILL.md
+!skills/doc-refine/references/
+!skills/doc-refine/references/*.md

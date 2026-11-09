@@ -53,7 +53,7 @@ Do not use this skill for:
 | **L4** | **Logical Architecture & Proof** | Deductive Logic / Rationale | Why this over alternatives? Are assertions supported by premises? Is there fact-value separation? | `references/layer-4-rules.md` |
 | **L5** | **Empirical Evidence & Replicability** | Validation / Replicability | Are benchmarks accompanied by hardware specs and reproduction commands (NaaM 4-tuple)? | `references/layer-5-rules.md` |
 
-*(Note: Path references above and templates below are resolved relative to the directory containing this SKILL.md)*
+*(Note: Path references above are resolved relative to the directory containing this SKILL.md)*
 
 ---
 
@@ -65,7 +65,7 @@ Agents executing `doc-refine` **MUST** follow this three-phase protocol in seque
 +-----------------------------------+
 | Phase 1: Diagnostic Report        |
 | - Evaluate target across L1-L5    |
-| - Format via template             |
+| - Output 5-layer audit summary    |
 +-----------------+-----------------+
                   |
                   v
@@ -78,14 +78,14 @@ Agents executing `doc-refine` **MUST** follow this three-phase protocol in seque
                   v
 +-----------------+-----------------+
 | Phase 3: Refined Rewrite Output   |
-| - Output complete document        |
-| - Format via standard template    |
+| - Output complete refined document|
+| - Structure via 5-layer rules     |
 +-----------------------------------+
 ```
 
 ### Phase 1: Diagnostic Report
 Evaluate the document against Layers 1 through 5 using the specific audit criteria in each reference file.
-Load and adhere strictly to the standardized format defined in `templates/diagnostic-report-template.md`.
+Output a structured report summarizing the audit results for each layer (PASS / WARN / FAIL), detailing critical issues with quoted text, and outlining a remediation roadmap.
 
 ### Phase 2: Adaptive Elicitation & Progression (Hard Stop)
 **CRITICAL ENFORCEMENT**: After outputting Phase 1, the agent **MUST terminate the turn immediately**. Under NO circumstances should Phase 3 or any rewritten document be generated in the same turn without explicit user selection. Wait for the user's response.
@@ -109,7 +109,7 @@ Load and adhere strictly to the standardized format defined in `templates/diagno
    ```
 
 ### Phase 3: Refined Rewrite Output
-When the user requests a full or partial rewrite, generate the complete refined document following `templates/refined-readme-template.md`.
+When the user requests a full or partial rewrite, generate the complete refined document applying the 5-layer specifications.
 - Do not leave placeholder comments or `TODO` items.
 - Ensure all constraints follow the 3-part refutational tuple: `[Constraint Fact]` — `[Design Rationale / Trade-off]` — `[Workaround / Recommended Configuration]`.
 - Verify that every benchmark number contains the NaaM 4-tuple (Hardware/Runtime, Dataset, Baseline, Variance).
