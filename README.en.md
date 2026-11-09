@@ -35,9 +35,9 @@ This repository is organized into separated documents by concern. To read the ma
 | :--- | :--- | :--- |
 | **[`PAPER.md`](./PAPER.md)** | **[Main Paper] Synthesis of the Study** | The comprehensive monograph integrating empirical findings and primary citations across 8 domains into a hypothesis model of technical documentation. |
 | **[`PHILOSOPHY.md`](./PHILOSOPHY.md)** | **[Why] Origins & Philosophy** | The motivation behind the study, the hybrid approach combining formal logic with advertising techniques, and core guiding attitudes. |
-| **[`ARCHITECTURE.md`](./ARCHITECTURE.md)** | **[How] Skill Architecture** | How the hypothesis model of `PAPER.md` is translated and structured into the `doc-refine` AI agent skill. |
+| **[`ARCHITECTURE.md`](./ARCHITECTURE.md)** | **[How] Skill Architecture** | Architectural guide mapping each component of `doc-refine` (`SKILL.md`, `principles.md`, `context-adaptation.md`) to the specific theories and empirical findings from the 57 sources and Agent Skills specifications. |
 | **[`CITATIONS.md`](./CITATIONS.md)** | **[Sources] Official Bibliography** | Bibliographic records (DOIs, venues, authors) for the 57 sources and their mapping to the chapters of `PAPER.md`. |
-| **[`skills/doc-refine/`](./skills/doc-refine/)** | **[Practice] Agent Skill** | The operational skill definition loaded by AI agents when drafting or refining technical documentation. |
+| **[`skills/doc-refine/`](./skills/doc-refine/)** | **[Practice] Agent Skill** | The operational skill definition comprising the 3-step protocol (`SKILL.md`), the 4 design principles (`references/principles.md`), and the context adaptation guide (`references/context-adaptation.md`). |
 
 ---
 

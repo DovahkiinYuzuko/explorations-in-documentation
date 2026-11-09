@@ -1,131 +1,94 @@
 ---
 name: doc-refine
-description: Designs, crafts, audits, and refines technical documentation and READMEs. Converts marketing hyperbole into verifiable facts, applies refutational two-sided constraint disclosure, enforces above-the-fold Quick Starts, and structures documents for cognitive efficiency. Use when writing new READMEs or specifications from scratch (0-to-1), or auditing and rewriting existing technical documents (1-to-10). Triggers on requests like "refine documentation", "write README", "audit technical doc", "eliminate hype", or "structure spec".
+description: Writes, expands, restructures, and refines technical documentation—including READMEs, architecture specifications, API guides, technical articles, and plain-text notes. Use when creating or improving documentation, eliminating promotional hype, organizing complex information for cognitive clarity, or strengthening logical coherence and credibility without losing the author's original voice.
 ---
 
-# doc-refine
+# Technical Documentation Design & Refinement (`doc-refine`)
 
-A lightweight operational protocol for drafting, auditing, and refining technical documentation and READMEs. It eliminates promotional hyperbole, enforces refutational two-sided constraint disclosure, optimizes first-view cognitive accessibility, and grounds every claim in verifiable facts.
+このスキルは、固定の見出しテンプレートで文書を画一化するのではなく、対象文書の目的・読者・書き手の動機（種：Seed）を活かしながら、読者がつまずきやすい **3つの摩擦** を解消するための思考・作業プロトコルです。
 
-## When to Use
-
-Use this skill when:
-- **0→1 Drafting**: Creating a brand-new README, API guide, or architecture specification from project context or source code.
-- **1→10 Refinement**: Auditing and rewriting existing documentation to prune promotional buzzwords, eliminate normative preachiness ("ought"/"should"), and structure cognitive flow.
-- Preparing documents for public release where developer trust, clarity, and rapid adoption are critical.
-
-## When NOT to Use
-
-Do not use this skill for:
-- Writing consumer marketing copy, sales landing pages, or promotional blog posts.
-- Generating application source code (use domain-specific coding workflows).
-- Project task tracking or issue management (use `local-issues` or similar skills).
-- Line-by-line syntax linting or code formatting.
+1. **初動の知覚摩擦**: 開いた瞬間に「何をするものか」「なぜ・いつ使うのか」が分からず、試す前に閉じられてしまう摩擦。
+2. **読解の認知摩擦**: 情報がフラットに並びすぎて作業記憶がパンクするか、逆に要約で情報が削られすぎて必要な仕様が分からなくなる摩擦。
+3. **論理と信頼の摩擦**: 根拠のない誇張（「超高速」「究極の」等）、事実から「〜すべき」を飛躍させる説教調、あるいは言いっぱなしの制限事項によって読者に警戒される摩擦。
 
 ---
 
-## Operational Workflow
+## 実行ワークフロー（3-Step Protocol）
 
-Agents executing `doc-refine` follow this 3-step sequence:
+ドキュメントの作成・追記・構成整理・推敲を行う際は、いきなり全文を書き換えず、以下の3ステップを順番に実行します。
 
-```
-[1. Mode Selection & Analysis]
-       |
-       +---> Mode A: 0→1 Drafting (From scratch)
-       +---> Mode B: 1→10 Refinement (Existing text)
-       |
-[2. Plan Presentation & User Confirmation (Hard Stop)]
-       |
-       v (User approves plan)
-[3. Structured Document Generation]
-```
+### Step 1: Context & Seed Analysis（文脈と「種」の分析）
 
-### Step 1: Mode Selection & Analysis
+対象のファイル、リポジトリのコード（`package.json`, `Cargo.toml`, `pyproject.toml`, ソースコード、既存ドキュメント等）、およびユーザーの指示を確認し、以下を特定します。
 
-Determine the operational mode based on user intent and target files:
+1. **文書種別と媒体**: GitHub README、内部アーキテクチャ設計書・仕様書、APIガイド、技術解説記事（Zenn / note 等）、プレーンテキスト（`.txt`）、コード内コメント等。
+2. **プロジェクトの性質と想定読者**: 実用CLIツール・OSSライブラリ、業務システム、個人開発のエンタメ・ジョークアプリ等。読者が求めているのは「即座の導入と安全性」か、「設計判断の背景」か、「手軽な面白さ」か。
+3. **書き手の「種（Seed）」の特定**:
+   - 書き手がそのツールや文書を作った固有のきっかけ、解決したかった個人的な不便、あるいは大切にしているユーモアや語り口（温度感）を読み取ります。
+   - 外部記事（note やブログ等）へのリンクや、書き手固有の動機が語られている箇所は、AIの定型文で脱色・削除せず核として保護します。
+4. **重み付けの判断**:
+   - [references/context-adaptation.md](references/context-adaptation.md) を参照し、対象の文脈において重点を置く原則と、あえて省略・控える要素（例：ジョークアプリに重厚なベンチマークや堅苦しい課題論証を持ち込まない、内部仕様書に不要な1行インストール手順を作らない等）を決定します。
 
-1. **Mode A: 0→1 Drafting (New Document)**
-   - Analyze source code, package manifests, and project context.
-   - Load patterns from `references/patterns-0to1-creation.md`.
-   - Identify: (a) Axiomatic problem (Why), (b) LSP Pattern, (c) Level A minimal example, (d) Known constraints.
+### Step 2: Strategy Proposal & User Confirmation（方針提示と合意形成）
 
-2. **Mode B: 1→10 Refinement (Existing Document)**
-   - Inspect existing documentation.
-   - Load patterns from `references/patterns-1to10-refinement.md`.
-   - Scan for:
-     - Undefined comparative adjectives ("fast", "lightweight", "best-in-class").
-     - Normative moralizing statements ("developers ought to...", "you should always...").
-     - Unrefuted bare limitations (negative bullets without rationale or workarounds).
-     - Flat cognitive overload (H2 $\ge$ 4 without TOC, lists $> 5$ items without chunking).
+- **なぜここで合意を挟むのか（Why）**:
+  AIが独断でいきなり全文を生成・改稿すると、書き手が意図していた温度感（種）を消してしまったり、対象にそぐわない見出し構成を押し付けたりするズレが生じるため、執筆前に方針をすり合わせます。
 
-### Step 2: Plan Presentation & User Confirmation (Hard Stop)
+ユーザーに向けて以下の3点を簡潔に提示します：
+1. **読み取った文脈と活かす「種」**: 対象をどのような性質の文書として捉え、既存のどの個性・トーン・構成を活かすか。
+2. **適用する設計方針**: 3つの摩擦を減らすためにどこを整え（構成案や改善ポイント）、文脈に合わせて何をあえてやらないか。
+3. **不足情報の確認質問（必要な場合のみ）**: コードや既存文面から読み取れない情報（作ったきっかけ、比較のベースライン条件、その制限・トレードオフを選んだ理由など）がある場合、1〜3個の具体的な質問。
 
-**MANDATORY STOP**: Present a concise strategy plan to the user before writing or rewriting full documents:
-- Identified mode (Drafting or Refinement).
-- Key patterns to apply (e.g., LSP formulation, 3-element constraint tuples, TOC restructuring).
-- Target files and proposed structural outline.
-- **End turn immediately and wait for user approval.**
+- **停止ルール（Hard Stop）**:
+  - 実行環境に質問ツール（`ask_question` 等）がある場合はそれを使用し、ない場合はチャットテキストで上記を提示して **即座にターンを終了（Hard Stop）** し、ユーザーの返答を待ちます。
+  - ※例外：ユーザーから「質問なしで最後まで一気に出力して」「バッチ処理で進めて」等の明示的な指示がある場合に限り、Step 2 の待機をスキップして Step 3 まで連続実行します。
 
-### Step 3: Structured Document Generation
+### Step 3: Context-Adaptive Execution & Self-Check（文脈適応型の実行と自己点検）
 
-Upon user confirmation, output the complete, production-ready document adhering to `references/readme-template.md`:
-- Do not output placeholders or unexpanded `TODO` markers.
-- Keep Tier 1 concise ($\le$ 50 lines before Quick Start).
-- Isolate Tier 3 technical depths (exhaustive CLI flags, schemas) inside `<details>` blocks or separate files.
+ユーザーの承認と回答を受けたら、[references/principles.md](references/principles.md) に定義された **4つの柱の設計原則** に基づいてドキュメントを作成・推敲します。
 
 ---
 
-## Core Execution Rules
+## 4つの柱の設計原則サマリー（詳細は `references/principles.md`）
 
-### 1. The LSP One-Liner Pattern
-The very first sentence under the project header must follow the LSP formula:
-```
-[Language / Environment] + [Software Category] + [Specific Problem Solved / Purpose]
-```
-*Example*: "A zero-dependency Python 3.11+ CLI tool that audits OpenAPI schemas against breaking changes."
+執筆・推敲時は、[references/principles.md](references/principles.md) を参照し、以下の4つの視点を文脈に合わせて適用します。
 
-### 2. Level A Quick Start
-Quick Start snippets must use only elementary syntax (assignments, imports, attribute access). Avoid complex list comprehensions, lambdas, or unneeded async boilerplate. Keep runnable in $\le$ 3 lines.
+### 1. 注意と導入（Attention & Onboarding）
+- **最初の画面での具体定義**: 抽象的なキャッチコピーではなく、対象環境・カテゴリ・具体的な入出力（何を受け取って何を返すか）と、どんな課題・状況に向くか（Why/When）を冒頭で示す。
+- **最短動線の単一化と基本構文**: 実用ツールでは、迷わない1つの標準インストール手順と、基本構文（Level A）だけで動く最小実行例を先に置く。
+- **視覚的連続性**: 冒頭直後の孤立した水平線（`---`）や過剰な余白による「偽の床（ページが終わったという錯覚）」を避け、次の見出しや手順が視界に入る流れを作る。
 
-### 3. Refutational Two-Sided Disclosure
-Never list technical limitations as bare negative bullets. Every constraint must be formulated as a 3-element tuple:
-1. **Fact**: Exact limitation, boundary, or non-recommended environment.
-2. **Rationale**: Architectural trade-off or engineering reason.
-3. **Alternative**: Recommended workaround or alternative configuration.
+### 2. 認知負荷と構造（Cognition & Structure）
+- **チャンキング（3〜5個）と表の活用**: フラットに5個以上並ぶ項目は3〜4個の上位グループに束ねるか、比較軸を揃えた表（テーブル）に整理する。
+- **空間的近接と非トートロジー**: コード例と出力・解説を近くに配置し（注意の分散の防止）、コードの字面をなぞるだけの反復説明を省いて「前提条件・副作用・異常時の挙動」を書く。
+- **情報を削らない段階的開示（グルーピング × 関心事の分離）**: 詳細情報を要約で削り落とすのではなく、第1層（最短動線）・第2層（主要概念と境界）・第3層（網羅的リファレンス）に分離する。媒体に応じて `<details>` 折りたたみ、末尾 `Appendix`、別ファイルリンクを使い分け、H2見出しが4個以上並ぶ規模の文書では目次（TOC）を配置する。
 
-### 4. Hume's Guillotine (Fact-Value Separation)
-Eliminate all normative preaching ("should", "ought", "must", "best practice"). Replace with objective conditional causality:
-- *Bad*: "You must always set the pool size to 10."
-- *Good*: "To prevent connection exhaustion under burst traffic, configure the connection pool size to 10 or higher."
+### 3. 論理と必然性（Logic & Necessity）
+- **既知から未知への連鎖と迂回の排除**: 読者がすでに知っている前提（旧情報）から新しい結論（新情報）へとつなぎ、その場限りの造語や回りくどい前置き（論理の迂回）を省く。
+- **背理法とトレードオフの峻別**: 既存手段では構造的に満たせない必須要件（境界条件）は背理法として示し、一長一短の選択は条件付きのトレードオフ（結果論証）として記述する。
+- **規範語（ought）から仕様事実・条件付き因果（is / If-Then）への転換**: 「〜すべきである」「〜しなければならない」という説教調（ヒュームのギロチン）を排し、「どういう仕様・制約があるか（事実）」と「どういう条件・目的のときに何をするとどうなるか（条件付き因果）」として記述する。
 
-### 5. Baselines for Benchmarks
-Never write "blazing fast" or "10x performance" without an explicit baseline and hardware note:
-```markdown
-> [!NOTE]
-> Tested on AMD Ryzen 9 7950X, Ubuntu 24.04 with a 10MB dataset. Processing time was 42ms vs 89ms on v1.2 (2.1x speedup). Results vary by hardware and dataset structure.
-```
-
-### 6. Cognitive Chunking & Progressive Disclosure
-- Restrict parallel bullet points under any single heading to $4 \pm 1$ items.
-- Provide a Markdown Table of Contents (TOC) whenever a document contains 4 or more H2 headings.
-- Move exhaustive tables, full schemas, and low-level diagnostic guides into collapsible `<details>` tags or external files.
+### 4. 誠実さと信頼（Credibility & Persuasion）
+- **無根拠な誇張の排除と比較基準（Baseline）の明示**: 実測値がある場合は「比較対象＋測定環境＋変動の注記」を添え、実測値がない場合は「超高速」「軽量」等の主観的形容詞を外して検証可能な機能的事実に置き換える。
+- **反駁的両面提示**: 中程度の制限事項や非推奨ケースを隠さず挙げたうえで、「なぜその設計上のトレードオフを選んだか（理由）」と「どう回避・代替できるか（対処法）」をセットで添える。
+- **コードとの整合性と追試手段**: 引数・設定キー・パスが実装コードと一致していることを確認し、手元で動作やテストを確かめられるコマンドを添える。
 
 ---
 
-## Antipatterns to Avoid
+## 出力前の自己点検チェックリスト（Self-Verification）
 
-| Antipattern | Description | Remediation |
-| :--- | :--- | :--- |
-| **Premature Execution** | Rewriting entire documents without presenting Step 2 plan and waiting for user approval. | Halt after Step 2 plan output and wait for explicit confirmation. |
-| **Bare Limitation Dumping** | Listing limitations without architectural rationale or workarounds ($r = -.060$ in persuasiveness). | Formulate as 3-element tuple: Fact + Rationale + Alternative. |
-| **Unanchored Adjectives** | Using "fast", "simple", "scalable" without baselines or mechanisms. | State the concrete mechanism (e.g., "in-memory index") and provide test baselines with `[!NOTE]`. |
-| **Normative Sermonizing** | Lecturing developers on how they "should" build software. | Convert to conditional causality: "When [condition], [mechanism] produces [result]." |
-| **Context Dump** | Dumping 20 CLI flags or full configuration schemas directly after the introduction. | Encapsulate Tier 3 data within `<details>` or separate reference files. |
+Step 3 でドキュメントを出力する直前に、以下の項目を満たしているか確認します。
+
+- [ ] **文脈と「種」の保護**: 対象文書のジャンルや書き手の温度感（ユーモア・動機・外部記事導線等）を壊さず、固定テンプレートの押し付け（金太郎飴化）になっていないか？
+- [ ] **初動の明確さ**: 冒頭を読んだだけで「何を受け取って何を返すか」「いつ・なぜ使うか」が具体的に分かるか？
+- [ ] **情報の非圧縮と階層化**: 既存の有益な仕様や詳細データを勝手に削除・省略せず、適切なグルーピングや段階的開示によって整理されているか？
+- [ ] **事実と因果による記述**: 根拠のない最上級・誇張表現や、「〜すべき」「〜しなければならない」という規範的説教が混入していないか？
+- [ ] **反駁的構造と実装整合性**: 制限事項が「言いっぱなしの弱点リスト」にならず理由や対処法と対になっており、かつコマンドや設定名が実装コードと一致しているか？
+- [ ] **自然な語り口**: スキル内部の用語（「反駁的両面提示」「ヒュームのギロチン」「Level A構文」等）や論文名を出力ドキュメントの地の文に露出させず、自然な言葉で書かれているか？
 
 ---
 
-## Reference Guides
+## リファレンス一覧（On-Demand References）
 
-- [0→1 Drafting Patterns](references/patterns-0to1-creation.md): In-depth guide for axiomatic Why, LSP pattern, and Level A code design.
-- [1→10 Refinement Patterns](references/patterns-1to10-refinement.md): Replacement catalogs for hyperbolic adjectives, Hume's guillotine, and chunking.
-- [Standard README Template](references/readme-template.md): Complete, copy-pasteable Markdown template.
+- [references/principles.md](references/principles.md) — 4つの柱の設計原則、各原則の「なぜそうするのか（Why）」と具体的な操作手順。
+- [references/context-adaptation.md](references/context-adaptation.md) — 文書種別・プロジェクト性質ごとの重み付けガイドと、Before / After の具体的な変換サンプル。

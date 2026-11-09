@@ -35,9 +35,9 @@
 | :--- | :--- | :--- |
 | **[`PAPER.md`](./PAPER.md)** | **【本編】自由研究の総括** | 8分野・57文献の知見と一次引用を統合し、「良いドキュメントとは何か」という仮説モデルを提案する全体統括論考。 |
 | **[`PHILOSOPHY.md`](./PHILOSOPHY.md)** | **【なぜ作ったか】思想と起こり** | 自由研究を始めたきっかけ、論法と広告手法のハイブリッドという着想、大切にしているスタンス。 |
-| **[`ARCHITECTURE.md`](./ARCHITECTURE.md)** | **【どう作ったか】スキルの設計** | `PAPER.md` の仮説モデルを、AIエージェント向けスキル `doc-refine` としてどう構造化・実装しているかの解説。 |
+| **[`ARCHITECTURE.md`](./ARCHITECTURE.md)** | **【どう作ったか】スキルの設計** | `doc-refine` スキルの各機構（`SKILL.md` / `principles.md` / `context-adaptation.md`）が、どの論文・仕様のどういう理論やデータを利用しているかの設計解説。 |
 | **[`CITATIONS.md`](./CITATIONS.md)** | **【参考元】文献公式目録** | 調査した57文献の書誌情報（DOI・原典）と、`PAPER.md` の各章への対応関係一覧。 |
-| **[`skills/doc-refine/`](./skills/doc-refine/)** | **【実践】エージェントスキル** | エージェントがドキュメントの起案・推敲時に読み込むスキル本体。 |
+| **[`skills/doc-refine/`](./skills/doc-refine/)** | **【実践】エージェントスキル** | 3ステップの対話プロトコル（`SKILL.md`）、4大設計原則（`references/principles.md`）、文脈適応ガイド（`references/context-adaptation.md`）から成るスキル本体。 |
 
 ---
 
