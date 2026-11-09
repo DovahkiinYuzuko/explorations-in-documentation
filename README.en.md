@@ -67,11 +67,6 @@ While detailed in **[`PAPER.md`](./PAPER.md)**, the hypothesis model proposed in
 npx skills add DovahkiinYuzuko/explorations-in-documentation --skill doc-refine
 ```
 
-**Installation in Antigravity Environments:**
-```bash
-agy plugin install DovahkiinYuzuko/explorations-in-documentation
-```
-
 ---
 
 ### Limitations, Boundaries & Trade-offs

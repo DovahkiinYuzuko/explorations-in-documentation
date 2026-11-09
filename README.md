@@ -67,12 +67,6 @@
 npx skills add DovahkiinYuzuko/explorations-in-documentation --skill doc-refine
 ```
 
-**Antigravity 環境でのインストール**
-
-```bash
-agy plugin install DovahkiinYuzuko/explorations-in-documentation
-```
-
 ---
 
 ### 制約事項とトレードオフ
