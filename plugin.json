@@ -1,0 +1,13 @@
+{
+  "name": "doc-refine",
+  "displayName": "doc-refine",
+  "description": "Formal logic and cognitive load based technical documentation refinement skill.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Yuzuko Underson",
+    "url": "https://github.com/DovahkiinYuzuko"
+  },
+  "homepage": "https://github.com/DovahkiinYuzuko/explorations-in-documentation",
+  "repository": "https://github.com/DovahkiinYuzuko/explorations-in-documentation",
+  "license": "MIT"
+}
