@@ -9,6 +9,10 @@
 !ARCHITECTURE.md
 !PHILOSOPHY.md
 !CITATIONS.md
+!requirements.txt
+# .gitignores/scripts.gitignore
+!scripts/
+!scripts/*.py
 # .gitignores/skills.gitignore
 !skills/
 !skills/doc-refine/
