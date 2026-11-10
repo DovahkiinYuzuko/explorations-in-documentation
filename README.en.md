@@ -1,9 +1,9 @@
 # explorations-in-documentation / ドキュメント論─個人的な自由研究
 
-[![Language: 日本語](https://img.shields.io/badge/Language-%F0%9F%87%AF%F0%9F%87%B5%20%E6%97%A5%E6%9C%AC%E8%AA%9E-red?style=flat-square)](./README.md)
-[![Language: English](https://img.shields.io/badge/Language-%F0%9F%87%BA%F0%9F%87%B8%20English-blue?style=flat-square)](./README.en.md)
+**English** | [日本語](./README.md)
+
 [![Main Paper](https://img.shields.io/badge/Paper-PAPER.md-8A2BE2?style=flat-square&logo=gitbook&logoColor=white)](./PAPER.md)
-![Agent Skill](https://img.shields.io/badge/Agent_Skill-doc--refine-blue?style=flat-square&logo=markdown&logoColor=white)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-doc--refine-blue?style=flat-square&logo=markdown&logoColor=white)](./skills/doc-refine/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=opensourceinitiative&logoColor=white)](./LICENSE.MIT)
 
 An independent exploratory study synthesizing interdisciplinary primary sources—across formal logic, cognitive science, persuasion engineering, and advertising—to propose a hypothesis model for *"What makes good technical documentation?"* ([**`PAPER.md`**](./PAPER.md)), accompanied by the `doc-refine` agent skill built as a practical prototype of these principles.

@@ -1,9 +1,9 @@
 # ドキュメント論─個人的な自由研究 / explorations-in-documentation
 
-[![Language: 日本語](https://img.shields.io/badge/Language-%F0%9F%87%AF%F0%9F%87%B5%20%E6%97%A5%E6%9C%AC%E8%AA%9E-red?style=flat-square)](./README.md)
-[![Language: English](https://img.shields.io/badge/Language-%F0%9F%87%BA%F0%9F%87%B8%20English-blue?style=flat-square)](./README.en.md)
+[English](./README.en.md) | **日本語**
+
 [![Main Paper](https://img.shields.io/badge/Paper-PAPER.md-8A2BE2?style=flat-square&logo=gitbook&logoColor=white)](./PAPER.md)
-![Agent Skill](https://img.shields.io/badge/Agent_Skill-doc--refine-blue?style=flat-square&logo=markdown&logoColor=white)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-doc--refine-blue?style=flat-square&logo=markdown&logoColor=white)](./skills/doc-refine/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=opensourceinitiative&logoColor=white)](./LICENSE.MIT)
 
 形式論理学、認知科学、説得・広告工学などの学際的知見から「嘘や誇張がなく、頭に入りやすい『良いドキュメント』とは何か」を探求し、ひとつの仮説モデルとしてまとめた自由研究（[**`PAPER.md`**](./PAPER.md)）と、その設計原則を試作したエージェントスキル `doc-refine` のリポジトリです。
