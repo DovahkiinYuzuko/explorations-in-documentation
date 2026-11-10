@@ -6,7 +6,7 @@
 ![Agent Skill](https://img.shields.io/badge/Agent_Skill-doc--refine-blue?style=flat-square&logo=markdown&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=opensourceinitiative&logoColor=white)](./LICENSE.MIT)
 
-An independent exploratory study synthesizing 56 primary sources across 8 domains—formal logic, cognitive science, persuasion engineering, and advertising—to propose a hypothesis model for *"What makes good technical documentation?"* ([**`PAPER.md`**](./PAPER.md)), accompanied by the `doc-refine` agent skill built as a practical prototype of these principles.
+An independent exploratory study synthesizing interdisciplinary primary sources—across formal logic, cognitive science, persuasion engineering, and advertising—to propose a hypothesis model for *"What makes good technical documentation?"* ([**`PAPER.md`**](./PAPER.md)), accompanied by the `doc-refine` agent skill built as a practical prototype of these principles.
 
 ---
 
@@ -25,7 +25,7 @@ An independent exploratory study synthesizing 56 primary sources across 8 domain
 ### Overview
 This repository began as a personal exploratory study addressing a common tendency in generative AI (LLMs): inflating technical writing with unverified promotional hyperbole while skipping mechanical verification.
 
-Rather than relying on superficial grammar checks or rigid fill-in-the-blank templates, this research investigates how human readers scan text, evaluate logical validity, and form trust—synthesizing findings from 56 academic and empirical sources into an information design hypothesis model applicable to READMEs, specifications, and technical documents.
+Rather than relying on superficial grammar checks or rigid fill-in-the-blank templates, this research investigates how human readers scan text, evaluate logical validity, and form trust—synthesizing findings from academic literature and empirical research into an information design hypothesis model applicable to READMEs, specifications, and technical documents.
 
 ---
 
@@ -35,10 +35,10 @@ This repository is organized into separated documents by concern. To read the ma
 
 | Document | Role | Description |
 | :--- | :--- | :--- |
-| **[`PAPER.md`](./PAPER.md)** | **[Main Paper] Synthesis of the Study** | The comprehensive monograph integrating empirical findings and primary citations across 8 domains into a hypothesis model of technical documentation. |
+| **[`PAPER.md`](./PAPER.md)** | **[Main Paper] Synthesis of the Study** | The comprehensive monograph integrating interdisciplinary findings and primary citations into a hypothesis model of technical documentation. |
 | **[`PHILOSOPHY.md`](./PHILOSOPHY.md)** | **[Why] Origins & Philosophy** | The motivation behind the study, the hybrid approach combining formal logic with advertising techniques, and core guiding attitudes. |
-| **[`ARCHITECTURE.md`](./ARCHITECTURE.md)** | **[How] Skill Architecture** | Architectural guide mapping each component of `doc-refine` (`SKILL.md`, `principles.md`, `context-adaptation.md`) to the specific theories and empirical findings from the 56 sources and Agent Skills specifications. |
-| **[`CITATIONS.md`](./CITATIONS.md)** | **[Sources] Official Bibliography** | Bibliographic records (DOIs, venues, authors) for the 56 sources and their mapping to the chapters of `PAPER.md`. |
+| **[`ARCHITECTURE.md`](./ARCHITECTURE.md)** | **[How] Skill Architecture** | Architectural guide mapping each component of `doc-refine` (`SKILL.md`, `principles.md`, `context-adaptation.md`) to the specific theories and empirical findings from cited literature and Agent Skills specifications. |
+| **[`REFERENCES.md`](./REFERENCES.md)** | **[Sources] Official Bibliography** | Bibliographic records (DOIs, venues, authors) for the cited literature and their mapping to the chapters of `PAPER.md`. |
 | **[`skills/doc-refine/`](./skills/doc-refine/)** | **[Practice] Agent Skill** | The operational skill definition comprising the 3-step protocol (`SKILL.md`), the 4 design principles (`references/principles.md`), and the context adaptation guide (`references/context-adaptation.md`). |
 
 ---
@@ -79,7 +79,7 @@ agy plugin install https://github.com/DovahkiinYuzuko/explorations-in-documentat
 In accordance with our disclosure principles, the boundaries and trade-offs of this hypothesis model and skill are stated below:
 
 - **Unverified Nature as a Cross-Disciplinary Hypothesis Model**:
-  - *Constraint Fact*: While each of the 56 cited studies carries its own empirical or theoretical backing, this integrated cross-disciplinary model itself has not yet undergone direct empirical validation (such as large-scale controlled A/B testing).
+  - *Constraint Fact*: While each cited study carries its own empirical or theoretical backing, this integrated cross-disciplinary model itself has not yet undergone direct empirical validation (such as large-scale controlled A/B testing).
   - *Design Rationale*: As an independent exploratory study, the primary objective was to deductively formulate a practical hypothesis model from dispersed literature and prototype it as an AI agent skill.
   - *Workaround / Recommended Configuration*: Treat the principles presented here not as rigid laws, but as a repertoire of design hypotheses ("applying structure X under condition Y is expected to yield effect Z") to be adapted based on actual reader feedback and project context.
 - **Incompatibility with Emotional Copywriting and Creative Prose**:

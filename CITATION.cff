@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this research or the doc-refine skill, please cite it as below."
+type: software
+authors:
+  - family-names: Underson
+    given-names: Yuzuko
+    alias: DovahkiinYuzuko
+    email: rikuichi0212@gmail.com
+title: "ドキュメント論─個人的な自由研究: explorations-in-documentation"
+version: 0.1.0
+date-released: 2026-11-10
+license: MIT
+url: "https://github.com/DovahkiinYuzuko/explorations-in-documentation"
+repository-code: "https://github.com/DovahkiinYuzuko/explorations-in-documentation"
+abstract: >-
+  形式論理学、認知科学、説得工学などの学際的知見に基づき、「誇張や嘘を排し、認知負荷の低さと論理的説得力を両立する技術文書」の情報設計を探求した個人研究（PAPER.md）と、その設計原則を実装したエージェントスキル doc-refine のリポジトリ。
+keywords:
+  - documentation
+  - technical-writing
+  - formal-logic
+  - cognitive-load
+  - persuasion
+  - agent-skills
+  - prompt-engineering

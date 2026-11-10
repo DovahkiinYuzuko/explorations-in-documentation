@@ -2,7 +2,7 @@
 
 このドキュメントは、本リポジトリの理論本編である **[`PAPER.md`](./PAPER.md)**（良いドキュメント論）を、AIエージェントが実際に動かせるスキル **[`skills/doc-refine/`](./skills/doc-refine/)** としてどのように設計・実装したのか（「どの部分が、どの論文や仕様のどういう考え方を利用しているのか」）を解説するアーキテクチャ文書です。
 
-研究を始めたきっかけや問題意識については **[`PHILOSOPHY.md`](./PHILOSOPHY.md)** に、理論そのものの体系については **[`PAPER.md`](./PAPER.md)** に、全56文献の書誌情報については **[`CITATIONS.md`](./CITATIONS.md)** にまとめています。
+研究を始めたきっかけや問題意識については **[`PHILOSOPHY.md`](./PHILOSOPHY.md)** に、理論そのものの体系については **[`PAPER.md`](./PAPER.md)** に、参考文献の書誌情報については **[`REFERENCES.md`](./REFERENCES.md)** にまとめています。
 
 ---
 
@@ -204,7 +204,7 @@ AI時代に氾濫する宣伝文句と一線を画し、エンジニアや読者
 #### ① 無根拠な誇張の排除と比較基準（Baseline）の明示（`principles.md` §4.1）
 - **利用している論文・知見**:
   - **OSSのレモン市場化とコスト高シグナル（`[REF-PARAM2026]` / `[REF-ASA2026]` / `[REF-TSOY2012]`）**: Paramitha et al. (2026) は、生成AI等の普及によって自称の美辞麗句や表面的な指標（Cheap Signals）が氾濫し、ソフトウェアエコシステムが「情報の非対称性によって粗悪品と優良品の区別がつかないレモン市場」に陥っていることを指摘しました。この環境で信頼を生むのは、Asa & Nautwima (2026) が示す通り、模倣や捏造にコストがかかる **コスト高シグナル（Costly Signals：検証可能な事実と測定条件の開示）** です。
-  - **Assurance Case における主張・証拠・但し書きの結合（`[REF-RUSHBY2009]` / `[REF-SALESCOPY2026]`）**: Rushby (2009) はシステム保証において、主張（Claims）には必ず論証（Arguments）と証拠（Evidence）、そしてその主張が成立するための前提条件・但し書き（Caveats）を結びつける枠組みを示しました（※筆者自身の思考フレームワークである [`NaaM`](./CITATIONS.md#3-付記筆者自身の関連ノート) における「数字の検証・時代と前提条件の確認」とも直結しています）。
+  - **Assurance Case における主張・証拠・但し書きの結合（`[REF-RUSHBY2009]` / `[REF-SALESCOPY2026]`）**: Rushby (2009) はシステム保証において、主張（Claims）には必ず論証（Arguments）と証拠（Evidence）、そしてその主張が成立するための前提条件・但し書き（Caveats）を結びつける枠組みを示しました（※筆者自身の思考フレームワークである [`NaaM`](./REFERENCES.md#3-付記筆者自身の関連ノート) における「数字の検証・時代と前提条件の確認」とも直結しています）。
 - **スキルへの落とし込み**:
   実測データがある場合は「比較対象（Baseline）＋測定環境（OS/CPU/データ量）＋環境により変動する旨の但し書き」を添え、実測データがない場合は「超高速」「軽量」といった形容詞を外して機能的事実（アルゴリズム、依存数、入出力仕様）へ置き換えるルールとしています。
 
@@ -225,9 +225,9 @@ AI時代に氾濫する宣伝文句と一線を画し、エンジニアや読者
 
 ## 5. 対応関係一覧表（スキル構成要素 × 理論・文献マトリクス）
 
-最後に、`skills/doc-refine/` の各ファイル・各セクションと、[`PAPER.md`](./PAPER.md) および [`CITATIONS.md`](./CITATIONS.md) の文献IDとの対応関係を一覧表にまとめます。
+最後に、`skills/doc-refine/` の各ファイル・各セクションと、[`PAPER.md`](./PAPER.md) および [`REFERENCES.md`](./REFERENCES.md) の文献IDとの対応関係を一覧表にまとめます。
 
-| スキル内のファイル・セクション | スキル内での役割・操作ルール | 利用している主な理論・概念 | 対応する文献ID（詳細は [`CITATIONS.md`](./CITATIONS.md)） |
+| スキル内のファイル・セクション | スキル内での役割・操作ルール | 利用している主な理論・概念 | 対応する文献ID（詳細は [`REFERENCES.md`](./REFERENCES.md)） |
 | :--- | :--- | :--- | :--- |
 | **`SKILL.md` Frontmatter & 全体構成** | 3段階の段階的開示、1階層リンク、スコープ定義 | Agent Skills 標準仕様、Progressive Disclosure | AgentSkills.io Spec, Anthropic Best Practices, Antigravity Guide, `[REF-NIELSEN2006]` |
 | **`SKILL.md` Step 1 & `context-adaptation.md`** | 文書種別・プロジェクト性質・読者層に応じた原則の重み付けと「種」の保護 | 専門性の逆転効果、透明性の逆説、控えめな説得（Unobtrusiveness）、構造的一致仮説 | `[REF-KALYUGA2011]`, `[REF-SPRING2020]`, `[REF-NABWIRE2026A]`, `[REF-KNIGHT2010]` |
