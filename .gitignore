@@ -9,8 +9,9 @@
 !PAPER.md
 !ARCHITECTURE.md
 !PHILOSOPHY.md
-!CITATIONS.md
+!REFENCES.md
 
+!CITATION.cff
 !plugin.json
 # .gitignores/skills.gitignore
 !skills/
