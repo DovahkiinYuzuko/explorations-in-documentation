@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install Japanese Noto CJK fonts
         run: |
@@ -63,9 +65,10 @@ jobs:
           pip install playwright
           playwright install --with-deps chromium
 
-      - name: Build PAPER.pdf
+      - name: Build PAPER.pdf and SHA-256 checksum
         run: |
           python tools/pdf-generator/build_pdf.py --output PAPER.pdf
+          sha256sum PAPER.pdf > PAPER.pdf.sha256
 
       - name: Upload PAPER.pdf to GitHub Release
         env:
@@ -74,6 +77,7 @@ jobs:
           if [ "${{ github.event_name }}" = "push" ]; then
             TAG="${{ github.ref_name }}"
             PRERELEASE_FLAG=""
+            TAG_MSG="$(git for-each-ref --format='%(contents)' "refs/tags/$TAG")"
           else
             TAG="${{ inputs.tag_name }}"
             if [ "${{ inputs.prerelease }}" = "true" ]; then
@@ -81,13 +85,23 @@ jobs:
             else
               PRERELEASE_FLAG=""
             fi
+            TAG_MSG=""
+          fi
+
+          NOTES_FILE="$(mktemp)"
+          if [ -n "$TAG_MSG" ]; then
+            printf '%s\n' "$TAG_MSG" > "$NOTES_FILE"
+          else
+            printf 'Automated PDF build from PAPER.md (commit: %s).\n' "${GITHUB_SHA::7}" > "$NOTES_FILE"
           fi
 
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" PAPER.pdf --clobber
+            gh release upload "$TAG" PAPER.pdf PAPER.pdf.sha256 --clobber
+            gh release edit "$TAG" --title "explorations-in-documentation ($TAG)" --notes-file "$NOTES_FILE"
           else
-            gh release create "$TAG" PAPER.pdf \
-              --title "PAPER ($TAG)" \
-              --notes "Automated PDF build from PAPER.md (commit: ${GITHUB_SHA::7})." \
+            gh release create "$TAG" PAPER.pdf PAPER.pdf.sha256 \
+              --title "explorations-in-documentation ($TAG)" \
+              --notes-file "$NOTES_FILE" \
               $PRERELEASE_FLAG
           fi
+          rm -f "$NOTES_FILE"
