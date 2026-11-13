@@ -66,6 +66,30 @@
 | **`[REF-COPYHACKERS2015]`**| コピー・型 | Joanna Wiebe (2015) | Every Copywriting Formula Ever。構造化されたメッセージフレームワーク（BAB等）。 | **第4章** 導入前の課題から導入後の状態へつなぐ論理的架け橋 |
 | **`[REF-HUME1739]`**   | 形式論理・哲学 | David Hume (1739) | 事実命題（is）から客観的導出なしに規範命題（ought）を導く論理的誤謬。 | **第4章** ヒュームのギロチン（「〜すべき」という説教を排し、仕様事実と条件付き因果文で語る） |
 | **`[REF-PENG2011]`**   | 実証再現性 | Roger D. Peng (2011) | 再現可能な研究の自己完結性、および決定論的テストオラクル。 | **第5章** 読者の手元で追試・再現できるコマンドとコード資産の提示 |
+| **`[REF-LU2018]`**     | GitHub/絵文字実証 | Xuan Lu et al. (2018) | GitHub README における絵文字使用の主意図は Content emphasis（34.25%）と階層リスト（5.50%）。 | **第2章** 書き手が視覚的強調を狙って絵文字を導入する実態 |
+| **`[REF-RONG2023]`**   | GitHub/絵文字実証 | Shiyue Rong (2023) | PR 41.87%・Issue 47.12% が Visual Enhancement 目的である一方、開発者は感情表現と主観認識。 | **第2章** 書き手の主観的認識と実リポジトリの視覚強調用途の乖離 |
+| **`[REF-BORGO]`**      | 視覚探索・メタファー | Rita Borgo et al. | 視覚的メタファーは記憶保持を助け得る一方、結合探索（conjunction search）を誘発し探索速度を有意に遅延。 | **第2章/第3章** 視覚要素による記憶保持と探索速度のトレードオフ |
+| **`[REF-LIU2026]`**    | 視覚探索・意味的距離 | Yunguo Liu et al. (2026) | $`N = 372`$ 実験。意味的距離が近いアイコンほど高速認識され、文化的背景との交互作用も有意。 | **第2章** アイコンの意味的距離と文化差による探索効率の変化 |
+| **`[REF-LUJIE2024]`**  | 視覚探索・意味的距離 | Deng Lujie et al. (2024) | 24カ国120アイコン分析。具象的で意味的距離が近いほど効率的、抽象・恣意的記号は事前学習が必要。 | **第2章** 具象性と意味的距離が記号認識に与える影響 |
+| **`[REF-SILVEN2025]`** | 視覚探索・意味的距離 | Johanna Silvennoinen et al. (2025) | ソフトウェア実装における意味的距離が認知的処理流暢性を決定し、設計不備で誤解を招く。 | **第2章** 機能アイコンの解釈流暢性と誤認識リスク |
+| **`[REF-ROY2025]`** | 視覚探索・具象性 | Ankita Roy & Hiroyuki Matsuguma (2025) | 28種UIアイコン調査。ハート等は文化的合意依存であり、抽象アイコンは誤認率が高い。 | **第2章** 文化的合意なき抽象記号の誤認リスク |
+| **`[REF-LI2016]`**     | 視覚メタファー | Jie Li et al. (2016) | 転移元概念の干渉属性（Interfering Attributes）が推論に逆効果（Backfire Effects）をもたらす。 | **第2章** 視覚的メタファーによる意図しない連想干渉 |
+| **`[REF-SUNG2012]`**   | グラフィック認知 | Eunmo Sung & Mayer (2012) | 200名4群実験。全画像で Liking 向上（$`d=0.85\text{–}1.21`$）だが、想起向上は説明的画像（$`d=0.79`$）のみ（魅惑的は $`d=-0.38`$ 低下傾向）。 | **第3章** 主観的好感度と客観的理解の乖離（Liking ≠ Learning） |
+| **`[REF-DANIELSON2012]`**| 装飾グラフィック | Robert W. Danielson (2012) | 168名実験。テキストと対応しない装飾的グラフィックは外在的（Extraneous）であり学習を直接助けない。 | **第3章** 装飾的グラフィックの無関連性と外在性認知負荷 |
+| **`[REF-SCHNEIDER2017]`**| 装飾グラフィック | Sascha Schneider (2017) | テキストと結合の弱い装飾画像が課題無関連な推論要求（ECL）を増大させ学習成績を低下させる。 | **第3章** 弱結合な視覚要素が引き起こす推論負荷 |
+| **`[REF-HARPER2009]`** | 視覚的複雑性 | Simon Harper et al. (2009) | Webの視覚的複雑性を認知負荷の潜在的マーカーとして理論化し、読解困難時の逆行注視を整理。 | **第3章** 視覚的複雑性による走査コスト増大 |
+| **`[REF-YADAV2026]`**  | UI認知負荷 | Anamika Yadav (2026) | 乱雑なデザインや紛らわしいアイコンが外在性認知負荷の直接的発生源となることをレビュー。 | **第3章** 視覚的クラッターの抑制 |
+| **`[REF-SANCHEZ2006]`**| 魅惑的詳細効果 | Sanchez & Wiley (2006) | 視線計測実験。魅惑的詳細による理解低下は注意制御が弱い低WMC読者（初学者等）に集中。 | **第3章** 装飾的視覚要素が初学者・低WMC読者に与える非対称な負荷 |
+| **`[REF-TIGWELL2020]`**| アクセシビリティ | Garreth W. Tigwell et al. (2020) | 視覚障害者58名＋インタビュー11名。絵文字記述子が文脈を分断しデジタルデバイドを再構築。 | **第3章** 音声・点字環境における絵文字の認知摩擦と配置配慮 |
+| **`[REF-OSU2026]`**    | アクセシビリティ | Oregon State Univ. (2026) | 絵文字のALT記述子読み上げ仕様、箇条書きバレット反復問題、意図と記述子の乖離を整理。 | **第3章** スクリーンリーダー環境での反復・乖離ノイズ |
+| **`[REF-KERDAR2024]`** | アクセシビリティ | Sara Hamideh Kerdar et al. (2024) | 49文献レビュー。代替テキスト欠如や標準リスト構造からの逸脱による視覚障害者への障壁を特定。 | **第3章** 標準リスト構造遵守と代替情報提供の重要性 |
+| **`[REF-ZHANG2025]`**  | AIアライメント | Xuanchang Zhang et al. (2025) | RLHF選好モデルが絵文字・太字等に強いバイアスを示し、1%未満の混入で選好反転が発生。 | **第1章/第5章** 生成AIにおける視覚フォーマット・バイアスの再生産 |
+| **`[REF-GLIKSON2018]`**| 社会的知覚 | Ella Glikson et al. (2018) | 3実験。フォーマル設定でスマイリーは温かさを増さず有能さ評価を低下させ情報共有を阻害。 | **第5章** フォーマル文脈における有能さ知覚の低下 |
+| **`[REF-LI2019]`**     | 社会的知覚 | Xueni Li et al. (2019) | 交換規範（タスク志向）の受信者では絵文字使用により有能さ低下を介して満足度が低下。 | **第5章** 交換規範と共同体規範による受け止め方の分岐 |
+| **`[REF-VAREBERG2023]`**| 社会的知覚 | Kyle R. Vareberg et al. (2023) | 368名実験（$`F=34.59, p<.001`$）。絵文字使用により親近感は向上するが有能さ・信頼性が低下。 | **第5章** 信頼性（Credibility）と親近感のトレードオフ |
+| **`[REF-VRIELINK2025]`**| 社会的知覚 | Esmee Vrielink (2025) | Email/Teams/WhatsApp追試。全チャネルで温かさは向上し、有能さ・適切性への悪影響は認められず。 | **第5章** チャネル・時代条件による受容差の両面提示 |
+| **`[REF-HILLBERG2018]`**| クロスプラットフォーム | Hannah M. Hillberg et al. (2018) | 710名調査。25%超がOS間描画差異を未認識、20%が他OS表示を見て投稿を後悔・編集意図を報告。 | **第5章** 描画差異の不可視性による意図せぬ印象変化 |
+| **`[REF-MILLER2017]`** | 解釈多義性 | Hannah Miller et al. (2017) | 2,482名実験。テキスト文脈を添えても絵文字の誤解ポテンシャルは単独提示とほぼ同等。 | **第5章** テキスト文脈による多義性解消の限界 |
 
 ---
 
@@ -139,10 +163,48 @@
 55. **`[REF-HUME1739]`**: David Hume. *A Treatise of Human Nature*. Book III, Part I, Section I (1739).
 56. **`[REF-PENG2011]`**: Roger D. Peng. "Reproducible Research in Computational Science". *Science*, Vol. 334, No. 6060, pp. 1226–1227 (2011). DOI: [10.1126/science.1213847](https://doi.org/10.1126/science.1213847).
 
+### 2.7 視覚効果・グラフィック・絵文字認知研究
+57. **`[REF-LU2018]`**: Xuan Lu, Yanbin Cao, Zhenpeng Chen, Xuanzhe Liu. "A First Look at Emoji Usage on GitHub: An Empirical Study". arXiv: [1812.04863](https://arxiv.org/abs/1812.04863) (2018).
+58. **`[REF-RONG2023]`**: Shiyue Rong. "Why Do Developers Use Emojis in GitHub? An Empirical Study". UC Irvine MS Thesis, `qt18p2s3c3` (2023).
+59. **`[REF-BORGO]`**: Rita Borgo, Alfie Abdul-Rahman, Farhan Mohamed, Philip W. Grant, Irene Reppa, Luciano Floridi, Min Chen. "An Empirical Study on Using Visual Metaphors in Visualization". *IEEE Transactions on Visualization and Computer Graphics*.
+60. **`[REF-LIU2026]`**: Yunguo Liu, Zizhen Liu, Xuelin Tang, Rang Meng. "Effects of icon semantic distance and cultural background on visual search efficiency in vehicle control interfaces". *Scientific Reports*, 16: 7066 (2026). DOI: [10.1038/s41598-026-37943-8](https://doi.org/10.1038/s41598-026-37943-8).
+61. **`[REF-LUJIE2024]`**: Deng Lujie, Chunhua Lin, Qiong Liao, Shuicai Qiu. "The effects of icon design features on user perception and preference: A case study of icons for Covid-19". *PLOS ONE*, 19(9): e0305290 (2024). DOI: [10.1371/journal.pone.0305290](https://doi.org/10.1371/journal.pone.0305290).
+62. **`[REF-SILVEN2025]`**: Johanna Silvennoinen et al. "Icons for Software Implementations of Interactive Multiobjective Optimization Methods: A Semantic Distance Study". *Journal of Multi-Criteria Decision Analysis*, 32: e70010 (2025). DOI: [10.1002/mcda.70010](https://doi.org/10.1002/mcda.70010).
+63. **`[REF-ROY2025]`**: Ankita Roy & Hiroyuki Matsuguma. "Interface Iconography, Intricacies and Relationships in Contemporary Digital Realms". *International Journal of Asia Digital Art and Design*, Vol. 29, S1, pp. 76–85 (2025).
+64. **`[REF-LI2016]`**: Jie Li, Kang Zhang et al. "The impact of metaphors on information visualization". *Journal of Visualization*, 19: 533–548 (2016). DOI: [10.1007/s12650-016-0371-9](https://doi.org/10.1007/s12650-016-0371-9).
+65. **`[REF-SUNG2012]`**: Eunmo Sung, Richard E. Mayer. "When graphics improve liking but not learning from online lessons". *Computers in Human Behavior*, 28(5), pp. 1618–1625 (2012).
+66. **`[REF-DANIELSON2012]`**: Robert William Danielson. "THE EFFECT OF DECORATIVE GRAPHICS ON EXPOSITORY TEXT COMPREHENSION". Master's Thesis, California State University, Chico (2012).
+67. **`[REF-SCHNEIDER2017]`**: Sascha Schneider. "The impact of decorative pictures on learning with media". Doctoral dissertation, Faculty of Humanities, Technische Universität Chemnitz (2017).
+68. **`[REF-HARPER2009]`**: Simon Harper, Eleni Michailidou, Robert Stevens. "Toward a Definition of Visual Complexity as an Implicit Measure of Cognitive Load". *ACM Transactions on Applied Perception (TAP)*, Vol. 6, No. 2, Article 10 (2009). DOI: [10.1145/1498700.1498704](https://doi.org/10.1145/1498700.1498704).
+69. **`[REF-YADAV2026]`**: Anamika Yadav. "A Review Study of Cognitive Load in Website and Mobile Application User Interface Design". *Journal Publication of International Research for Engineering and Management (JOIREM)*, Vol. 4, Issue 4, pp. 1–6 (2026).
+70. **`[REF-SANCHEZ2006]`**: Christopher A. Sanchez, Jennifer Wiley. "An examination of the seductive details effect in terms of working memory capacity". *Memory & Cognition*, 34(2), pp. 344–355 (2006).
+71. **`[REF-TIGWELL2020]`**: Garreth W. Tigwell, Benjamin M. Gorman, Rachel Menzies. "Emoji Accessibility for Visually Impaired People". *Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems (CHI '20)*, Paper 140, pp. 1–14 (2020). DOI: [10.1145/3313831.3376267](https://doi.org/10.1145/3313831.3376267).
+72. **`[REF-OSU2026]`**: Oregon State University College of Health. "Best Practices for Emoji Accessibility". *Digital Accessibility Guidelines* (2026-02-12).
+73. **`[REF-KERDAR2024]`**: Sara Hamideh Kerdar, Liane Bächler, Britta Marleen Kirchhoff. "The accessibility of digital technologies for people with visual impairment and blindness: a scoping review". *Discover Computing*, Vol. 27, Article 14 (2024). DOI: [10.1007/s10791-024-09460-7](https://doi.org/10.1007/s10791-024-09460-7).
+74. **`[REF-ZHANG2025]`**: Xuanchang Zhang, Wei Xiong, Lichang Chen, Tianyi Zhou, Heng Huang, Tong Zhang. "From Lists to Emojis: How Format Bias Affects Model Alignment". arXiv: [2409.11704](https://arxiv.org/abs/2409.11704) (2025).
+75. **`[REF-GLIKSON2018]`**: Ella Glikson, Arik Cheshin, Gerben A. van Kleef. "The dark side of a smiley: Effects of Smiling Emoticons on Virtual First Impressions". *Social Psychological and Personality Science*, 9(5), pp. 614–625 (2018). DOI: [10.1177/1948550617720269](https://doi.org/10.1177/1948550617720269).
+76. **`[REF-LI2019]`**: Xueni (Shirley) Li, Kimmy Wa Chan, Sara Kim. "Service with Emoticons: How Customers Interpret Employee Use of Emoticons in Online Service Encounters". *Journal of Consumer Research*, 45(5), pp. 973–987 (2019). DOI: [10.1093/jcr/ucy016](https://doi.org/10.1093/jcr/ucy016).
+77. **`[REF-VAREBERG2023]`**: Kyle R. Vareberg, Olivia Vogt, Maranda Berndt. "Putting your best face forward: How instructor emoji use influences students’ impressions of credibility, immediacy, and liking". *Education and Information Technologies*, 28, pp. 6075–6092 (2023). DOI: [10.1007/s10639-022-11421-w](https://doi.org/10.1007/s10639-022-11421-w).
+78. **`[REF-VRIELINK2025]`**: Esmee Vrielink. "From Email to WhatsApp: The Impact of Emojis on Professional Communication Across Channels". Master's Thesis, Tilburg University (2025).
+79. **`[REF-HILLBERG2018]`**: Hannah Miller Hillberg, Zachary Levonian, Daniel Kluver, Loren Terveen, Brent Hecht. "What I See is What You Don’t Get: The Effects of (Not) Seeing Emoji Rendering Differences across Platforms". *Proceedings of the ACM on Human-Computer Interaction*, Vol. 2, CSCW, Article 124 (2018). DOI: [10.1145/3274393](https://doi.org/10.1145/3274393).
+80. **`[REF-MILLER2017]`**: Hannah Miller, Daniel Kluver, Jacob Thebault-Spieker, Loren Terveen, Brent Hecht. "Understanding Emoji Ambiguity in Context: The Role of Text in Emoji-Related Miscommunication". *Proceedings of the 11th International AAAI Conference on Web and Social Media (ICWSM 2017)*, pp. 152–161 (2017).
+
 ---
 
 ## 3. 付記：筆者自身の関連ノート
 
 ※ **[`PAPER.md`](./PAPER.md)** 第5章の脚注（`[^naam]`）にて言及している、筆者自身の思考フレームワーク（7層モデル：事実の確認 → 合理性の確認 → 時代条件の確認 → 制約の確認 → 普及条件の確認 → 数字の検証 → 再現可能性の確認）の初出記事は以下の通りです。
 
-- Yuzuko Underson. 「[NaaM(Numbers are a Mirage)思考フレームワーク概念定義仕様書](https://note.com/dandy_viper3242/n/na5ceff82ae2e)」. *note* (2026-04-02). 
+- Yuzuko Underson. 「[NaaM(Numbers are a Mirage)思考フレームワーク概念定義仕様書](https://note.com/dandy_viper3242/n/na5ceff82ae2e)」. *note* (2026-04-02).
+
+---
+
+## 4. 付記：Web実態観察資料（非査読記事・テンプレート事例）
+
+※ **[`PAPER.md`](./PAPER.md)** 第5章の脚注（`[^web-obs]`）にて「非査読のWeb流通実態の観察例」として言及している資料群（学術的根拠ではなく、マーケティング言説の流入やLLMテンプレート循環の観察事例。ローカル一次資料は `references/絵文字懐疑reference/なぜ絵文字を使うのか/` 配下に格納）は以下の通りです。
+
+- Medium (2025-06-19). *The Power of Emojis in Marketing: Boost Engagement and Strengthen Brand Communication*（スキム文化における視覚的アンカーとしての言説事例）。
+- DEV.to (2023-11-27). *How to Boost Your Productivity as a Developer with Emojis*（開発者記事における視覚的手がかりの言説事例）。
+- MarkdownTools (2025-09-11). *Markdown Emoji Guide: Complete Reference for Technical Documentation and Content Creation*（技術文書向け絵文字ガイドの主張事例）。
+- note (2025-08-25). 『エンジニア向け README作成完全ガイド』（絵文字付き見出しを含むREADMEテンプレート内に `https://claude.ai/chat/LICENSE` のURL痕跡が残留していた実態事例）。
+- Zenn (2022-11-21) 『GitHubのREADMEの見た目をイケてる感じにする』、Zenn『技術記事を読んでほしい私が、「伝え方」で気をつけている5つのポイント（具体例つき）』、はてなブログ (2026-06-28) 『GitHub の README をきれいに書く方法まとめ』、decopon-room (2025-08-16) 『GitHubのREADMEで伝わる技術資料を作る方法【Markdown入門つき】』。

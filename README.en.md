@@ -49,14 +49,14 @@ While detailed in **[`PAPER.md`](./PAPER.md)**, the hypothesis model proposed in
 
 1. **Science of Attention & Onboarding**:
    Grounded in eye-tracking tendencies (57% of viewing time concentrated above the fold) and empirical OSS gaps (Why missing in 74.3% and When missing in 78.6% of READMEs), aiming to reduce initial confusion and visual "False Floors."
-2. **Cognitive Load & Progressive Disclosure**:
-   Reconciling working memory capacity ($`4 \pm 1`$ chunks for novel information) with the empirical finding that readers prefer high information depth over summaries—avoiding arbitrary deletion of details by structuring them via **Grouping × Separation of Concerns (SoC)**.
+2. **Cognitive Load, Visual Elements & Progressive Disclosure**:
+   Reconciling working memory capacity ($`4 \pm 1`$ chunks for novel information) with the empirical finding that readers prefer high information depth over summaries—avoiding arbitrary deletion of details by structuring them via **Grouping × Separation of Concerns (SoC)**, while distinguishing instructive graphics from decorative or seductive visual embellishments (e.g., emojis and icons) that compete for attention and cause accessibility friction in screen-reader environments.
 3. **Logical Backbone & Necessity**:
    Connecting foundational problems deductively to functional mechanisms and architectural choices, while applying Hume's Guillotine to replace normative preaching ("developers should...") with objective specifications and conditional causality.
 4. **Credibility & Refutational Two-Sided Signaling**:
    Replacing cheap talk with comparative baselines, reproducible local verification commands (Witnesses), and refutational two-sided constraint disclosure (Constraint Fact + Design Trade-off Rationale + Workaround), which is expected to foster reader trust.
 5. **Context Adaptation Over Rigid Templates**:
-   Avoiding one-size-fits-all fill-in-the-blank templates in favor of flexible adaptation tailored to the document's medium and project nature (e.g., production CLI tools, libraries, internal specs, or casual web toys).
+   Avoiding one-size-fits-all fill-in-the-blank templates in favor of flexible adaptation tailored to the document's medium, social norm (exchange vs. communal orientation), and project nature (e.g., production CLI tools, libraries, internal specs, or casual web toys), including boundary conditions for visual elements and cross-platform rendering variance.
 
 ---
 
