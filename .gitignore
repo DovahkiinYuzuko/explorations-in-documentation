@@ -30,3 +30,4 @@
 !tools/pdf-generator/
 !tools/pdf-generator/build_pdf.py
 !tools/pdf-generator/template.typ
+!tools/pdf-generator/requirements.txt
