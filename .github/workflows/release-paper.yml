@@ -1,0 +1,93 @@
+name: Build and Release PAPER PDF
+
+on:
+  push:
+    tags:
+      - "v*"
+      - "paper-v*"
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "Release tag name (e.g. paper-v1.0.0 or paper-latest)"
+        required: true
+        default: "paper-latest"
+      prerelease:
+        description: "Mark as prerelease"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Japanese Noto CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk curl tar xz-utils
+
+      - name: Install Typst and Pandoc
+        run: |
+          mkdir -p "$HOME/.local/bin" /tmp/pdf_tools
+          cd /tmp/pdf_tools
+
+          TYPST_URL=$(curl -fsSL https://api.github.com/repos/typst/typst/releases/latest | grep -oE 'https://[^"]+typst-x86_64-unknown-linux-musl\.tar\.xz' | head -n1)
+          curl -fsSL "$TYPST_URL" -o typst.tar.xz
+          tar -xf typst.tar.xz
+          cp typst-x86_64-unknown-linux-musl/typst "$HOME/.local/bin/typst"
+          chmod +x "$HOME/.local/bin/typst"
+
+          PANDOC_URL=$(curl -fsSL https://api.github.com/repos/jgm/pandoc/releases/latest | grep -oE 'https://[^"]+linux-amd64\.tar\.gz' | head -n1)
+          curl -fsSL "$PANDOC_URL" -o pandoc.tar.gz
+          tar -xzf pandoc.tar.gz
+          cp pandoc-*/bin/pandoc "$HOME/.local/bin/pandoc"
+          chmod +x "$HOME/.local/bin/pandoc"
+
+          rm -rf /tmp/pdf_tools
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright and Chromium (CI only)
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Build PAPER.pdf
+        run: |
+          python tools/pdf-generator/build_pdf.py --output PAPER.pdf
+
+      - name: Upload PAPER.pdf to GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            TAG="${{ github.ref_name }}"
+            PRERELEASE_FLAG=""
+          else
+            TAG="${{ inputs.tag_name }}"
+            if [ "${{ inputs.prerelease }}" = "true" ]; then
+              PRERELEASE_FLAG="--prerelease"
+            else
+              PRERELEASE_FLAG=""
+            fi
+          fi
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" PAPER.pdf --clobber
+          else
+            gh release create "$TAG" PAPER.pdf \
+              --title "PAPER ($TAG)" \
+              --notes "Automated PDF build from PAPER.md (commit: ${GITHUB_SHA::7})." \
+              $PRERELEASE_FLAG
+          fi

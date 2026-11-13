@@ -3,9 +3,9 @@
 !.gitignore
 # ---AUTO-Generated---
 # .gitignores/github.gitignore
-!github/
-!github/workflows/
-!github/workflows/*.yml
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
 # .gitignores/root.gitignore
 !README.md
 !README.*.md
