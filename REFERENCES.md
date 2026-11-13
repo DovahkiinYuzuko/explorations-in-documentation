@@ -12,15 +12,15 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **`[REF-PRANA2019]`** | GitHub/OSS実証 | Prana et al. (2019) | 393リポジトリ解析。Why欠落率74.3%、When欠落率78.6%。 | **第2章/第4章** Why（目的・動機）と When（適用条件・境界）の明示 |
 | **`[REF-SITTHI2023]`** | GitHub/OSS実証 | Sitthithanasakul et al. (2023) | PyPI 1,620件解析。スニペットの92%がBasic構文（Level A: 基本構文）。 | **第2章** 初動コード例における基本構文（Level A）の優位性と技巧排除 |
-| **`[REF-ABDUL2024]`** | GitHub/OSS実証 | Abdulmajeed (2026) | 717リポジトリCatBoost/SHAP解析。README長が静的ドキュメント要因中第1位（平均SHAP 0.420）。中程度の長さでピークに達する非線形関係。 | **第3章** 過短・過長を避けた情報密度の最適化と段階的分離 |
+| **`[REF-ABDUL2026]`** | GitHub/OSS実証 | Abdulmajeed (2026) | 717リポジトリCatBoost/SHAP解析。README長が静的ドキュメント要因中第1位（平均SHAP 0.420）。中程度の長さでピークに達する非線形関係。 | **第3章** 過短・過長を避けた情報密度の最適化と段階的分離 |
 | **`[REF-HELLMAN2023]`**| GitHub/OSS実証 | Hellman et al. (2023) | GitHub概要欄の実態調査。高品質リポジトリから創発した **LSP（Language, Software technology, Purpose）** パターンが読者に最も好まれることを実証。 | **第2章** 抽象語を排した具体的要素（言語・技術・目的）による冒頭定義 |
 | **`[REF-GAUGHAN2025]`**| GitHub/OSS実証 | Gaughan et al. (2025) | 初版README中央値160語。煩雑な誓約（CLA等）は新規参入者を激減させる。 | **第2章** 初動の認知的摩擦・参入障壁の低減 |
 | **`[REF-FRONCH2023]`** | GitHub/OSS実証 | Fronchetti et al. (2023) | 65%にCONTRIBUTING欠落、新人の主要障壁（タスク選定・環境構築）の75%以上が放置。 | **第2章/第5章** ローカル環境構築と再現テスト手順の明示 |
 | **`[REF-FOUNDJEM]`**   | GitHub/OSS実証 | Foundjem et al. (ICSE) | オンボーディング充実によるバグ14%減少、PR受容率13.5%向上、定着率35%延長。 | **第2章** ドキュメント品質がプロジェクト保守性に与える実証効果 |
 | **`[REF-DANTAS2023]`** | GitHub/OSS実証 | Dantas et al. (2023) | PR可読性改善370件分析。開発者の83.8%が可読性を重視、直感性・モジュール化・冗長性排除。 | **第4章** サンプルコードの直感的命名と冗長性排除 |
-| **`[REF-ALLEN1991]`** | 説得工学 | Allen (1991) | メタ分析（$`N=7,547`$）。反論なし両面提示 $`r=-.060`$ vs 反論あり $`r=.076`$（有効性約20%向上）。 | **第5章** 反論あり両面提示（制約事実＋設計理由＋回避策）の核となる実証 |
-| **`[REF-OKEFE1999]`**  | 説得工学 | O'Keefe (1999) | メタ分析（$`N=20,111`$）。非広告文書において反論なき弱点開示は説得力を破壊（$`r=-.069`$）、反論ありは有意に向上（$`r=.081`$）。 | **第5章** 単なる弱点列挙の禁止とトレードオフ・解消ロジック併記 |
-| **`[REF-KAMINS1989]`** | シグナリング | Kamins et al. (1989) | 開示実験（$`t=3.27, p<.005`$）。「中程度の重要度」の弱点開示が信頼性と利用意図を最大化。 | **第5章** コア価値を壊さない中程度のトレードオフ開示による信頼獲得 |
+| **`[REF-ALLEN1991]`** | 説得工学 | Allen (1991) | メタ分析（$`N = 7,547`$）。反論なし両面提示 $`r = -.060`$ vs 反論あり $`r = .076`$（有効性約20%向上）。 | **第5章** 反論あり両面提示（制約事実＋設計理由＋回避策）の核となる実証 |
+| **`[REF-OKEFE1999]`**  | 説得工学 | O'Keefe (1999) | メタ分析（$`N = 20,111`$）。非広告文書において反論なき弱点開示は説得力を破壊（$`r = -.069`$）、反論ありは有意に向上（$`r = .081`$）。 | **第5章** 単なる弱点列挙の禁止とトレードオフ・解消ロジック併記 |
+| **`[REF-KAMINS1989]`** | シグナリング | Kamins et al. (1989) | 開示実験（$`t = 3.27, p < .005`$）。「中程度の重要度」の弱点開示が信頼性と利用意図を最大化。 | **第5章** コア価値を壊さない中程度のトレードオフ開示による信頼獲得 |
 | **`[REF-PARAM2026]`**  | 信頼性・シグナリング | Paramitha et al. (2026) | 252検索ソース＋870 Redditスレッドの大規模レビュー。スター数・DL数等の安価な信頼シグナル（Cheap Signals）の崩壊とレモン市場化を実証。 | **第5章** 安価な自称主張（チープトーク）の排除とコスト高シグナルの必然性 |
 | **`[REF-ASA2026]`**    | 信頼性・シグナリング | Asa & Nautwima (2026) | コスト高シグナル（Costly signals）による分離均衡。シグナル適合性と模倣困難な誠実性が信頼を形成。 | **第5章** 模倣困難な再現検証手順と境界開示による信頼形成 |
 | **`[REF-TSOY2012]`**   | 信頼性・シグナリング | Tsoy & Staples (Queen's) | OSS参加における第三者評価と客観的実績（$`p < .001`$）の信頼形成効果。 | **第5章** 客観的実績・外部検証キューの明示 |
@@ -35,18 +35,18 @@
 | **`[REF-AMGOUD2009]`** | 論証モデル | Leila Amgoud (2009) / Rahwan | 意思決定のための論証理論。賛成・反対理由の評価と反論に対する防御可能性。 | **第5章** メリットだけでなく反対理由（デメリット）への対処による意思決定支援 |
 | **`[REF-MURALI2025]`** | 段階的開示 | Muralidhar et al. (2025) | 臨床AI診断システムにおける3層（Summary / Rationale / Exhaustive Evidence）の選択的透明性。 | **第3章** 3層情報アーキテクチャによる認知過負荷防止と監査性の両立 |
 | **`[REF-SPRING2020]`** | 段階的開示 | Springer & Whittaker (2020) | 4つの実証実験。透明性の逆説（初期の過剰な詳細露出が不信を招く現象）とオンデマンド開示の優位性。 | **第3章** 初期はシンプルなメンタルモデルを提示し、詳細はオンデマンドで開示する |
-| **`[REF-ANIK2026]`**   | 段階的開示・情報設計 | Anik & Bunt (2026) | 32名被験者実験。ユーザーは認知負荷が高くても詳細で完全な情報（High Information Depth）を強く好む。段階的開示が学習の知覚を有意に向上（$`p<0.05`$）。 | **第3章** 情報を削らず深さを保った上での段階的開示（グルーピング × SoC） |
+| **`[REF-ANIK2026]`**   | 段階的開示・情報設計 | Anik & Bunt (2026) | 32名被験者実験。ユーザーは認知負荷が高くても詳細で完全な情報（High Information Depth）を強く好む。段階的開示が学習の知覚を有意に向上（$`p < .05`$）。 | **第3章** 情報を削らず深さを保った上での段階的開示（グルーピング × SoC） |
 | **`[REF-NIELSEN2006]`**| 段階的開示 | Jakob Nielsen (2006) | Progressive Disclosure。初見時は基本・必須機能のみ、高度なオプションは要求に応じて開示。 | **第3章** 最短動線（Happy Path）と詳細リファレンスの階層分離 |
 | **`[REF-HORTON2006]`** | 情報設計 | Sarah Horton (2006) | "Designing Beneath the Surface of the Web" / *Access by Design*。主要なナラティブフローと副次的詳細・構造の分離。 | **第3章** 表層リンクや付録分離による思考フローの維持 |
 | **`[REF-PROCTER2001]`**| 情報設計 | Chris Procter & Judith Symonds (2001)| Webユーザビリティと情報階層。一貫した構造的手がかりによるナビゲーション破綻防止。 | **第3章** 一貫した見出し構造と階層化 |
 | **`[REF-MATTYAS2020]`**| 情報設計 | Dóra Mattyasovszky-Philipp et al. (2020)| 認知的情報システムにおけるモデル駆動型アーキテクチャと視点（Viewpoint）の分離。 | **第3章** 読者の関心空間に応じた情報レイヤーの分離（SoC） |
 | **`[REF-STOREY1997]`** | 認知設計 | Margaret-Anne Storey et al. (1997) | ソフトウェア探索におけるメンタルモデル構築支援（複数の抽象レベルと大域的文脈の維持）。 | **第3章** 局所的詳細を見ても迷子にならない大域ナビゲーション |
-| **`[REF-COWAN2001]`**  | 認知負荷 | Cowan (2001) | 未知情報に対する純粋な作業記憶容量（注意の焦点）は $`4 \pm 1`$（中央値4）。 | **第3章** フラットな並列項目の抑制と意味的グループ化（チャンキング） |
+| **`[REF-COWAN2001]`**  | 認知負荷 | Cowan (2001) | 未知情報に対する純粋なワーキングメモリ容量（注意の焦点）は $`4 \pm 1`$（中央値4）。 | **第3章** フラットな並列項目の抑制と意味的グループ化（チャンキング） |
 | **`[REF-DURAN2022]`**  | 認知負荷 | Rodrigo Duran et al. (2022) | 計算機科学教育における認知負荷理論（ICLとECL）の体系的レビュー、およびOviatt (2006) の構造化効果。 | **第3章** 見せ方の不手際による外在性認知負荷（ECL）の最小化 |
 | **`[REF-SWEL2011]`**   | 認知負荷 | Sweller et al. (2011) / Kalyuga (2011)| 相互依存情報の空間的分離による注意分割効果（Split-Attention）と外在性認知負荷（ECL）の急増。 | **第3章** コードと注釈・コマンドと出力の空間的一体化 |
 | **`[REF-SU2012]`**     | 情報設計 | Su, Tempero, Hosking, Grundy (2012) | アーキテクチャ文書における情報採餌（Information Foraging）行動調査。読者は目次や見出しを起点に跳躍探索する。 | **第3章** 情報の手がかり（Information Scent）としての構造的目次（TOC）と見出し |
 | **`[REF-PAECH2016]`**  | ドキュメント可読性 | Jürgen Börstler & Barbara Paech (2016) | 104名被験者実験。「主観的な読みやすさ」と「客観的な理解度」に有意な相関がないことを実証（およびGarousi 2015の実態調査）。 | **第3章** 字面をなぞるだけのトートロジー解説の排除と、前提・副作用の記述 |
-| **`[REF-KALYUGA2011]`**| 認知負荷 | Slava Kalyuga (2011) | 専門性の逆転効果（Expertise Reversal Effect）。初心者向けの丁寧すぎる説明は熟達者の理解を阻害する。 | **第3章** 初心者向け導入と熟達者向け詳細を段階的開示で分離する理論的根拠 |
+| **`[REF-KALYUGA2011]`**| 認知負荷 | Slava Kalyuga (2011) | 専門性逆転効果（Expertise Reversal Effect）。初心者向けの丁寧すぎる説明は熟達者の理解を阻害する。 | **第3章** 初心者向け導入と熟達者向け詳細を段階的開示で分離する理論的根拠 |
 | **`[REF-JACQUETTE2008]`**| 論理学 | Dale Jacquette (2008) | 背理法（Reductio ad Absurdum）の演繹的構造と前提への責任帰属。 | **第4章** 代替案の矛盾を示す背理法的説明と前提条件の明示 |
 | **`[REF-JANSEN2007]`** | 論理学 | Henrike Jansen (2007) | 背理法（論理的不可能性）と結果論証（因果的な望ましくない影響・トレードオフ）の厳格な峻別。 | **第4章** 単なる工学的トレードオフを「論理的破綻」と誇張する誤謬の排除 |
 | **`[REF-RUSHBY2009]`** | 形式検証 | John Rushby (2009) | Assurance Case 3層分離（Claims + Arguments + Evidence）と全称命題の限定（Caveats）。 | **第5章** 主張・論証・証拠の結合と、測定環境・前提の但し書き（Caveats） |
@@ -56,7 +56,7 @@
 | **`[REF-KNIGHT2010]`** | 形式検証 | Xiang Yin & John Knight (NASA NFM 2010)| 構造的一致仮説（Structural Matching Hypothesis）と部分証明。 | **第4章** ドキュメント構造と実際のソフトウェア構造の相似性（Isomorphism） |
 | **`[REF-SIEG1998]`**   | 証明論 | Wilfried Sieg & John Byrnes | 自然演繹における戦略的証明探索（Intercalation Calculus：前提と結論の間隙架橋）。 | **第4章** 読者の前提から結論へと至る段階的な論理の架橋 |
 | **`[REF-NIELSEN2018]`**| CVR・視線誘導 | Jakob Nielsen (2018) | NNGroupアイトラッキング（13万点固着解析）。閲覧時間の57%がAbove the Fold、74%が上位2画面に集中。 | **第2章** 最初の画面（ファーストビュー）における情報伝達と迷いの排除 |
-| **`[REF-MULLIN2023]`** | CVR・視線誘導 | Shanelle Mullin (2023) | Google視認性データ73% vs 44%、NNGroup平均格差84%。False Floor（騙しの床）による離脱。 | **第2章** 視覚的終端の錯覚（False Floor）の排除とスクロール動線の維持 |
+| **`[REF-MULLIN2023]`** | CVR・視線誘導 | Shanelle Mullin (2023) | Google視認性データ73% vs 44%、NNGroup平均格差84%。False Floor（偽の床）による離脱。 | **第2章** 視覚的終端の錯覚（False Floor）の排除とスクロール動線の維持 |
 | **`[REF-SHAPIRO2020]`**| 離脱防止・LP | Julian Shapiro (2020) | Adoption Rate = Desire - (Labor + Confusion)。5秒テスト（What/Why/Howの即答性）。 | **第2章** 探索労力と混乱の極小化、冒頭5秒でのWhat/Why/Howの提示 |
 | **`[REF-DRY2020]`**    | コピー・表現 | Harry Dry (2020) | Jargon（抽象的メタファー）の排除と具体的動作・入出力事実への正規化。 | **第2章** 抽象的な宣伝文句を排し、字義通りの名詞と動詞で定義する |
 | **`[REF-UNBOUNCE2022]`**| CVR・離脱防止 | Unbounce (2022) | 競合するマルチCTAによる決定麻痺（Decision Paralysis）の解明。 | **第2章** 初動における単一推奨手順の提示と代替手法の段階的分離 |
@@ -74,9 +74,9 @@
 | **`[REF-SILVEN2025]`** | 視覚探索・意味的距離 | Johanna Silvennoinen et al. (2025) | ソフトウェア実装における意味的距離が認知的処理流暢性を決定し、設計不備で誤解を招く。 | **第2章** 機能アイコンの解釈流暢性と誤認識リスク |
 | **`[REF-ROY2025]`** | 視覚探索・具象性 | Ankita Roy & Hiroyuki Matsuguma (2025) | 28種UIアイコン調査。ハート等は文化的合意依存であり、抽象アイコンは誤認率が高い。 | **第2章** 文化的合意なき抽象記号の誤認リスク |
 | **`[REF-LI2016]`**     | 視覚メタファー | Jie Li et al. (2016) | 転移元概念の干渉属性（Interfering Attributes）が推論に逆効果（Backfire Effects）をもたらす。 | **第2章** 視覚的メタファーによる意図しない連想干渉 |
-| **`[REF-SUNG2012]`**   | グラフィック認知 | Eunmo Sung & Mayer (2012) | 200名4群実験。全画像で Liking 向上（$`d=0.85\text{–}1.21`$）だが、想起向上は説明的画像（$`d=0.79`$）のみ（魅惑的は $`d=-0.38`$ 低下傾向）。 | **第3章** 主観的好感度と客観的理解の乖離（Liking ≠ Learning） |
-| **`[REF-DANIELSON2012]`**| 装飾グラフィック | Robert W. Danielson (2012) | 168名実験。テキストと対応しない装飾的グラフィックは外在的（Extraneous）であり学習を直接助けない。 | **第3章** 装飾的グラフィックの無関連性と外在性認知負荷 |
-| **`[REF-SCHNEIDER2017]`**| 装飾グラフィック | Sascha Schneider (2017) | テキストと結合の弱い装飾画像が課題無関連な推論要求（ECL）を増大させ学習成績を低下させる。 | **第3章** 弱結合な視覚要素が引き起こす推論負荷 |
+| **`[REF-SUNG2012]`**   | グラフィックス認知 | Eunmo Sung & Mayer (2012) | 200名4群実験。全画像で Liking 向上（$`d = 0.85\text{–}1.21`$）だが、想起向上は説明的画像（$`d = 0.79`$）のみ（魅惑的は $`d = -0.38`$ 低下傾向）。 | **第3章** 主観的好感度と客観的理解の乖離（Liking ≠ Learning） |
+| **`[REF-DANIELSON2012]`**| 装飾グラフィックス | Robert W. Danielson (2012) | 168名実験。テキストと対応しない装飾的グラフィックスは外在的（Extraneous）であり学習を直接助けない。 | **第3章** 装飾的グラフィックスの無関連性と外在性認知負荷 |
+| **`[REF-SCHNEIDER2017]`**| 装飾グラフィックス | Sascha Schneider (2017) | テキストと結合の弱い装飾画像が課題無関連な推論要求（ECL）を増大させ学習成績を低下させる。 | **第3章** 弱結合な視覚要素が引き起こす推論負荷 |
 | **`[REF-HARPER2009]`** | 視覚的複雑性 | Simon Harper et al. (2009) | Webの視覚的複雑性を認知負荷の潜在的マーカーとして理論化し、読解困難時の逆行注視を整理。 | **第3章** 視覚的複雑性による走査コスト増大 |
 | **`[REF-YADAV2026]`**  | UI認知負荷 | Anamika Yadav (2026) | 乱雑なデザインや紛らわしいアイコンが外在性認知負荷の直接的発生源となることをレビュー。 | **第3章** 視覚的クラッターの抑制 |
 | **`[REF-SANCHEZ2006]`**| 魅惑的詳細効果 | Sanchez & Wiley (2006) | 視線計測実験。魅惑的詳細による理解低下は注意制御が弱い低WMC読者（初学者等）に集中。 | **第3章** 装飾的視覚要素が初学者・低WMC読者に与える非対称な負荷 |
@@ -86,7 +86,7 @@
 | **`[REF-ZHANG2025]`**  | AIアライメント | Xuanchang Zhang et al. (2025) | RLHF選好モデルが絵文字・太字等に強いバイアスを示し、1%未満の混入で選好反転が発生。 | **第1章/第5章** 生成AIにおける視覚フォーマット・バイアスの再生産 |
 | **`[REF-GLIKSON2018]`**| 社会的知覚 | Ella Glikson et al. (2018) | 3実験。フォーマル設定でスマイリーは温かさを増さず有能さ評価を低下させ情報共有を阻害。 | **第5章** フォーマル文脈における有能さ知覚の低下 |
 | **`[REF-LI2019]`**     | 社会的知覚 | Xueni Li et al. (2019) | 交換規範（タスク志向）の受信者では絵文字使用により有能さ低下を介して満足度が低下。 | **第5章** 交換規範と共同体規範による受け止め方の分岐 |
-| **`[REF-VAREBERG2023]`**| 社会的知覚 | Kyle R. Vareberg et al. (2023) | 368名実験（$`F=34.59, p<.001`$）。絵文字使用により親近感は向上するが有能さ・信頼性が低下。 | **第5章** 信頼性（Credibility）と親近感のトレードオフ |
+| **`[REF-VAREBERG2023]`**| 社会的知覚 | Kyle R. Vareberg et al. (2023) | 368名実験（$`F = 34.59, p < .001`$）。絵文字使用により親近感は向上するが有能さ・信頼性が低下。 | **第5章** 信頼性（Credibility）と親近感のトレードオフ |
 | **`[REF-VRIELINK2025]`**| 社会的知覚 | Esmee Vrielink (2025) | Email/Teams/WhatsApp追試。全チャネルで温かさは向上し、有能さ・適切性への悪影響は認められず。 | **第5章** チャネル・時代条件による受容差の両面提示 |
 | **`[REF-HILLBERG2018]`**| クロスプラットフォーム | Hannah M. Hillberg et al. (2018) | 710名調査。25%超がOS間描画差異を未認識、20%が他OS表示を見て投稿を後悔・編集意図を報告。 | **第5章** 描画差異の不可視性による意図せぬ印象変化 |
 | **`[REF-MILLER2017]`** | 解釈多義性 | Hannah Miller et al. (2017) | 2,482名実験。テキスト文脈を添えても絵文字の誤解ポテンシャルは単独提示とほぼ同等。 | **第5章** テキスト文脈による多義性解消の限界 |
@@ -98,7 +98,7 @@
 ### 2.1 GitHub README & OSS 実証研究
 1. **`[REF-PRANA2019]`**: Gede Artha Azriadi Prana, Christoph Treude, Ferdian Thung, Thushari Atapattu, David Lo. "Categorizing the Content of GitHub README Files". *Empirical Software Engineering*, Vol. 24, pp. 1296–1327 (2019). DOI: [10.1007/s10664-018-9660-3](https://doi.org/10.1007/s10664-018-9660-3) / arXiv: [1802.06997](https://arxiv.org/abs/1802.06997).
 2. **`[REF-SITTHI2023]`**: Supavas Sitthithanasakul, Bodin Chinthanet, Raula Gaikovina Kula, Natthakit Netsiwarawichian, Pattara Leelaprute, Bundit Manaskasemsak, Arnon Rungsawang, Kenichi Matsumoto. "Do Developers Present Proficient Code Snippets in Their README Files? An Analysis of PyPI Libraries in GitHub". *Journal of Information Processing*, Vol. 31, pp. 679–688 (2023). DOI: [10.2197/ipsjjip.31.679](https://doi.org/10.2197/ipsjjip.31.679).
-3. **`[REF-ABDUL2024]`**: Ashraf Abdulmunim Abdulmajeed. "A Software Engineering Perspective on Documentation Quality: Predicting Newcomer Attraction in Open-Source Projects". *Statistics, Optimization and Information Computing*, Vol. x, pp. 1–24 (2026).
+3. **`[REF-ABDUL2026]`**: Ashraf Abdulmunim Abdulmajeed. "A Software Engineering Perspective on Documentation Quality: Predicting Newcomer Attraction in Open-Source Projects". *Statistics, Optimization and Information Computing*, Vol. x, pp. 1–24 (2026).
 4. **`[REF-HELLMAN2023]`**: Jazlyn Hellman, Eunbee Jang, Christoph Treude, Chenzhun Huang, Jin L.C. Guo. "Describing GitHub Repositories". *SSRN Electronic Journal* (2023). SSRN: [4543196](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4543196).
 5. **`[REF-GAUGHAN2025]`**: Matthew Gaughan, Kaylea Champion, Sohyeon Hwang, Aaron Shaw. "The Introduction of README and CONTRIBUTING Files in Open Source Software Development". arXiv: [2502.18440](https://arxiv.org/abs/2502.18440) (2025).
 6. **`[REF-FRONCH2023]`**: Felipe Fronchetti, David C. Shepherd, Igor Wiese, Christoph Treude, Marco Aurélio Gerosa, Igor Steinmacher. "Do CONTRIBUTING Files Provide Information about OSS Newcomers’ Onboarding Barriers?". *ESEC/FSE 2023*, pp. 1–13 (2023). DOI: [10.1145/3611643.3616288](https://doi.org/10.1145/3611643.3616288).

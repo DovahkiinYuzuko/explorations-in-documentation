@@ -14,7 +14,7 @@
   - [2.2 「0→1 / 1→10」や固定テンプレートを作らない理由](#22-01--110や固定テンプレートを作らない理由)
   - [2.3 3ステップの対話プロトコルと自由度（Degrees of Freedom）](#23-3ステップの対話プロトコルと自由度degrees-of-freedom)
 - [3. 文脈適応（`context-adaptation.md`）が利用している理論](#3-文脈適応context-adaptationmdが利用している理論)
-  - [3.1 専門性の逆転効果（Expertise Reversal Effect）](#31-専門性の逆転効果expertise-reversal-effect)
+  - [3.1 専門性逆転効果（Expertise Reversal Effect）](#31-専門性逆転効果expertise-reversal-effect)
   - [3.2 透明性の逆説と控えめな説得（Unobtrusiveness）](#32-透明性の逆説と控えめな説得unobtrusiveness)
   - [3.3 なぜ `context-adaptation.md` に文書種別ごとの絵文字ルールを書かないのか](#33-なぜ-context-adaptationmd-に文書種別ごとの絵文字ルールを書かないのか)
 - [4. 4つの設計原則（`principles.md`）と先行研究の対応関係](#4-4つの設計原則principlesmdと先行研究の対応関係)
@@ -104,11 +104,11 @@ flowchart LR
 
 [`references/context-adaptation.md`](./skills/doc-refine/references/context-adaptation.md) は、「実用CLI・OSSライブラリ」「エンタメ・ジョークアプリ」「内部アーキテクチャ設計書・仕様書」「技術解説記事（Zenn / note 等）」「プレーンテキスト（`.txt`）・コードコメント」という文脈ごとに、4つの柱の重み付けを変える基準を定めています。ここには主に2つの理論が使われています。
 
-### 3.1 専門性の逆転効果（Expertise Reversal Effect）
+### 3.1 専門性逆転効果（Expertise Reversal Effect）
 
-認知負荷理論の研究において、Kalyuga (2011)（`[REF-KALYUGA2011]`）は **専門性の逆転効果（Expertise Reversal Effect）** を明らかにしています。初心者の理解を助けるための手厚いガイドや基礎的な導入手順は、すでに前提知識を持つ熟達者にとっては冗長な処理負荷（外在性認知負荷）となり、かえって読解を妨げるという現象です。
+認知負荷理論の研究において、Kalyuga (2011)（`[REF-KALYUGA2011]`）は **専門性逆転効果（Expertise Reversal Effect）** を明らかにしています。初心者の理解を助けるための手厚いガイドや基礎的な導入手順は、すでに前提知識を持つ熟達者にとっては冗長な処理負荷（外在性認知負荷）となり、かえって読解を妨げるという現象です。
 
-`context-adaptation.md` で「外部向けのOSSツールには迷わない単一インストール手順と最小実行例を手厚く配置する一方、チーム内部のアーキテクチャ仕様書やRFCでは初歩的な導入手順を省いて前提課題からの演繹的連鎖とモジュール構造の対応に集中する」と使い分けているのは、この専門性の逆転効果に基づいています。
+`context-adaptation.md` で「外部向けのOSSツールには迷わない単一インストール手順と最小実行例を手厚く配置する一方、チーム内部のアーキテクチャ仕様書やRFCでは初歩的な導入手順を省いて前提課題からの演繹的連鎖とモジュール構造の対応に集中する」と使い分けているのは、この専門性逆転効果に基づいています。
 
 ### 3.2 透明性の逆説と控えめな説得（Unobtrusiveness）
 
@@ -139,7 +139,7 @@ flowchart LR
 #### ① 最初の画面での具体定義と Why / When の提示（`principles.md` §1.1）
 - **利用している論文・知見**:
   - **最初の画面への視線集中（`[REF-NIELSEN2018]`）**: Nielsen (2018) のアイトラッキング調査（13万点の固着解析）では、ページ閲覧時間の **57% がスクロール前の最初の画面（Above the Fold）** に、**74% が上位2画面** に集中しています。
-  - **What 偏重と Why / When の欠落（`[REF-PRANA2019]`）**: Prana et al. (2019) によるGitHub 393リポジトリの実証解析では、READMEの88.8%が「何であるか（What）」を書いている一方で、**「なぜ必要か（Why）」は74.3%で欠落**し、**「いつ・どの条件で使うか（When）」は78.6%で欠落**していることが判明しています。
+  - **What 偏重と Why / When の欠落（`[REF-PRANA2019]`）**: Prana et al. (2019) によるGitHub 393リポジトリの実証解析では、READMEの97%が「何であるか（What）」を書いている一方で、**「なぜ必要か（Why）」は74.3%で欠落**し、**「いつ・どの条件で使うか（When）」は78.6%で欠落**していることが判明しています。
   - **具体的要素による定義と5秒テスト（`[REF-HELLMAN2023]` / `[REF-DRY2020]` / `[REF-SHAPIRO2020]`）**: Hellman et al. (2023) は、高品質なリポジトリの概要文には「言語（Language）・技術分類（Software technology）・目的（Purpose）」という具体的要素が備わっていることを示しました。また Dry (2020) と Shapiro (2020) は、抽象的な宣伝文句（Jargon）を排し、字義通りの具体的な名詞と動詞で入出力を定義することで「探索労力（Labor）と混乱（Confusion）」を下げる手法を定式化しています。
 - **スキルへの落とし込み**:
   冒頭の段落で抽象的なキャッチコピー（「次世代のスマートな〜」）を避け、「対象環境・分類・具体的な入出力（何を受け取って何を返すか）」と「どんな課題・状況に向くか（Why/When）」を配置するルールとして実装しています。
@@ -153,7 +153,7 @@ flowchart LR
 
 #### ③ 視覚的連続性と「偽の床（False Floor）」の回避（`principles.md` §1.3）
 - **利用している論文・知見**:
-  - **騙しの床（False Floor / Illusion of Completeness）（`[REF-MULLIN2023]`）**: Mullin (2023) および NNGroup の視認性データが示す通り、ファーストビューの直後に孤立した水平線（`---`）や大きな余白があると、読者は「ここでコンテンツが終わった」と錯覚し、スクロール率が大幅に低下します（視認性73% 対 44%）。
+  - **偽の床（False Floor / Illusion of Completeness）（`[REF-MULLIN2023]`）**: Mullin (2023) および NNGroup の視認性データが示す通り、ファーストビューの直後に孤立した水平線（`---`）や大きな余白があると、読者は「ここでコンテンツが終わった」と錯覚し、スクロール率が大幅に低下します（視認性73% 対 44%）。
 - **スキルへの落とし込み**:
   冒頭から次の見出しや導入コードが視界に入る連続性を保ち、見出し（`##` / `###`）だけで十分に区切れる箇所での装飾的な水平線の乱用を控えるルールとしています。
 
@@ -161,15 +161,15 @@ flowchart LR
 
 ### 4.2 第2の柱：認知負荷と構造（Cognition & Structure）
 
-読解中の作業記憶（ワーキングメモリ）のパンクを防ぎつつ、深い技術情報を損なわずに届けるための原則です。
+読解中のワーキングメモリのパンクを防ぎつつ、深い技術情報を損なわずに届けるための原則です。
 
-#### ① 作業記憶の保護：チャンキングと構造化（`principles.md` §2.1）
+#### ① ワーキングメモリの保護：チャンキングと構造化（`principles.md` §2.1）
 - **利用している論文・知見**:
-  - **作業記憶容量の限界 $`4 \pm 1`$（`[REF-COWAN2001]` / `[REF-DURAN2022]`）**: Cowan (2001) は、人間が未知の情報を処理する際に注意の焦点（Focus of Attention）として同時に保持できるチャンク数が **$`4 \pm 1`$（3〜5個）** であることを実証しました。また Duran et al. (2022) は、情報の構造化によって見せ方の不手際に起因する外在性認知負荷（ECL）を削減できることを整理しています。
+  - **ワーキングメモリ容量の限界 $`4 \pm 1`$（`[REF-COWAN2001]` / `[REF-DURAN2022]`）**: Cowan (2001) は、人間が未知の情報を処理する際に注意の焦点（Focus of Attention）として同時に保持できるチャンク数が **$`4 \pm 1`$（3〜5個）** であることを実証しました。また Duran et al. (2022) は、情報の構造化によって見せ方の不手際に起因する外在性認知負荷（ECL）を削減できることを整理しています。
 - **スキルへの落とし込み**:
   5個以上の項目がフラットに並ぶ箇所は、意味的な共通軸で3〜4個の上位グループに束ねるか、比較軸を揃えた表（テーブル）に変換するルールとしています。
 
-#### ② 注意の分散（Split-Attention）と冗長な反復の解消（`principles.md` §2.2）
+#### ② 注意分割効果（Split-Attention Effect）と冗長な反復の解消（`principles.md` §2.2）
 - **利用している論文・知見**:
   - **注意分割効果（Split-Attention Effect）（`[REF-SWEL2011]`）**: Sweller et al. (2011) の認知負荷理論において、互いに関連する情報（コード例と引数解説、コマンドと出力結果）が空間的に離れていると、視線の往復と記憶の保持に認知資源が奪われることが示されています。
   - **主観的読みやすさと客観的理解度の乖離（`[REF-PAECH2016]`）**: Börstler & Paech (2016) の104名被験者実験では、「主観的な読みやすさ」と「実際の客観的な理解度」には有意な相関がないことが示されました。コードの字面をそのまま自然言語でなぞるだけのトートロジー解説は、「スラスラ読めたつもり」を生むだけで理解には寄与しません。
@@ -185,7 +185,7 @@ flowchart LR
 
 #### ④ 説明的図解と装飾的視覚要素の区別（`principles.md` §2.4）
 - **利用している論文・知見**:
-  - **説明的グラフィックスと装飾的・魅惑的グラフィックスの乖離（`[REF-SUNG2012]` / `[REF-DANIELSON2012]` / `[REF-SCHNEIDER2017]` / `[REF-SANCHEZ2006]`）**: Sung & Mayer (2012) の実験では、装飾的・魅惑的グラフィックは読者の満足度（Liking）を高める一方で内容の想起には寄与せず（または低下傾向を示し）、理解向上（$`d = 0.79`$）をもたらしたのは説明的グラフィックスのみでした。また Sanchez & Wiley (2006) は、無関連な視覚要素による理解阻害が特にワーキングメモリ容量の低い読者・初学者に集中することを示しています。
+  - **説明的グラフィックスと装飾的・魅惑的グラフィックスの乖離（`[REF-SUNG2012]` / `[REF-DANIELSON2012]` / `[REF-SCHNEIDER2017]` / `[REF-SANCHEZ2006]`）**: Sung & Mayer (2012) の実験では、装飾的・魅惑的グラフィックスは読者の満足度（Liking）を高める一方で内容の想起には寄与せず（または低下傾向を示し）、理解向上（$`d = 0.79`$）をもたらしたのは説明的グラフィックスのみでした。また Sanchez & Wiley (2006) は、無関連な視覚要素による理解阻害が特にワーキングメモリ容量の低い読者・初学者に集中することを示しています。
   - **視覚探索の遅延と意味的距離・アクセシビリティ摩擦（`[REF-BORGO]` / `[REF-LUJIE2024]` / `[REF-LI2016]` / `[REF-TIGWELL2020]` / `[REF-OSU2026]` / `[REF-KERDAR2024]`）**: Borgo らは視覚的メタファーが探索を結合探索（Conjunction Search）へ変えて探索速度を落とし得ることを報告しています。さらに Tigwell et al. (2020) およびオレゴン州立大学ガイドライン (2026) では、テキスト内の絵文字がスクリーンリーダーで Unicode 記述子として読み上げられ、箇条書き行頭での反復や意味の乖離が支援技術利用者の障壁となることが示されています。
   - **OSS における視覚的強調実態（`[REF-LU2018]` / `[REF-RONG2023]`）**: GitHub 上の絵文字利用では感情表現以上にコンテンツの強調や一覧識別を目的とした利用が多く見られる一方、無自覚な配置による探索・読み上げ負荷とのトレードオフが存在します。
 - **スキルへの落とし込み**:
@@ -249,13 +249,13 @@ AI時代に氾濫する宣伝文句と一線を画し、エンジニアや読者
 
 ## 5. 任意制御オプション（`emoji-control.md` と `detect_emoji.py`）の設計根拠
 
-[**`PAPER.md` 第5.1節**](./PAPER.md) で触れている通り、RLHF を受けた選好モデルや生成AIには、リスト・太字・絵文字などの特定フォーマットパターンを過剰に差し込みやすい傾向（Format Bias：`[REF-ZHANG2025]`）が見られます。ただし、これは「絵文字を常に悪とみなして禁止する」話ではなく、親しみやすさを重視する文書や書き手が意図して置いた記号まで AI が勝手に削ぎ落としては逆効果になります。
+[**`PAPER.md` 第5.1節**](./PAPER.md) で触れている通り、RLHFを受けた選好モデルや生成AIには、リスト・太字・絵文字などの特定フォーマットパターンを過剰に差し込みやすい傾向（Format Bias：`[REF-ZHANG2025]`）が見られます。ただし、これは「絵文字を常に悪とみなして禁止する」話ではなく、親しみやすさを重視する文書や書き手が意図して置いた記号までAIが勝手に削ぎ落としては逆効果になります。
 
-そこで `doc-refine` では、設計上の原則（[`principles.md`](./skills/doc-refine/references/principles.md)）と AI 側のバイアス対策を分離し、書き手が「絵文字を使わない方針」を選んだ場合や検査を求めた場合のみ発動する 2 段階のオプトイン安全装置として [`references/emoji-control.md`](./skills/doc-refine/references/emoji-control.md) と [`scripts/detect_emoji.py`](./skills/doc-refine/scripts/detect_emoji.py) を配置しています。
+そこで `doc-refine` では、設計上の原則（[`principles.md`](./skills/doc-refine/references/principles.md)）とAI側のバイアス対策を分離し、書き手が「絵文字を使わない方針」を選んだ場合や検査を求めた場合のみ発動する2段階のオプトイン安全装置として [`references/emoji-control.md`](./skills/doc-refine/references/emoji-control.md) と [`scripts/detect_emoji.py`](./skills/doc-refine/scripts/detect_emoji.py) を配置しています。
 
 - **ソフト制約とハード制約の併用**: 生成時の指示で絵文字・ショートコードの出力を抑えつつ、すり抜けを [`scripts/detect_emoji.py`](./skills/doc-refine/scripts/detect_emoji.py) で機械検出して終了コード `0` になるまで修正します。
-- **外部ライブラリ非依存のポータビリティ**: AgentSkills.io 仕様および Anthropic のスキル作成ガイドに合わせ、Python 標準ライブラリのみで動作し、Unicode 公式データに基づく同梱テーブル（`emoji_data.py`）でオフライン動作するように構成しています。
-- **スクリプト単体を過信しない運用**: 検知スクリプトも未収録の最新 Unicode 文字やテキスト顔文字、Markdown マスク判定の境界などで見逃し・誤検知の余地を持つため、終了コード `0` のみに依存せず目視確認と併用する前提としています。
+- **外部ライブラリ非依存のポータビリティ**: AgentSkills.io仕様およびAnthropicのスキル作成ガイドに合わせ、Python標準ライブラリのみで動作し、Unicode公式データに基づく同梱テーブル（`emoji_data.py`）でオフライン動作するように構成しています。
+- **スクリプト単体を過信しない運用**: 検知スクリプトも未収録の最新Unicode文字やテキスト顔文字、Markdownマスク判定の境界などで見逃し・誤検知の余地を持つため、終了コード `0` のみに依存せず目視確認と併用する前提としています。
 
 ---
 
@@ -266,14 +266,14 @@ AI時代に氾濫する宣伝文句と一線を画し、エンジニアや読者
 | スキル内のファイル・セクション | スキル内での役割・操作ルール | 利用している主な理論・概念 | 対応する文献ID（詳細は [`REFERENCES.md`](./REFERENCES.md)） |
 | :--- | :--- | :--- | :--- |
 | **`SKILL.md` Frontmatter & 全体構成** | 3段階の段階的開示、1階層リンク、スコープ定義 | Agent Skills 標準仕様、Progressive Disclosure | AgentSkills.io Spec, Anthropic Best Practices, Antigravity Guide, `[REF-NIELSEN2006]` |
-| **`SKILL.md` Step 1 & `context-adaptation.md`** | 文書種別・プロジェクト性質・読者層に応じた原則の重み付けと「種」の保護（種別ごとの絵文字検閲ルールは置かない） | 専門性の逆転効果、透明性の逆説、控えめな説得（Unobtrusiveness）、構造的一致仮説 | `[REF-KALYUGA2011]`, `[REF-SPRING2020]`, `[REF-NABWIRE2026A]`, `[REF-KNIGHT2010]` |
+| **`SKILL.md` Step 1 & `context-adaptation.md`** | 文書種別・プロジェクト性質・読者層に応じた原則の重み付けと「種」の保護（種別ごとの絵文字検閲ルールは置かない） | 専門性逆転効果、透明性の逆説、控えめな説得（Unobtrusiveness）、構造的一致仮説 | `[REF-KALYUGA2011]`, `[REF-SPRING2020]`, `[REF-NABWIRE2026A]`, `[REF-KNIGHT2010]` |
 | **`SKILL.md` Step 2 (Hard Stop)** | 全文書き換え前の構成案提示・不足情報の確認・合意形成（絵文字抑止の任意選択を含む） | 説明可能な説得（インフォームド・コンセント）、読者・書き手の自律性保護 | `[REF-CEMILOGLU2021]`, `[REF-RAHMAN2024]`, `[REF-BENNER2022]` |
-| **`principles.md` §1.1** | 最初の画面での具体定義（言語・分類・入出力）と Why / When の提示 | First Viewport への視線集中、Why/When 欠落の実態、LSPパターン、5秒テスト、Jargon排除 | `[REF-NIELSEN2018]`, `[REF-PRANA2019]`, `[REF-HELLMAN2023]`, `[REF-SHAPIRO2020]`, `[REF-DRY2020]` |
+| **`principles.md` §1.1** | 最初の画面での具体定義（言語・分類・入出力）と Why / When の提示 | Above the Fold への視線集中、Why/When 欠落の実態、LSPパターン、5秒テスト、Jargon排除 | `[REF-NIELSEN2018]`, `[REF-PRANA2019]`, `[REF-HELLMAN2023]`, `[REF-SHAPIRO2020]`, `[REF-DRY2020]` |
 | **`principles.md` §1.2** | 単一の標準インストール動線と基本構文（Level A）による最小実行例 | 競合CTAによる決定麻痺の回避、初動スニペットにおける基本構文（92%）の優位性 | `[REF-UNBOUNCE2022]`, `[REF-SITTHI2023]`, `[REF-GAUGHAN2025]`, `[REF-FRONCH2023]`, `[REF-DANTAS2023]` |
-| **`principles.md` §1.3** | 視覚的連続性の維持と冒頭直後の孤立した水平線・大余白の回避 | 騙しの床（False Floor / Illusion of Completeness）によるスクロール離脱の防止 | `[REF-MULLIN2023]`, `[REF-NIELSEN2018]` |
-| **`principles.md` §2.1** | フラットな並列項目の3〜5チャンクへのグループ化とテーブル構造化 | 作業記憶容量の限界（$`4 \pm 1`$ チャンク）、構造化による外在性認知負荷（ECL）の削減 | `[REF-COWAN2001]`, `[REF-DURAN2022]` |
+| **`principles.md` §1.3** | 視覚的連続性の維持と冒頭直後の孤立した水平線・大余白の回避 | 偽の床（False Floor / Illusion of Completeness）によるスクロール離脱の防止 | `[REF-MULLIN2023]`, `[REF-NIELSEN2018]` |
+| **`principles.md` §2.1** | フラットな並列項目の3〜5チャンクへのグループ化とテーブル構造化 | ワーキングメモリ容量の限界（$`4 \pm 1`$ チャンク）、構造化による外在性認知負荷（ECL）の削減 | `[REF-COWAN2001]`, `[REF-DURAN2022]` |
 | **`principles.md` §2.2** | コードと解説・出力の空間的近接、字面をなぞるトートロジー説明の排除 | 注意分割効果（Split-Attention Effect）、主観的読みやすさと客観的理解度の乖離 | `[REF-SWEL2011]`, `[REF-PAECH2016]` |
-| **`principles.md` §2.3** | 情報を削除・圧縮しない3層分離（グルーピング × SoC）と目次（TOC） | 情報深度（High Information Depth）への選好と段階的開示、3層選択的透明性、情報採餌理論 | `[REF-ANIK2026]`, `[REF-MURALI2025]`, `[REF-SU2012]`, `[REF-STOREY1997]`, `[REF-HORTON2006]`, `[REF-PROCTER2001]`, `[REF-MATTYAS2020]`, `[REF-ABDUL2024]` |
+| **`principles.md` §2.3** | 情報を削除・圧縮しない3層分離（グルーピング × SoC）と目次（TOC） | 情報深度（High Information Depth）への選好と段階的開示、3層選択的透明性、情報採餌理論 | `[REF-ANIK2026]`, `[REF-MURALI2025]`, `[REF-SU2012]`, `[REF-STOREY1997]`, `[REF-HORTON2006]`, `[REF-PROCTER2001]`, `[REF-MATTYAS2020]`, `[REF-ABDUL2026]` |
 | **`principles.md` §2.4** | 説明的図解と装飾的視覚要素・絵文字の区別、意味の記号依存回避と音声読み上げ・環境差配慮 | 説明的 vs 装飾的・魅惑的グラフィックス、結合探索による探索遅延、低WMC注意阻害、スクリーンリーダー摩擦、OSS利用実態 | `[REF-SUNG2012]`, `[REF-DANIELSON2012]`, `[REF-SCHNEIDER2017]`, `[REF-SANCHEZ2006]`, `[REF-BORGO]`, `[REF-LUJIE2024]`, `[REF-SILVEN2025]`, `[REF-ROY2025]`, `[REF-LIU2026]`, `[REF-LI2016]`, `[REF-HARPER2009]`, `[REF-YADAV2026]`, `[REF-TIGWELL2020]`, `[REF-OSU2026]`, `[REF-KERDAR2024]`, `[REF-LU2018]`, `[REF-RONG2023]` |
 | **`principles.md` §3.1** | 既知から未知への演繹連鎖、一時的造語や回りくどい前置き（迂回）の削除 | 自然演繹における正規化定理（迂回の除去）、間隙架橋、Affinity からの導入、FAB連鎖 | `[REF-VONPLATO2020]`, `[REF-PRAWITZ2018]`, `[REF-SIEG1998]`, `[REF-KANDA2016]`, `[REF-USERPILOT2026]`, `[REF-COPYHACKERS2015]` |
 | **`principles.md` §3.2** | 背理法（必須要件との論理的矛盾）・対偶による適用範囲限定と結果論証（トレードオフ比較）の書き分け | 背理法（Reductio ad Absurdum）、対偶、結果論証（Argument from Consequences）の論理的峻別 | `[REF-JACQUETTE2008]`, `[REF-JANSEN2007]` |

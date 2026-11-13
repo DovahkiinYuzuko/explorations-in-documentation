@@ -90,10 +90,6 @@ In accordance with our disclosure principles, the boundaries and trade-offs of t
   - *Constraint Fact*: Interactive `<details>` accordions require Markdown or HTML rendering support.
   - *Design Rationale*: Adopted to provide information scent while protecting initial working memory within a single document view.
   - *Workaround / Recommended Configuration*: In non-markup environments such as plain text (.txt), RFCs, or inline code comments, apply the underlying structure ("Grouping × SoC") by separating deep reference material into appendices or external pointer files.
-- **Ecosystem Fragmentation of Global Skill Discovery Paths**:
-  - *Constraint Fact*: Global installations via Skills CLI (`npx skills add -g`) do not populate Antigravity's global configuration directory (`~/.gemini/config/skills/`).
-  - *Design Rationale*: Cross-ecosystem standardization of agent skill registries is an emerging domain with differing directory discovery hierarchies.
-  - *Workaround / Recommended Configuration*: For Antigravity environments, utilize `agy plugin install` or place the skill into the workspace root `.agents/skills/`.
 
 ---
 
