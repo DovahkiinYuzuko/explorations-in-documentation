@@ -2,6 +2,10 @@
 *
 !.gitignore
 # ---AUTO-Generated---
+# .gitignores/github.gitignore
+!github/
+!github/workflows/
+!github/workflows/*.yml
 # .gitignores/root.gitignore
 !README.md
 !README.*.md
@@ -21,3 +25,8 @@
 !skills/doc-refine/references/*.md
 !skills/doc-refine/scripts/
 !skills/doc-refine/scripts/*.py
+# .gitignores/tools.gitignore
+!tools/
+!tools/pdf-generator/
+!tools/pdf-generator/build_pdf.py
+!tools/pdf-generator/template.typ
