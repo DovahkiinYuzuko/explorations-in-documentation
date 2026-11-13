@@ -19,3 +19,5 @@
 !skills/doc-refine/SKILL.md
 !skills/doc-refine/references/
 !skills/doc-refine/references/*.md
+!skills/doc-refine/scripts/
+!skills/doc-refine/scripts/*.py

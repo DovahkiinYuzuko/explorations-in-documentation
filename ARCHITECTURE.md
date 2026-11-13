@@ -16,12 +16,14 @@
 - [3. 文脈適応（`context-adaptation.md`）が利用している理論](#3-文脈適応context-adaptationmdが利用している理論)
   - [3.1 専門性の逆転効果（Expertise Reversal Effect）](#31-専門性の逆転効果expertise-reversal-effect)
   - [3.2 透明性の逆説と控えめな説得（Unobtrusiveness）](#32-透明性の逆説と控えめな説得unobtrusiveness)
+  - [3.3 なぜ `context-adaptation.md` に文書種別ごとの絵文字ルールを書かないのか](#33-なぜ-context-adaptationmd-に文書種別ごとの絵文字ルールを書かないのか)
 - [4. 4つの設計原則（`principles.md`）と先行研究の対応関係](#4-4つの設計原則principlesmdと先行研究の対応関係)
   - [4.1 第1の柱：注意と導入（Attention & Onboarding）](#41-第1の柱注意と導入attention--onboarding)
   - [4.2 第2の柱：認知負荷と構造（Cognition & Structure）](#42-第2の柱認知負荷と構造cognition--structure)
   - [4.3 第3の柱：論理と必然性（Logic & Necessity）](#43-第3の柱論理と必然性logic--necessity)
   - [4.4 第4の柱：誠実さと信頼（Credibility & Persuasion）](#44-第4の柱誠実さと信頼credibility--persuasion)
-- [5. 対応関係一覧表（スキル構成要素 × 理論・文献マトリクス）](#5-対応関係一覧表スキル構成要素--理論文献マトリクス)
+- [5. 任意制御オプション（`emoji-control.md` と `detect_emoji.py`）の設計根拠](#5-任意制御オプションemoji-controlmd-と-detect_emojipyの設計根拠)
+- [6. 対応関係一覧表（スキル構成要素 × 理論・文献マトリクス）](#6-対応関係一覧表スキル構成要素--理論文献マトリクス)
 
 ---
 
@@ -49,9 +51,14 @@ AIエージェントのスキル定義に論文名や統計データをそのま
 ```text
 skills/doc-refine/
 ├── SKILL.md                          # 全体ワークフロー（Step 1〜3）と4原則の要点・自己点検リスト
-└── references/
-    ├── principles.md                 # 4つの柱の設計原則（ミニWhy＋具体的な操作）
-    └── context-adaptation.md         # 文書種別・プロジェクト性質ごとの重み付けとBefore/After例
+├── references/
+│   ├── principles.md                 # 4つの柱の設計原則（ミニWhy＋具体的な操作）
+│   ├── context-adaptation.md         # 文書種別・プロジェクト性質ごとの重み付けとBefore/After例
+│   └── emoji-control.md              # 絵文字を含めない方針・検査依頼時のみ参照するオプトイン手順
+└── scripts/
+    ├── detect_emoji.py               # 出力内のUnicode絵文字・ショートコード検知ツール（ブラックボックス実行）
+    ├── emoji_data.py                 # 同梱Unicode絵文字データ（オフライン実行用）
+    └── _generate_emoji_data.py       # メンテナンス時にemoji_data.pyを再生成する補助スクリプト
 ```
 
 ### 2.1 3段階のコンテキスト設計（Progressive Disclosure）
@@ -62,8 +69,9 @@ skills/doc-refine/
    エージェントが起動時に常時読み込むメタデータです。Anthropic および AgentSkills.io のベストプラクティスに従い、`description` は三人称で記述し、ワークフローのネタバレ（内部手順の要約）を避け、「どのような文書に対して、いつ発動するか（`Use when...`）」というトリガー条件とスコープ（README、設計仕様書、APIガイド、技術記事、プレーンテキスト等）を明示しています。
 2. **Stage 2: Activation（[`SKILL.md`](./skills/doc-refine/SKILL.md) 本体）**
    スキルが呼ばれたときに読み込まれる中核プロトコルです。500行以内というコンテキスト予算の目安を守りつつ、3ステップの実行手順と自己点検チェックリストを収めています。
-3. **Stage 3: On-Demand References（`references/` 配下の2ファイル）**
-   `SKILL.md` から **1階層の相対リンク** で直接参照される詳細リファレンスです。参照ファイルがさらに別ファイルを呼ぶような深いネスト（A → B → C）を作ると、AIが途中で読み込みを省略しやすくなるため、フラットな1階層構成に統一しています。また、各リファレンスの冒頭には目次（Contents）を置き、AIが長いファイルの中でも構造を把握しやすいようにしています（`[REF-SU2012]` の情報採餌理論における「情報の手がかり」の応用）。
+3. **Stage 3: On-Demand References & Scripts（`references/` および `scripts/`）**
+   `SKILL.md` から **1階層の相対リンク** で直接参照される詳細リファレンス群と実行スクリプトです。参照ファイルがさらに別ファイルを呼ぶような深いネスト（A → B → C）を作ると、AIが途中で読み込みを省略しやすくなるため、フラットな1階層構成に統一しています。また、各リファレンスの冒頭には目次（Contents）を置き、AIが長いファイルの中でも構造を把握しやすいようにしています（`[REF-SU2012]` の情報採餌理論における「情報の手がかり」の応用）。
+   なお、[`references/emoji-control.md`](./skills/doc-refine/references/emoji-control.md) と [`scripts/detect_emoji.py`](./skills/doc-refine/scripts/detect_emoji.py) は常時ロードする基本ルールではなく、「絵文字を含めない方針を選んだ場合／混入検査を求められた場合のみ参照・実行するオプトイン構成」とし、実行時はスクリプトの中身を読ませずブラックボックスとして走らせることで通常時のトークン消費を抑えています。
 
 ### 2.2 「0→1 / 1→10」や固定テンプレートを作らない理由
 
@@ -110,11 +118,17 @@ flowchart LR
 
 そのため `context-adaptation.md` では、エンタメやジョークアプリに対して「堅苦しい学術的Whyや大袈裟なベンチマーク・重々しい制約セクションを控え、一目で何のおもちゃか伝わる概要と書き手のユーモア（種）を最優先で保護する」というルールを設けています。
 
+### 3.3 なぜ `context-adaptation.md` に文書種別ごとの絵文字ルールを書かないのか
+
+[**`PAPER.md` 第6.1節**](./PAPER.md) で論じている通り、文書種別ごとの禁止令や固定的な配置基準をマニュアル化すると、AIエージェントは対象文書の文脈を見るのではなく「実用CLIだから絵文字をすべて消す」「行頭記号を書き換える」といった画一的な検閲・勝手な削ぎ落としを始めやすくなります。
+
+そのため、`doc-refine` では `context-adaptation.md` に種別ごとの絵文字許可・禁止基準を追加せず、視覚要素や記号が読者の探索速度やアクセシビリティに与え得るトレードオフは普遍的な思考材料として [`principles.md`](./skills/doc-refine/references/principles.md) に置き、「絵文字を使わない」方針を選んだ場合の抑止と検査は独立したオプトイン手順 [`emoji-control.md`](./skills/doc-refine/references/emoji-control.md) へ切り分けています。
+
 ---
 
 ## 4. 4つの設計原則（`principles.md`）と先行研究の対応関係
 
-[`references/principles.md`](./skills/doc-refine/references/principles.md) に収録された4つの柱（計12項目の設計原則）が、それぞれどの論文のどういう知見を利用しているのかを順番に見ていきます。
+[`references/principles.md`](./skills/doc-refine/references/principles.md) に収録された4つの柱（計13項目の設計原則）が、それぞれどの論文のどういう知見を利用しているのかを順番に見ていきます。
 
 ---
 
@@ -169,6 +183,14 @@ flowchart LR
 - **スキルへの落とし込み**:
   「要約のために詳細仕様を削除・圧縮すること」を禁じ、情報を3層（最短動線 / 主要概念と境界 / 網羅的リファレンス）に分離したうえで、媒体に応じて `<details>` 折りたたみ・末尾 `Appendix`・別ファイルリンクを使い分け、H2見出しが4個以上並ぶ文書には目次（TOC）を配置するルールとしています。
 
+#### ④ 説明的図解と装飾的視覚要素の区別（`principles.md` §2.4）
+- **利用している論文・知見**:
+  - **説明的グラフィックスと装飾的・魅惑的グラフィックスの乖離（`[REF-SUNG2012]` / `[REF-DANIELSON2012]` / `[REF-SCHNEIDER2017]` / `[REF-SANCHEZ2006]`）**: Sung & Mayer (2012) の実験では、装飾的・魅惑的グラフィックは読者の満足度（Liking）を高める一方で内容の想起には寄与せず（または低下傾向を示し）、理解向上（$`d = 0.79`$）をもたらしたのは説明的グラフィックスのみでした。また Sanchez & Wiley (2006) は、無関連な視覚要素による理解阻害が特にワーキングメモリ容量の低い読者・初学者に集中することを示しています。
+  - **視覚探索の遅延と意味的距離・アクセシビリティ摩擦（`[REF-BORGO]` / `[REF-LUJIE2024]` / `[REF-LI2016]` / `[REF-TIGWELL2020]` / `[REF-OSU2026]` / `[REF-KERDAR2024]`）**: Borgo らは視覚的メタファーが探索を結合探索（Conjunction Search）へ変えて探索速度を落とし得ることを報告しています。さらに Tigwell et al. (2020) およびオレゴン州立大学ガイドライン (2026) では、テキスト内の絵文字がスクリーンリーダーで Unicode 記述子として読み上げられ、箇条書き行頭での反復や意味の乖離が支援技術利用者の障壁となることが示されています。
+  - **OSS における視覚的強調実態（`[REF-LU2018]` / `[REF-RONG2023]`）**: GitHub 上の絵文字利用では感情表現以上にコンテンツの強調や一覧識別を目的とした利用が多く見られる一方、無自覚な配置による探索・読み上げ負荷とのトレードオフが存在します。
+- **スキルへの落とし込み**:
+  絵文字や図解を一律に禁止するのではなく、「構造や関係を示す図解は空間近接させて活用し、装飾記号・絵文字に意味を委ねず周囲のテキストで読めるようにする」「同じ記号の行頭連打や文字環境での表示崩れに留意する」という思考の引き出しとして実装しています。
+
 ---
 
 ### 4.3 第3の柱：論理と必然性（Logic & Necessity）
@@ -203,10 +225,11 @@ AI時代に氾濫する宣伝文句と一線を画し、エンジニアや読者
 
 #### ① 無根拠な誇張の排除と比較基準（Baseline）の明示（`principles.md` §4.1）
 - **利用している論文・知見**:
-  - **OSSのレモン市場化とコスト高シグナル（`[REF-PARAM2026]` / `[REF-ASA2026]` / `[REF-TSOY2012]`）**: Paramitha et al. (2026) は、生成AI等の普及によって自称の美辞麗句や表面的な指標（Cheap Signals）が氾濫し、ソフトウェアエコシステムが「情報の非対称性によって粗悪品と優良品の区別がつかないレモン市場」に陥っていることを指摘しました。この環境で信頼を生むのは、Asa & Nautwima (2026) が示す通り、模倣や捏造にコストがかかる **コスト高シグナル（Costly Signals：検証可能な事実と測定条件の開示）** です。
+  - **OSSのレモン市場化とコスト高シグナル（`[REF-PARAM2026]` / `[REF-ASA2026]` / `[REF-TSOY2012]` / `[REF-ZHANG2025]`）**: Paramitha et al. (2026) は、生成AI等の普及によって自称の美辞麗句や表面的な指標（Cheap Signals）が氾濫し、ソフトウェアエコシステムが「情報の非対称性によって粗悪品と優良品の区別がつかないレモン市場」に陥っていることを指摘しました。さらに Zhang et al. (2025) は、RLHF 選好モデルがリスト・太字・絵文字等の特定フォーマットパターンへ強いバイアスを持ち、内容より装飾を優先し得ることを示しています。この環境で信頼を生むのは、Asa & Nautwima (2026) が示す通り、模倣や捏造にコストがかかる **コスト高シグナル（Costly Signals：検証可能な事実と測定条件の開示）** です。
+  - **視覚記号による有能さ評価の文脈依存性と解釈の揺れ（`[REF-GLIKSON2018]` / `[REF-LI2019]` / `[REF-VAREBERG2023]` / `[REF-VRIELINK2025]` / `[REF-HILLBERG2018]` / `[REF-MILLER2017]`）**: Glikson et al. (2018) や Li et al. (2019) は、タスク志向・フォーマルな設定では絵文字が有能さ知覚を低下させ得る一方、Vrielink (2025) の職場チャット追試ではチャネルや関係性によって影響が異なることを報告しています。また Hillberg et al. (2018) と Miller et al. (2017) は、OS 間の描画差異とテキスト文脈下でも消えない解釈のばらつきを実証しています。
   - **Assurance Case における主張・証拠・但し書きの結合（`[REF-RUSHBY2009]` / `[REF-SALESCOPY2026]`）**: Rushby (2009) はシステム保証において、主張（Claims）には必ず論証（Arguments）と証拠（Evidence）、そしてその主張が成立するための前提条件・但し書き（Caveats）を結びつける枠組みを示しました（※筆者自身の思考フレームワークである [`NaaM`](./REFERENCES.md#3-付記筆者自身の関連ノート) における「数字の検証・時代と前提条件の確認」とも直結しています）。
 - **スキルへの落とし込み**:
-  実測データがある場合は「比較対象（Baseline）＋測定環境（OS/CPU/データ量）＋環境により変動する旨の但し書き」を添え、実測データがない場合は「超高速」「軽量」といった形容詞を外して機能的事実（アルゴリズム、依存数、入出力仕様）へ置き換えるルールとしています。
+  実測データがある場合は「比較対象（Baseline）＋測定環境（OS/CPU/データ量）＋環境により変動する旨の但し書き」を添え、実測データがない場合は「超高速」「軽量」といった形容詞や定型の視覚装飾を外して機能的事実（アルゴリズム、依存数、入出力仕様）へ置き換え、境界条件などの重要な意味は非言語記号に依存せず言葉で明記するルールとしています。
 
 #### ② 反駁的両面提示（Refutational Two-Sided Disclosure）（`principles.md` §4.2）
 - **利用している論文・知見**:
@@ -223,24 +246,38 @@ AI時代に氾濫する宣伝文句と一線を画し、エンジニアや読者
 
 ---
 
-## 5. 対応関係一覧表（スキル構成要素 × 理論・文献マトリクス）
+## 5. 任意制御オプション（`emoji-control.md` と `detect_emoji.py`）の設計根拠
+
+[**`PAPER.md` 第5.1節**](./PAPER.md) で触れている通り、RLHF を受けた選好モデルや生成AIには、リスト・太字・絵文字などの特定フォーマットパターンを過剰に差し込みやすい傾向（Format Bias：`[REF-ZHANG2025]`）が見られます。ただし、これは「絵文字を常に悪とみなして禁止する」話ではなく、親しみやすさを重視する文書や書き手が意図して置いた記号まで AI が勝手に削ぎ落としては逆効果になります。
+
+そこで `doc-refine` では、設計上の原則（[`principles.md`](./skills/doc-refine/references/principles.md)）と AI 側のバイアス対策を分離し、書き手が「絵文字を使わない方針」を選んだ場合や検査を求めた場合のみ発動する 2 段階のオプトイン安全装置として [`references/emoji-control.md`](./skills/doc-refine/references/emoji-control.md) と [`scripts/detect_emoji.py`](./skills/doc-refine/scripts/detect_emoji.py) を配置しています。
+
+- **ソフト制約とハード制約の併用**: 生成時の指示で絵文字・ショートコードの出力を抑えつつ、すり抜けを [`scripts/detect_emoji.py`](./skills/doc-refine/scripts/detect_emoji.py) で機械検出して終了コード `0` になるまで修正します。
+- **外部ライブラリ非依存のポータビリティ**: AgentSkills.io 仕様および Anthropic のスキル作成ガイドに合わせ、Python 標準ライブラリのみで動作し、Unicode 公式データに基づく同梱テーブル（`emoji_data.py`）でオフライン動作するように構成しています。
+- **スクリプト単体を過信しない運用**: 検知スクリプトも未収録の最新 Unicode 文字やテキスト顔文字、Markdown マスク判定の境界などで見逃し・誤検知の余地を持つため、終了コード `0` のみに依存せず目視確認と併用する前提としています。
+
+---
+
+## 6. 対応関係一覧表（スキル構成要素 × 理論・文献マトリクス）
 
 最後に、`skills/doc-refine/` の各ファイル・各セクションと、[`PAPER.md`](./PAPER.md) および [`REFERENCES.md`](./REFERENCES.md) の文献IDとの対応関係を一覧表にまとめます。
 
 | スキル内のファイル・セクション | スキル内での役割・操作ルール | 利用している主な理論・概念 | 対応する文献ID（詳細は [`REFERENCES.md`](./REFERENCES.md)） |
 | :--- | :--- | :--- | :--- |
 | **`SKILL.md` Frontmatter & 全体構成** | 3段階の段階的開示、1階層リンク、スコープ定義 | Agent Skills 標準仕様、Progressive Disclosure | AgentSkills.io Spec, Anthropic Best Practices, Antigravity Guide, `[REF-NIELSEN2006]` |
-| **`SKILL.md` Step 1 & `context-adaptation.md`** | 文書種別・プロジェクト性質・読者層に応じた原則の重み付けと「種」の保護 | 専門性の逆転効果、透明性の逆説、控えめな説得（Unobtrusiveness）、構造的一致仮説 | `[REF-KALYUGA2011]`, `[REF-SPRING2020]`, `[REF-NABWIRE2026A]`, `[REF-KNIGHT2010]` |
-| **`SKILL.md` Step 2 (Hard Stop)** | 全文書き換え前の構成案提示・不足情報の確認・合意形成 | 説明可能な説得（インフォームド・コンセント）、読者・書き手の自律性保護 | `[REF-CEMILOGLU2021]`, `[REF-RAHMAN2024]`, `[REF-BENNER2022]` |
+| **`SKILL.md` Step 1 & `context-adaptation.md`** | 文書種別・プロジェクト性質・読者層に応じた原則の重み付けと「種」の保護（種別ごとの絵文字検閲ルールは置かない） | 専門性の逆転効果、透明性の逆説、控えめな説得（Unobtrusiveness）、構造的一致仮説 | `[REF-KALYUGA2011]`, `[REF-SPRING2020]`, `[REF-NABWIRE2026A]`, `[REF-KNIGHT2010]` |
+| **`SKILL.md` Step 2 (Hard Stop)** | 全文書き換え前の構成案提示・不足情報の確認・合意形成（絵文字抑止の任意選択を含む） | 説明可能な説得（インフォームド・コンセント）、読者・書き手の自律性保護 | `[REF-CEMILOGLU2021]`, `[REF-RAHMAN2024]`, `[REF-BENNER2022]` |
 | **`principles.md` §1.1** | 最初の画面での具体定義（言語・分類・入出力）と Why / When の提示 | First Viewport への視線集中、Why/When 欠落の実態、LSPパターン、5秒テスト、Jargon排除 | `[REF-NIELSEN2018]`, `[REF-PRANA2019]`, `[REF-HELLMAN2023]`, `[REF-SHAPIRO2020]`, `[REF-DRY2020]` |
 | **`principles.md` §1.2** | 単一の標準インストール動線と基本構文（Level A）による最小実行例 | 競合CTAによる決定麻痺の回避、初動スニペットにおける基本構文（92%）の優位性 | `[REF-UNBOUNCE2022]`, `[REF-SITTHI2023]`, `[REF-GAUGHAN2025]`, `[REF-FRONCH2023]`, `[REF-DANTAS2023]` |
 | **`principles.md` §1.3** | 視覚的連続性の維持と冒頭直後の孤立した水平線・大余白の回避 | 騙しの床（False Floor / Illusion of Completeness）によるスクロール離脱の防止 | `[REF-MULLIN2023]`, `[REF-NIELSEN2018]` |
 | **`principles.md` §2.1** | フラットな並列項目の3〜5チャンクへのグループ化とテーブル構造化 | 作業記憶容量の限界（$`4 \pm 1`$ チャンク）、構造化による外在性認知負荷（ECL）の削減 | `[REF-COWAN2001]`, `[REF-DURAN2022]` |
 | **`principles.md` §2.2** | コードと解説・出力の空間的近接、字面をなぞるトートロジー説明の排除 | 注意分割効果（Split-Attention Effect）、主観的読みやすさと客観的理解度の乖離 | `[REF-SWEL2011]`, `[REF-PAECH2016]` |
 | **`principles.md` §2.3** | 情報を削除・圧縮しない3層分離（グルーピング × SoC）と目次（TOC） | 情報深度（High Information Depth）への選好と段階的開示、3層選択的透明性、情報採餌理論 | `[REF-ANIK2026]`, `[REF-MURALI2025]`, `[REF-SU2012]`, `[REF-STOREY1997]`, `[REF-HORTON2006]`, `[REF-PROCTER2001]`, `[REF-MATTYAS2020]`, `[REF-ABDUL2024]` |
+| **`principles.md` §2.4** | 説明的図解と装飾的視覚要素・絵文字の区別、意味の記号依存回避と音声読み上げ・環境差配慮 | 説明的 vs 装飾的・魅惑的グラフィックス、結合探索による探索遅延、低WMC注意阻害、スクリーンリーダー摩擦、OSS利用実態 | `[REF-SUNG2012]`, `[REF-DANIELSON2012]`, `[REF-SCHNEIDER2017]`, `[REF-SANCHEZ2006]`, `[REF-BORGO]`, `[REF-LUJIE2024]`, `[REF-SILVEN2025]`, `[REF-ROY2025]`, `[REF-LIU2026]`, `[REF-LI2016]`, `[REF-HARPER2009]`, `[REF-YADAV2026]`, `[REF-TIGWELL2020]`, `[REF-OSU2026]`, `[REF-KERDAR2024]`, `[REF-LU2018]`, `[REF-RONG2023]` |
 | **`principles.md` §3.1** | 既知から未知への演繹連鎖、一時的造語や回りくどい前置き（迂回）の削除 | 自然演繹における正規化定理（迂回の除去）、間隙架橋、Affinity からの導入、FAB連鎖 | `[REF-VONPLATO2020]`, `[REF-PRAWITZ2018]`, `[REF-SIEG1998]`, `[REF-KANDA2016]`, `[REF-USERPILOT2026]`, `[REF-COPYHACKERS2015]` |
 | **`principles.md` §3.2** | 背理法（必須要件との論理的矛盾）と結果論証（トレードオフ比較）の書き分け | 背理法（Reductio ad Absurdum）と結果論証（Argument from Consequences）の論理的峻別 | `[REF-JACQUETTE2008]`, `[REF-JANSEN2007]` |
 | **`principles.md` §3.3** | 「〜すべき」の排除と仕様事実（is）・条件付き因果（If-Then）への転換 | ヒュームのギロチン（事実と当為の峻別）、強迫的ナッジの排除と自律性の尊重 | `[REF-HUME1739]`, `[REF-RAHMAN2025]`, `[REF-RAHMAN2024]` |
-| **`principles.md` §4.1** | 無根拠な誇張の排除、比較対象（Baseline）・測定環境・但し書きの明示 | レモン市場化とコスト高シグナル、Assurance Case の Caveats（但し書き）、NaaM フレームワーク | `[REF-PARAM2026]`, `[REF-ASA2026]`, `[REF-TSOY2012]`, `[REF-RUSHBY2009]`, `[REF-SALESCOPY2026]`, `NaaM` |
+| **`principles.md` §4.1** | 無根拠な誇張や定型視覚装飾の排除、比較対象・測定環境・但し書きの明示、非言語記号への仕様依存回避 | レモン市場化とコスト高シグナル、Assurance Case の Caveats、RLHF フォーマットバイアス、有能さ評価の文脈依存性と解釈揺れ、NaaM フレームワーク | `[REF-PARAM2026]`, `[REF-ASA2026]`, `[REF-TSOY2012]`, `[REF-RUSHBY2009]`, `[REF-SALESCOPY2026]`, `[REF-ZHANG2025]`, `[REF-GLIKSON2018]`, `[REF-LI2019]`, `[REF-VAREBERG2023]`, `[REF-VRIELINK2025]`, `[REF-HILLBERG2018]`, `[REF-MILLER2017]`, `NaaM` |
 | **`principles.md` §4.2** | 制限事項における「事実＋設計上のトレードオフ理由＋回避策」の3点結合 | 反駁的両面提示のメタ分析（反論なし両面提示の逆効果と反駁の有効性）、Toulmin の Rebuttal | `[REF-ALLEN1991]`, `[REF-OKEFE1999]`, `[REF-KAMINS1989]`, `[REF-RUBIN2023]`, `[REF-REED2005]`, `[REF-AMGOUD2009]`, `[REF-NABWIRE2026B]` |
 | **`principles.md` §4.3** | 実装コードとの整合性照合と、手元で追試できるテスト・検証コマンドの提示 | 計算科学における再現性（Reproducibility）、形式検証における証跡検証（Witness Validation） | `[REF-PENG2011]`, `[REF-BAIER2024]`, `[REF-FOUNDJEM]` |
+| **`emoji-control.md` & `detect_emoji.py`** | オプトイン合意・検査依頼時のみ発動する生成抑制、ブラックボックス検証ループ、目視確認との併用 | RLHF フォーマットバイアスへの実務的ガード（オプトイン安全装置）、Agent Skills スクリプト実行規約 | `[REF-ZHANG2025]`, AgentSkills.io Spec, Anthropic Best Practices |
