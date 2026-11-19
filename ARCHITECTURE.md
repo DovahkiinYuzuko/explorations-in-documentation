@@ -99,7 +99,7 @@ flowchart LR
     S3["Stage 3: 自然言語化・形式実装<br>(種と構造・呼吸を載せて執筆)"]
     S4A["Stage 4-A: Part I 独立監査<br>(structure-and-rhythm.md のみ)"]
     S4B["Stage 4-B: Part II 独立監査<br>(logic-and-credibility.md のみ)"]
-    S4M["競合統合・最終仕上げ<br>(3〜5行の監査サマリー併記)"]
+    S4M["競合統合・ステージング書き出し<br>＆最終適用承認 (Hard Stop)<br>(監査サマリー併記後に実ファイル反映)"]
 
     S1 --> S2 --> S3
     S3 --> S4A --> S4M
@@ -108,10 +108,11 @@ flowchart LR
 
 - **Stage 1（事実・実装・制約の収集）**: コード整合性、値域・境界挙動、実出力例、周辺スクリプト制約をファクトリストとして分離収集します（Full かつ独立コンテキスト利用可能時は委譲）。
 - **Stage 2（裸の最小構成ブループリント ＋ Hard Stop）**: 形容詞や装飾を一切排した「裸の事実・命題・因果鎖・値域境界・動的I/O例・制約3点セット・形式割り当て」の羅列を作り、ユーザーへ提示して承認を待ちます（`[REF-CEMILOGLU2021]` / `[REF-RAHMAN2024]` / `[REF-BENNER2022]` の説明可能な説得・自律性保護）。文章化前に骨格を丸裸にすることで、論理や事実の抜けをユーザーと共有しやすくなります。
-- **Stage 3（自然言語化・形式実装）**: 承認済みブループリントとファクトリストを土台に、書き手の「種（Seed）」の温度感・構造化形式・黙読の呼吸を載せてドラフトを執筆します。
-- **Stage 4（2系統の次元別独立監査・競合統合・監査サマリー）**:
-  - **監査パスA（Part I）** は `structure-and-rhythm.md` のみ、**監査パスB（Part II）** は `logic-and-credibility.md` とファクトリストのみを参照します。Full かつ独立コンテキストが利用できる環境では2系統を別コンテキストへ委譲し、非対応環境や Lite（部分追記・短いメモ・PR説明等）では同一エージェントが観点を明示的に切り替えて順次実行する汎用フォールバックを備えています。
-  - パスAとパスBの指摘が競合した場合は、「事実・実装整合・境界条件は削らず構造と呼吸で吸収する」「書き手の種と文脈を保護する」「スキル内部用語や論文名を露出させない」という競合統合ルールでメイン側が統合し、反映点と見送ったトレードオフを3〜5行の監査サマリーとして添えます。
+- **Stage 3（自然言語化・形式実装）**: 承認済みブループリントとファクトリストを土台に、書き手の「種（Seed）」の温度感・構造化形式・黙読の呼吸を載せてドラフトを執筆します（この時点では対象の本番ファイルを直接上書きしません）。
+- **Stage 4（2系統の次元別独立監査・ステージング書き出し・最終適用承認）**:
+  - **監査パスA（Part I）** は `structure-and-rhythm.md` のみ（および Stage 2 の文脈・種メモ）、**監査パスB（Part II）** は `logic-and-credibility.md` のみ（およびファクトリストと Stage 2 の文脈・種メモ）を参照します。Full かつ独立コンテキストが利用できる環境では2系統を別コンテキストへ委譲し、非対応環境や Lite（部分追記・短いメモ・PR説明等）では同一エージェントが観点を明示的に切り替えて順次実行する汎用フォールバックを備えています。
+  - パスAとパスBの指摘が競合した場合は、「事実・実装整合・境界条件は削らず構造と呼吸で吸収する」「書き手の種と文脈を保護する」「スキル内部用語や論文名を露出させない」という競合統合ルールでメイン側が統合します。
+  - 統合後の最終候補は、本番ファイルを直接上書きせずまず **確認用のステージング物理ファイル**（アーティファクト領域や一時ファイル `<対象名>.draft.<拡張子>`）へ書き出し（絵文字抑制オプトイン時はそのファイルに `detect_emoji.py` を実行）、反映点と見送ったトレードオフを3〜5行の監査サマリーとして添えて「この形で本番の実ファイルに適用してよいか」の最終承認（Hard Stop）を取ってから反映します。
 
 ---
 
@@ -226,7 +227,7 @@ Springer & Whittaker (2020)（`[REF-SPRING2020]`）の透明性の逆説と、Na
 | :--- | :--- | :--- | :--- |
 | **`SKILL.md` Frontmatter & 全体構成** | 3段階の段階的開示、1階層リンク、Full / Lite スケーリング、1監査パス＝1リファレンス対応 | Agent Skills 標準仕様、Progressive Disclosure、情報採餌の手がかり | AgentSkills.io Spec, Anthropic Best Practices, Antigravity Guide, `[REF-NIELSEN2006]`, `[REF-SU2012]` |
 | **`SKILL.md` Stage 1 & Stage 2** | 事実・実装・制約調査の分離（Full時独立委譲）、文脈・種判定、ゼロベース診断、形容ゼロの「裸の最小構成ブループリント」提示と Hard Stop | 認知資源分離、アンカリング抑制、説明可能な説得、自律性保護（Authorial Agency）、構造的一致仮説 | `[REF-CEMILOGLU2021]`, `[REF-RAHMAN2024]`, `[REF-BENNER2022]`, `[REF-KNIGHT2010]`, `[REF-MYNAMPATY2026]` |
-| **`SKILL.md` Stage 3 & Stage 4** | 自然言語化・形式実装、Part I / Part II の2系統独立監査（非対応環境・Lite時は順次パス）、競合統合ルール、3〜5行の監査サマリー | 次元別・項目別評価の優位（LintMe：25.4件 vs 一括7.25件）、確証バイアス分離、非圧縮原則 | `[REF-MYNAMPATY2026]`, `[REF-ANIK2026]`, `[REF-CEMILOGLU2021]` |
+| **`SKILL.md` Stage 3 & Stage 4** | 自然言語化・形式実装、Part I / Part II の2系統独立監査（非対応環境・Lite時は順次パス）、競合統合ルール、ステージング物理ファイル書き出し＋3〜5行の監査サマリーと実ファイル適用の最終承認（Hard Stop） | 次元別・項目別評価の優位（LintMe：25.4件 vs 一括7.25件）、確証バイアス分離、非圧縮原則、自律性保護（Authorial Agency） | `[REF-MYNAMPATY2026]`, `[REF-ANIK2026]`, `[REF-CEMILOGLU2021]`, `[REF-RAHMAN2024]` |
 | **`context-adaptation.md`** | 文書種別・読者層ごとの重み付け、「種」保護、9種の Before / After 具体例 | 専門性逆転効果、読者層・熟練度による評価乖離、透明性の逆説、控えめな説得（Unobtrusiveness） | `[REF-KALYUGA2011]`, `[REF-TAKAHASHI1995]`, `[REF-MYNAMPATY2026]`, `[REF-SPRING2020]`, `[REF-NABWIRE2026A]` |
 | **`structure-and-rhythm.md` §1.1–1.3** | 最初の画面の具体定義・Why/When・読解2段階、単一最短動線・Level A構文、偽の床回避 | Above the Fold 視線集中、動機づけ vs 精緻化、Why/When欠落、LSP、決定麻痺、Level A 92%、False Floor | `[REF-NIELSEN2018]`, `[REF-SHIMADA2008]`, `[REF-PRANA2019]`, `[REF-HELLMAN2023]`, `[REF-DRY2020]`, `[REF-SHAPIRO2020]`, `[REF-UNBOUNCE2022]`, `[REF-SITTHI2023]`, `[REF-GAUGHAN2025]`, `[REF-FRONCH2023]`, `[REF-DANTAS2023]`, `[REF-MULLIN2023]` |
 | **`structure-and-rhythm.md` §2.1–2.3** | 3〜5チャンク・短→長配列、空間近接・非トートロジー、非圧縮3層段階的開示・目次 | ワーキングメモリ $`4 \pm 1`$、段階的配列、注意分割効果、主観的可読性乖離、情報深度と段階的開示、情報採餌 | `[REF-COWAN2001]`, `[REF-DURAN2022]`, `[REF-LIU2023]`, `[REF-SWEL2011]`, `[REF-PAECH2016]`, `[REF-ANIK2026]`, `[REF-MURALI2025]`, `[REF-SPRING2020]`, `[REF-ABDUL2026]`, `[REF-SU2012]`, `[REF-SU2020]`, `[REF-NAGHSHZAN2023]`, `[REF-STOREY1997]`, `[REF-HORTON2006]`, `[REF-PROCTER2001]`, `[REF-MATTYAS2020]` |

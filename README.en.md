@@ -77,7 +77,7 @@ Once installed, invoke it from a compatible agent chat by specifying your target
 1. **Stage 1 (Fact Collection)**: Extracts a fact list—commands, paths, value ranges, boundary behaviors, and constraints—from implementation code, configuration, and tests.
 2. **Stage 2 (Bare Minimal Blueprint & Agreement)**: Presents a stripped-down structural and logical blueprint without stylistic embellishment, confirming the author's core intent and any missing facts before drafting.
 3. **Stage 3 (Prose Drafting & Format Implementation)**: Writes the full text without compressing agreed facts or boundaries, applying structured formats and natural reading rhythm.
-4. **Stage 4 (Dual-Track Independent Audit & Integration)**: Splits review into Part I (perception, structure, rhythm) and Part II (logic, credibility, boundaries, implementation alignment) to counter confirmation bias, then reconciles conflicts into the final output.
+4. **Stage 4 (Dual-Track Independent Audit, Staging & Application)**: Splits review into Part I (perception, structure, rhythm) and Part II (logic, credibility, boundaries, implementation alignment) to counter confirmation bias, reconciles conflicts into a staged physical file with a brief audit summary, and applies changes to the target file after user confirmation.
 
 ## Limitations, Boundaries & Trade-offs
 

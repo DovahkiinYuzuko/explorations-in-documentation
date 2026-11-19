@@ -73,34 +73,42 @@ description: Writes, expands, restructures, and refines technical documentation�
 
 ### Stage 3: 自然言語化と形式実装（ドラフト執筆）
 
-ユーザーの承認と回答を受けたら、確定した最小構成ブループリントとファクトリストを土台に、[references/structure-and-rhythm.md](references/structure-and-rhythm.md) と [references/context-adaptation.md](references/context-adaptation.md) を参照してドキュメント本文を書き起こします。
+ユーザーの承認と回答を受けたら、確定した最小構成ブループリントとファクトリストを土台に、[references/structure-and-rhythm.md](references/structure-and-rhythm.md) と [references/context-adaptation.md](references/context-adaptation.md)（および Stage 2 で参照した [references/logic-and-credibility.md](references/logic-and-credibility.md)、絵文字抑制オプトイン時は [references/emoji-control.md](references/emoji-control.md)）に沿ってドキュメント本文を書き起こします。
 
 - Stage 2 で確定した事実・論理・境界・有益な詳細を削らずに配置します（情報の非圧縮）。
 - ここで初めて、書き手の「種（Seed）」の温度感を乗せ、構造化形式（箇条書き・文見出し・表・説明的図解）の使い分け、コードと出力・解説の空間的近接、黙読の一呼吸と文長の緩急を整えます。
+- **注意**: この時点ではまだ対象となる本番の実ファイル（既存の `README.md` 等）を直接上書きせず、Stage 4 の監査とステージング承認を経てから反映します。
 
-### Stage 4: 次元別の独立監査・競合統合・仕上げ
+### Stage 4: 次元別の独立監査・ステージング書き出し・最終適用承認
 
-執筆直後の同一コンテキストには確証バイアスが働きやすく、全ルールを一括チェックすると見落としが増えます。そのため、観点を **Part I** と **Part II** の2系統に分離して監査します。
+執筆直後の同一コンテキストには確証バイアスが働きやすく、全ルールを一括チェックすると見落としが増えます。そのため、観点を **Part I** と **Part II** の2系統に分離して監査し、物理ファイルへのステージング書き出しと承認を経てから実ファイルを更新します。
 
 1. **2系統の次元別監査**:
    - **監査パスA（Part I：知覚・空間構造・リズム）**:
-     - [references/structure-and-rhythm.md](references/structure-and-rhythm.md) **のみ** を参照し、対象ドラフトと文脈・種メモに対して点検します。
+     - [references/structure-and-rhythm.md](references/structure-and-rhythm.md) **のみ** を参照し、対象ドラフトおよび Stage 2 の文脈・種メモ（あえて控える要素を含む）に対して点検します。
      - 観点：初動1画面・Why/When・偽の床／3〜5チャンク・空間近接・段階的開示・形式選択（箇条書き平坦化／文見出し／表／図解）／黙読の一呼吸・係り受けと短文化の罠（語彙密度過多）・並列構文と散文ゆらぎ・5種のスタイル欠陥・問いかけ頻度・装飾記号の負荷。
    - **監査パスB（Part II：論理・誠実さ・境界・実装整合）**:
-     - [references/logic-and-credibility.md](references/logic-and-credibility.md) **のみ** と Stage 1 のファクトリストを参照し、対象ドラフトに対して点検します。
+     - [references/logic-and-credibility.md](references/logic-and-credibility.md) **のみ** と Stage 1 のファクトリスト、および Stage 2 の文脈・種メモ（あえて控える要素を含む）を参照し、対象ドラフトに対して点検します。
      - 観点：既知から未知への因果鎖・迂回除去・未定義語彙・構造的一致／背理法・対偶とトレードオフの峻別／規範語（`〜すべき` / `should`）の排除／無根拠な誇張・比較基準・フォーマット装飾バイアス／反論あり両面提示／曖昧制約（`invalid` 等）の排除と具体的な値域境界・動的I/O具体例／ファクトリストとの実装整合・追試コマンド／スキル内部用語や論文名の露出有無。
    - **実行方式（ツール非依存）**:
      - **Full かつ独立コンテキスト（サブエージェント等）が利用できる環境**: 監査パスAと監査パスBをそれぞれ別の独立コンテキストへ委譲し（可能なら並列実行）、「問題箇所・理由・修正案」の指摘リストを受け取ります。
      - **非対応環境または Lite**: メインエージェントがまず「パスAのみ」の観点でドラフトを監査し、次に「パスBのみ」の観点へ明示的に切り替えて順次点検します。
-2. **任意の絵文字制御（該当時のみ）**:
-   - Stage 2 で「絵文字を含めない方針」に合意した場合、またはユーザーから混入検査を求められた場合に限り、[references/emoji-control.md](references/emoji-control.md) を参照して抑制・スクリプト検証・目視確認を行います。
-3. **競合統合ルールと最終仕上げ**:
+2. **競合統合ルールとドラフト仕上げ**:
    - パスA（読みやすさ・リズム）とパスB（論理・境界・厳密さ）の指摘が競合した場合は、以下の優先順位でメインエージェントが統合・修正します：
      1. **事実・実装整合・境界条件は削らない**: 厳密さを増す追記で文が重くなる場合は、情報を削除せず「文の分割・表化・第3層への段階的開示」で呼吸と構造を回復する。
      2. **「種（Seed）」と文脈を保護する**: 書き手のユーモア・語り口・対象ジャンルを壊す画一的な修正指摘は採用しない。
-     3. **自然な語り口を保つ**: スキル内部の用語（「裸の最小構成」「反論あり両面提示」「ヒュームのギロチン」「Level A構文」「5大スメル」等）や論文名を出力ドキュメントの地の文へ露出させない。
-4. **最終出力と監査サマリー**:
-   - 最終版ドキュメントを出力（またはファイル更新）したうえで、**「監査で反映した主な改善点」と「種や文脈を優先してあえて見送った指摘（トレードオフ）」を3〜5行の短いサマリー**として添えます。
+     3. **自然な語り口を保つ**: スキル内部の用語（「裸の最小構成」「反論あり両面提示」「ヒュームのギロチン」「非トートロジー」「統語プライミング」「動的I/O」「Level A構文」「5大スメル」等）や論文名を出力ドキュメントの地の文へ露出させない。
+3. **ステージング（物理ファイル書き出し）と任意の絵文字検査**:
+   - 対象の本番ファイル（既存の `README.md` 等）をいきなり上書きせず、まず **確認用のステージング物理ファイル** へ統合後の最終候補を書き出します：
+     - 実行環境にアーティファクト領域や専用の一時ディレクトリがある場合はそこへ物理ファイル（例：`<対象ファイル名>.draft.md` 等）として書き出し、ない場合は作業ディレクトリ内の一時ファイル（例：`<対象ファイル名>.draft.<拡張子>`）として書き出します。
+   - Stage 2 で「絵文字を含めない方針」に合意した場合、またはユーザーから混入検査を求められた場合は、[references/emoji-control.md](references/emoji-control.md) を参照し、このステージング物理ファイルに対して `scripts/detect_emoji.py` による機械検査と目視確認を行います。
+4. **実ファイル適用の承認（Hard Stop）と反映**:
+   - ユーザーに以下の2点を提示します：
+     1. **書き出したステージング物理ファイルのパス（またはリンク）**
+     2. **監査サマリー（3〜5行）**: 「監査で反映した主な改善点」と「種や文脈を優先してあえて見送った指摘（トレードオフ）」
+   - そのうえで、**「この形で本番の実ファイル（`<対象パス>`）に適用してよいか」を確認してターンを終了（Hard Stop）** し、ユーザーの承認を待ちます（質問ツールがある環境ではそれを併用して構いません）。
+   - ユーザーから承認を得たら、ステージングファイルの内容を本番の実ファイルへ反映（上書きまたは新規作成）し、作業ディレクトリ内に一時ドラフトファイルを作っていた場合は削除してクリーンアップします。
+   - ※例外：ユーザーからあらかじめ「確認なしで実ファイルまで直接書き換えて」「最後まで一気に出力・反映して」等の明示指示がある場合に限り、最終承認の Hard Stop をスキップして実ファイルまで反映します。
 
 ---
 
@@ -112,5 +120,5 @@ description: Writes, expands, restructures, and refines technical documentation�
 | :--- | :--- | :--- |
 | [references/context-adaptation.md](references/context-adaptation.md) | Stage 2, Stage 3 | 文書種別・読者層ごとの重み付け、「種」の保護基準、Before / After 具体例。 |
 | [references/structure-and-rhythm.md](references/structure-and-rhythm.md) | Stage 3, Stage 4（監査パスA） | Part I：視線と初動、空間構造・段階的開示・形式選択、文章のリズムと呼吸・スタイル欠陥・問いかけ境界。 |
-| [references/logic-and-credibility.md](references/logic-and-credibility.md) | Stage 2, Stage 4（監査パスB） | Part II：論理の連鎖・正規化・背理法/対偶/トレードオフ・規範語転換、比較基準・両面提示・値域制約・動的I/O例・実装整合。 |
-| [references/emoji-control.md](references/emoji-control.md) | Stage 4（オプトイン該当時のみ） | 絵文字を含めない方針・検査依頼時のみ参照する抑制および `scripts/detect_emoji.py` 実行手順。 |
+| [references/logic-and-credibility.md](references/logic-and-credibility.md) | Stage 2, Stage 3, Stage 4（監査パスB） | Part II：論理の連鎖・正規化・背理法/対偶/トレードオフ・規範語転換、比較基準・両面提示・値域制約・動的I/O例・実装整合。 |
+| [references/emoji-control.md](references/emoji-control.md) | Stage 3, Stage 4（オプトイン該当時のみ） | 絵文字を含めない方針・検査依頼時のみ参照する抑制および `scripts/detect_emoji.py` 実行手順。 |
