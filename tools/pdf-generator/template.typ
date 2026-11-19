@@ -254,9 +254,9 @@
     ]
   ]
 
-  // === 2ページ目以降: 自動目次（ページ跨ぎで途切れないよう独立ページ配置） ===
+  // === 2ページ目以降: 自動目次（1ページに収まらない場合は自然に改ページ） ===
   pagebreak(weak: true)
-  block(width: 100%, breakable: false, below: 1.4em)[
+  block(width: 100%, breakable: true, below: 1.4em)[
     #show outline.entry.where(level: 1): it => block(
       above: 0.7em,
       below: 0.15em,
