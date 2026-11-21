@@ -125,17 +125,30 @@ def shift_heading_levels(md_text: str) -> str:
 
 
 def normalize_inline_math_and_tags(md_text: str) -> str:
-    """コードフェンス外の GitHub 数式記法 ($`...`$) と <br> および相対リンクを正規化する。"""
+    """コードフェンス外の数式記法 ($`...`$, ```math```) と <br> および相対リンクを正規化する。"""
     out_lines: list[str] = []
     in_fence = False
+    in_math_fence = False
 
     inline_math_pattern = re.compile(r"\$`([^`]+?)`\$")
+    math_fence_start_pattern = re.compile(r"^```\s*math\s*$")
     rel_link_pattern = re.compile(r"\]\(\./([^)]+)\)")
     br_pattern = re.compile(r"<br\s*/?>", re.IGNORECASE)
 
     for line in md_text.splitlines():
         stripped = line.strip()
+        if not in_fence and math_fence_start_pattern.match(stripped):
+            in_fence = True
+            in_math_fence = True
+            out_lines.append("$$")
+            continue
+
         if stripped.startswith("```"):
+            if in_math_fence and stripped == "```":
+                in_fence = False
+                in_math_fence = False
+                out_lines.append("$$")
+                continue
             in_fence = not in_fence
             out_lines.append(line)
             continue
