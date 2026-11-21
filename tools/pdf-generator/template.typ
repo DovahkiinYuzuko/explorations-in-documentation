@@ -5,6 +5,7 @@
   title: "無題",
   author: "Yuzuko Underson (DovahkiinYuzuko)",
   date_str: "",
+  ssot_name: "PAPER.md",
   abstract_body: none,
   body,
 ) = {
@@ -214,7 +215,7 @@
   block(width: 100%, below: 1.0em)[
     #set text(font: "Noto Sans CJK JP")
     #text(size: 8.5pt, fill: luma(100), tracking: 0.08em)[
-      TECHNICAL RESEARCH PAPER / SSoT: PAPER.md
+      TECHNICAL RESEARCH PAPER / SSoT: #ssot_name
     ]
     #v(0.35em)
     #text(size: 17.0pt, weight: "bold", fill: luma(10))[

@@ -241,6 +241,93 @@ def render_mermaid_to_png(mermaid_code: str, out_png: Path) -> None:
             browser.close()
 
 
+def render_svg_to_png(svg_path: Path, out_png: Path) -> None:
+    """Playwright を用いて SVG ファイルを高解像度 PNG へ描画する。"""
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as playwright:
+        if os.name == "nt":
+            chrome_exe = resolve_local_chrome()
+            logger.info("既存 Google Chrome を使用して SVG を描画します: %s", chrome_exe)
+            browser = playwright.chromium.launch(
+                executable_path=str(chrome_exe),
+                headless=True,
+            )
+        else:
+            custom_exe = os.environ.get("PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH")
+            launch_kwargs = {"headless": True}
+            if custom_exe:
+                launch_kwargs["executable_path"] = custom_exe
+            logger.info("Linux/CI 環境の Playwright Chromium を使用して SVG を描画します。")
+            browser = playwright.chromium.launch(**launch_kwargs)
+
+        try:
+            page = browser.new_page(
+                viewport={"width": 1600, "height": 900},
+                device_scale_factor=2,
+            )
+            page.goto(svg_path.resolve().as_uri(), wait_until="load")
+            svg_locator = page.locator("svg").first
+            svg_locator.wait_for(state="visible", timeout=20000)
+            svg_locator.screenshot(path=str(out_png))
+        finally:
+            browser.close()
+
+
+def replace_picture_blocks(md_text: str, input_dir: Path, assets_dir: Path) -> str:
+    """Markdown 内の <picture> ブロックを PDF 埋め込み用の高解像度 PNG 参照へ置換する。"""
+    assets_dir.mkdir(parents=True, exist_ok=True)
+    picture_pattern = re.compile(r"<picture\b[^>]*>.*?</picture>", re.DOTALL | re.IGNORECASE)
+    img_src_pattern = re.compile(r'<img\b[^>]*\bsrc=["\']([^"\']+)["\']', re.IGNORECASE)
+    img_alt_pattern = re.compile(r'<img\b[^>]*\balt=["\']([^"\']*)["\']', re.IGNORECASE)
+    light_src_pattern = re.compile(
+        r'<source\b[^>]*prefers-color-scheme:\s*light[^>]*\bsrcset=["\']([^"\']+)["\']',
+        re.IGNORECASE,
+    )
+    counter = 0
+
+    def _replace(match: re.Match[str]) -> str:
+        nonlocal counter
+        block = match.group(0)
+        light_match = light_src_pattern.search(block)
+        img_src_match = img_src_pattern.search(block)
+        src_rel = light_match.group(1) if light_match else (img_src_match.group(1) if img_src_match else "")
+        if not src_rel:
+            return block
+
+        alt_match = img_alt_pattern.search(block)
+        alt_text = alt_match.group(1).strip() if alt_match and alt_match.group(1).strip() else "図"
+
+        src_path = (input_dir / src_rel).resolve()
+        if not src_path.is_file():
+            raise FileNotFoundError(f"<picture> で参照された画像ファイルが見つかりません: {src_path}")
+
+        counter += 1
+        if src_path.suffix.lower() == ".svg":
+            # 対応する既存 PNG（例: foo-light.svg -> foo.png または foo-light.png）があれば優先利用
+            stem_base = re.sub(r"-light$", "", src_path.stem)
+            png_candidates = [
+                src_path.with_suffix(".png"),
+                src_path.with_name(f"{stem_base}.png"),
+            ]
+            existing_png = next((p for p in png_candidates if p.is_file()), None)
+            out_png = assets_dir / f"picture_{counter}.png"
+            if existing_png is not None:
+                shutil.copy2(existing_png, out_png)
+                logger.info("既存の PNG アセットを使用します: %s -> %s", existing_png, out_png)
+            else:
+                render_svg_to_png(src_path, out_png)
+                logger.info("SVG から PNG を生成しました: %s -> %s", src_path, out_png)
+            return f"![{alt_text}]({out_png.name})"
+
+        out_img = assets_dir / f"picture_{counter}{src_path.suffix.lower()}"
+        shutil.copy2(src_path, out_img)
+        logger.info("画像アセットをコピーしました: %s -> %s", src_path, out_img)
+        return f"![{alt_text}]({out_img.name})"
+
+    return picture_pattern.sub(_replace, md_text)
+
+
 def replace_mermaid_blocks(md_text: str, assets_dir: Path) -> str:
     """Markdown 内の mermaid コードフェンスを高解像度 PNG 画像参照へ置換する。"""
     assets_dir.mkdir(parents=True, exist_ok=True)
@@ -262,7 +349,7 @@ def replace_mermaid_blocks(md_text: str, assets_dir: Path) -> str:
 def postprocess_typst_body(typst_text: str) -> str:
     """Pandoc が出力した Typst 記述の画像幅と引用ブロック分割境界を調整する。"""
     text = re.sub(
-        r'image\("(mermaid_\d+\.png)"\)',
+        r'image\("([^"]+\.(?:png|svg|jpg|jpeg))"\)',
         r'image("\1", width: 100%)',
         typst_text,
     )
@@ -285,6 +372,7 @@ def run_pandoc_and_typst(
     output_pdf: Path,
     title: str,
     date_str: str,
+    ssot_name: str = "PAPER.md",
 ) -> None:
     """Pandoc による Typst 変換と Typst による PDF コンパイルを実行する。"""
     body_typ = BUILD_DIR / "body.typ"
@@ -292,7 +380,7 @@ def run_pandoc_and_typst(
 
     if os.name == "nt":
         # Windows 実行時は WSL セッションの連続起動競合を避けるため 1 回の呼び出しで完結させる
-        write_main_typ(main_typ, title, date_str, has_abstract=abstract_md is not None)
+        write_main_typ(main_typ, title, date_str, has_abstract=abstract_md is not None, ssot_name=ssot_name)
         wsl_build = to_wsl_path(BUILD_DIR)
         wsl_output = to_wsl_path(output_pdf)
         wsl_body_md = to_wsl_path(body_md)
@@ -362,7 +450,7 @@ def run_pandoc_and_typst(
             postprocess_typst_body(body_typ.read_text(encoding="utf-8")),
             encoding="utf-8",
         )
-        write_main_typ(main_typ, title, date_str, has_abstract=abstract_md is not None)
+        write_main_typ(main_typ, title, date_str, has_abstract=abstract_md is not None, ssot_name=ssot_name)
 
         typst_cmd = [
             typst_bin,
@@ -379,12 +467,19 @@ def run_pandoc_and_typst(
         subprocess.run(typst_cmd, check=True)
 
 
-def write_main_typ(main_typ: Path, title: str, date_str: str, has_abstract: bool) -> None:
+def write_main_typ(
+    main_typ: Path,
+    title: str,
+    date_str: str,
+    has_abstract: bool,
+    ssot_name: str = "PAPER.md",
+) -> None:
     """テンプレートと変換済み本文を結合する main.typ を書き出す。"""
     shutil.copy2(TEMPLATE_PATH, BUILD_DIR / "template.typ")
 
     escaped_title = title.replace("\\", "\\\\").replace('"', '\\"')
     escaped_date = date_str.replace("\\", "\\\\").replace('"', '\\"')
+    escaped_ssot = ssot_name.replace("\\", "\\\\").replace('"', '\\"')
 
     abstract_expr = 'include "abstract.typ"' if has_abstract else "none"
     content = (
@@ -392,6 +487,7 @@ def write_main_typ(main_typ: Path, title: str, date_str: str, has_abstract: bool
         f'#show: paper_template.with(\n'
         f'  title: "{escaped_title}",\n'
         f'  date_str: "{escaped_date}",\n'
+        f'  ssot_name: "{escaped_ssot}",\n'
         f'  abstract_body: {abstract_expr},\n'
         f')\n\n'
         '#include "body.typ"\n'
@@ -413,7 +509,8 @@ def build_pdf(input_path: Path, output_path: Path) -> None:
 
     body_shifted = shift_heading_levels(body_raw)
     body_normalized = normalize_inline_math_and_tags(body_shifted)
-    body_with_imgs = replace_mermaid_blocks(body_normalized, BUILD_DIR)
+    body_with_pictures = replace_picture_blocks(body_normalized, input_path.parent, BUILD_DIR)
+    body_with_imgs = replace_mermaid_blocks(body_with_pictures, BUILD_DIR)
 
     body_md = BUILD_DIR / "body.md"
     body_md.write_text(body_with_imgs, encoding="utf-8")
@@ -435,6 +532,7 @@ def build_pdf(input_path: Path, output_path: Path) -> None:
         output_pdf=output_path,
         title=title,
         date_str=date_str,
+        ssot_name=input_path.name,
     )
     logger.info("SUCCESS build_pdf: 生成完了 -> %s (%d bytes)", output_path, output_path.stat().st_size)
 

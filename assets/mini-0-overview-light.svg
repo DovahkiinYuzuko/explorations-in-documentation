@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 272" width="960" height="272" role="img" aria-labelledby="t0 d0">
+  <title id="t0">良いドキュメント設計の全体マップ（3部構成）</title>
+  <desc id="d0">Part I（読みやすさの器）、Part II（納得と信頼の中身）、Part III（思考のレンズ）の3部構成による全体マップ。</desc>
+  <defs>
+    <style>
+      .f { font-family: "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", sans-serif; }
+      .mono { font-family: "Consolas", "DejaVu Sans Mono", monospace; }
+      .kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; fill: #4D4D54; }
+      .title { font-size: 17px; font-weight: 700; fill: #1A1A1C; }
+      .part-id { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; fill: #0017C1; }
+      .node-title { font-size: 15.5px; font-weight: 700; fill: #1A1A1C; }
+      .node-sub { font-size: 12px; font-weight: 500; fill: #4D4D54; }
+      .role-label { font-size: 11.5px; font-weight: 600; fill: #1A1A1C; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#1A1A1C" /></marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="272" fill="#FFFFFF" />
+  <text x="32" y="36" class="mono kicker">OVERVIEW — 3-PART HYPOTHESIS MODEL</text>
+  <text x="32" y="60" class="f title">良いドキュメント設計の全体マップ</text>
+  <line x1="32" y1="74" x2="928" y2="74" stroke="#757578" stroke-width="1.2" />
+
+  <g transform="translate(32, 98)">
+    <rect x="0" y="0" width="264" height="106" rx="8" fill="#F7F7F8" stroke="#1A1A1C" stroke-width="1.4" />
+    <rect x="0" y="8" width="4" height="90" fill="#0017C1" />
+    <circle cx="232" cy="32" r="16" fill="#E8F1FE" />
+    <g transform="translate(223,23) scale(0.7500)" fill="none" stroke="#0017C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></g>
+    <text x="20" y="28" class="mono part-id">PART I</text>
+    <text x="20" y="56" class="f node-title">読みやすさの器</text>
+    <text x="20" y="82" class="f node-sub">視線・空間構造・リズム</text>
+  </g>
+  <text x="164" y="232" text-anchor="middle" class="f role-label">認知資源と探索コストを保護する</text>
+  <line x1="306" y1="151" x2="338" y2="151" stroke="#1A1A1C" stroke-width="1.5" marker-end="url(#arr)" />
+
+  <g transform="translate(348, 98)">
+    <rect x="0" y="0" width="264" height="106" rx="8" fill="#F7F7F8" stroke="#1A1A1C" stroke-width="1.4" />
+    <rect x="0" y="8" width="4" height="90" fill="#0017C1" />
+    <circle cx="232" cy="32" r="16" fill="#E8F1FE" />
+    <g transform="translate(223,23) scale(0.7500)" fill="none" stroke="#0017C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></g>
+    <text x="20" y="28" class="mono part-id">PART II</text>
+    <text x="20" y="56" class="f node-title">納得と信頼の中身</text>
+    <text x="20" y="82" class="f node-sub">論理・誠実さ・境界開示</text>
+  </g>
+  <text x="480" y="232" text-anchor="middle" class="f role-label">飛躍・誇張と仕様の曖昧さを抑える</text>
+  <line x1="622" y1="151" x2="654" y2="151" stroke="#1A1A1C" stroke-width="1.5" marker-end="url(#arr)" />
+
+  <g transform="translate(664, 98)">
+    <rect x="0" y="0" width="264" height="106" rx="8" fill="#E8F1FE" stroke="#0017C1" stroke-width="1.6" stroke-dasharray="5 3" />
+    <circle cx="232" cy="32" r="16" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.2" />
+    <g transform="translate(223,23) scale(0.7500)" fill="none" stroke="#0017C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" /><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /></g>
+    <text x="20" y="28" class="mono part-id">PART III</text>
+    <text x="20" y="56" class="f node-title">思考のレンズ</text>
+    <text x="20" y="82" class="f node-sub">文脈適応と自己検証</text>
+  </g>
+  <text x="796" y="232" text-anchor="middle" class="f role-label">固定の型にせず目的に応じて引き出す</text>
+</svg>

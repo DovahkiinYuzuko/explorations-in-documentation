@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 416" width="960" height="416" role="img" aria-labelledby="t1 d1">
+  <title id="t1">Part I：読みやすさの基盤（視線・空間・リズム）</title>
+  <desc id="d1">読者が開いてからの3段階処理：最初の1〜5秒の視線（上位1画面57%）、空間構造（段階的開示の3層と4±1チャンク）、時間リズム（音韻ループ約2秒の呼吸）を図解。</desc>
+  <defs>
+    <style>
+      .f { font-family: "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", sans-serif; }
+      .mono { font-family: "Consolas", "DejaVu Sans Mono", monospace; }
+      .kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; fill: #4D4D54; }
+      .title { font-size: 17px; font-weight: 700; fill: #1A1A1C; }
+      .step-num { font-size: 11px; font-weight: 700; fill: #0017C1; }
+      .col-title { font-size: 14.5px; font-weight: 700; fill: #1A1A1C; }
+      .col-sub { font-size: 11.5px; font-weight: 500; fill: #4D4D54; }
+      .diagram-lbl { font-size: 11.5px; font-weight: 700; fill: #1A1A1C; }
+      .diagram-sub { font-size: 10.5px; font-weight: 500; fill: #4D4D54; }
+      .accent-lbl { font-size: 11px; font-weight: 700; fill: #0017C1; }
+      .caption { font-size: 11.5px; font-weight: 600; fill: #1A1A1C; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#595961" /></marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="416" fill="#FFFFFF" />
+  <text x="32" y="36" class="mono kicker">PART I — FOUNDATIONS OF READABILITY</text>
+  <text x="32" y="60" class="f title">読みやすさの基盤：視線・空間・リズムの 3 段階</text>
+  <line x1="32" y1="74" x2="928" y2="74" stroke="#757578" stroke-width="1.2" />
+
+  <line x1="188" y1="112" x2="452" y2="112" stroke="#757578" stroke-width="1.4" marker-end="url(#arr)" />
+  <line x1="500" y1="112" x2="764" y2="112" stroke="#757578" stroke-width="1.4" marker-end="url(#arr)" />
+
+  <g transform="translate(40, 92)">
+    <circle cx="128" cy="20" r="18" fill="#E8F1FE" stroke="#0017C1" stroke-width="1.4" />
+    <g transform="translate(119,11) scale(0.7500)" fill="none" stroke="#0017C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /><circle cx="12" cy="12" r="3" /></g>
+    <text x="128" y="56" text-anchor="middle" class="mono step-num">01 / OPEN (1–5s)</text>
+    <text x="128" y="76" text-anchor="middle" class="f col-title">視線と初動</text>
+    <g transform="translate(24, 94)">
+      <rect x="0" y="0" width="208" height="148" rx="8" fill="#FFFFFF" stroke="#757578" stroke-width="1.3" />
+      <line x1="0" y1="18" x2="208" y2="18" stroke="#757578" stroke-width="1" />
+      <circle cx="11" cy="9" r="2.5" fill="#595961" /><circle cx="20" cy="9" r="2.5" fill="#595961" /><circle cx="29" cy="9" r="2.5" fill="#595961" />
+      <rect x="8" y="25" width="192" height="68" rx="4" fill="#E8F1FE" stroke="#0017C1" stroke-width="1.5" />
+      <text x="104" y="47" text-anchor="middle" class="f accent-lbl">上位 1 画面（閲覧時間 約 57%）</text>
+      <text x="104" y="66" text-anchor="middle" class="f diagram-lbl">定義（LSP）・Why / When</text>
+      <text x="104" y="83" text-anchor="middle" class="f diagram-sub">標準手順 1 つ＋最小コード</text>
+      <line x1="0" y1="101" x2="208" y2="101" stroke="#757578" stroke-width="1" stroke-dasharray="4 3" />
+      <text x="104" y="128" text-anchor="middle" class="f diagram-sub">スクロール以降（詳細）</text>
+    </g>
+    <text x="128" y="270" text-anchor="middle" class="f caption">冒頭の迷いと離脱を防ぐ</text>
+    <text x="128" y="288" text-anchor="middle" class="f col-sub">導入率 = 効用 − (探索労力 + 混乱)</text>
+  </g>
+
+  <g transform="translate(352, 92)">
+    <circle cx="128" cy="20" r="18" fill="#E8F1FE" stroke="#0017C1" stroke-width="1.4" />
+    <g transform="translate(119,11) scale(0.7500)" fill="none" stroke="#0017C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></g>
+    <text x="128" y="56" text-anchor="middle" class="mono step-num">02 / SCAN (SPACE)</text>
+    <text x="128" y="76" text-anchor="middle" class="f col-title">空間構造と段階的開示</text>
+    <g transform="translate(14, 94)">
+      <rect x="0" y="0" width="228" height="42" rx="8" fill="#E8F1FE" stroke="#0017C1" stroke-width="1.5" />
+      <text x="12" y="18" class="f accent-lbl">第 1 層：最短動線</text>
+      <text x="12" y="34" class="f diagram-sub">概要・なぜ使うか・クイックスタート</text>
+      <rect x="0" y="52" width="228" height="42" rx="8" fill="#F7F7F8" stroke="#1A1A1C" stroke-width="1.2" />
+      <text x="12" y="70" class="f diagram-lbl">第 2 層：主要概念と境界</text>
+      <text x="12" y="86" class="f diagram-sub">全体像・代表的な使い方・主な制約</text>
+      <rect x="0" y="104" width="228" height="44" rx="8" fill="#FFFFFF" stroke="#757578" stroke-width="1.2" stroke-dasharray="4 3" />
+      <text x="12" y="122" class="f diagram-lbl">第 3 層：深層リファレンス</text>
+      <text x="12" y="138" class="f diagram-sub">全フラグ・詳細仕様（折りたたみ／別頁）</text>
+    </g>
+    <text x="128" y="270" text-anchor="middle" class="f caption">情報を削らず階層で整理する</text>
+    <text x="128" y="288" text-anchor="middle" class="f col-sub">4±1 チャンク保護・装飾と図解の区別</text>
+  </g>
+
+  <g transform="translate(664, 92)">
+    <circle cx="128" cy="20" r="18" fill="#E8F1FE" stroke="#0017C1" stroke-width="1.4" />
+    <g transform="translate(119,11) scale(0.7500)" fill="none" stroke="#0017C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2" /></g>
+    <text x="128" y="56" text-anchor="middle" class="mono step-num">03 / READ (TIME)</text>
+    <text x="128" y="76" text-anchor="middle" class="f col-title">文章のリズムと呼吸</text>
+    <g transform="translate(14, 94)">
+      <rect x="0" y="0" width="228" height="148" rx="8" fill="#F7F7F8" stroke="#757578" stroke-width="1.3" />
+      <path d="M 18 68 Q 42 32, 66 68 T 114 68" fill="none" stroke="#0017C1" stroke-width="2" />
+      <line x1="114" y1="36" x2="114" y2="86" stroke="#757578" stroke-width="1.2" stroke-dasharray="3 2" />
+      <path d="M 114 68 Q 138 38, 162 68 T 210 68" fill="none" stroke="#0017C1" stroke-width="2" />
+      <line x1="18" y1="92" x2="110" y2="92" stroke="#0017C1" stroke-width="1.3" />
+      <line x1="18" y1="88" x2="18" y2="96" stroke="#0017C1" stroke-width="1.3" />
+      <line x1="110" y1="88" x2="110" y2="96" stroke="#0017C1" stroke-width="1.3" />
+      <text x="64" y="110" text-anchor="middle" class="f accent-lbl">一息 約 2 秒</text>
+      <text x="162" y="110" text-anchor="middle" class="f diagram-sub">句読点で区切る</text>
+      <text x="114" y="134" text-anchor="middle" class="f diagram-lbl">音韻ループ（黙読の内語）</text>
+    </g>
+    <text x="128" y="270" text-anchor="middle" class="f caption">息切れしない係り受けと緩急</text>
+    <text x="128" y="288" text-anchor="middle" class="f col-sub">機械的短文化・問いかけ乱発の回避</text>
+  </g>
+</svg>

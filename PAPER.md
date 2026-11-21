@@ -786,27 +786,11 @@ Part I・IIで整理した知見は、あくまで個別研究から得られた
 
 ここまで、5本柱の学際知見から得られた考察を、視線と初動（第2章）、空間構造と形式設計（第3章）、文章のリズムと問いかけの境界（第4章）、論理と必然性（第5章）、信頼・境界開示と読者層差（第6章）という処理プロセスに沿って整理してきました。
 
-```mermaid
-flowchart LR
-    subgraph PART1["Part I: 知覚・構造・リズムの設計"]
-        direction TB
-        P1["1. 視線と初動 (第2章)<br>1〜5秒の動機づけとLSP・Why/When・結合探索抑制"]
-        P2["2. 空間構造と形式 (第3章)<br>4±1チャンク・段階的開示・箇条書き/AE/表/図解の選択"]
-        P3["3. 文章のリズムと呼吸 (第4章)<br>音韻ループ約2秒・係り受けと短文化の罠・問いかけの限界"]
-        P1 --> P2 --> P3
-    end
-    subgraph PART2["Part II: 論理と誠実さの設計"]
-        direction TB
-        P4["4. 論理と必然 (第5章)<br>FAB因果鎖・RAAと結果論証の峻別・事実(is)と当為(ought)の分離"]
-        P5["5. 信頼・誠実さと境界開示 (第6章)<br>コスト高シグナル・両面提示・値域制約と動的I/O例・読者層差"]
-        P4 --> P5
-    end
-    subgraph PART3["Part III: 文脈適応と自己検証"]
-        P6["思考のレンズとして適用 (第7章)<br>Authorial Agencyと文脈別検査・モデル自身の境界開示"]
-    end
-
-    PART1 --> PART2 --> PART3
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/paper-model-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/paper-model-light.svg">
+  <img alt="良いドキュメント設計の統合仮説モデル（3部・5本柱）" src="./assets/paper-model-light.svg">
+</picture>
 
 ここで、この自由研究の仮説を実際の文書作成に応用する上での重要な論点について考察します。
 

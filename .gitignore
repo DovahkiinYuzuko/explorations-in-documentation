@@ -2,6 +2,10 @@
 *
 !.gitignore
 # ---AUTO-Generated---
+# .gitignores/assets.gitignore
+!assets/
+!assets/*.svg
+!assets/*.png
 # .gitignores/github.gitignore
 !.github/
 !.github/workflows/
@@ -11,9 +15,11 @@
 !README.*.md
 !LICENSE.*
 !PAPER.md
+!PAPER_MINI.md
 !ARCHITECTURE.md
 !PHILOSOPHY.md
 !REFENCES.md
+!NOTICE.md
 
 !CITATION.cff
 !plugin.json

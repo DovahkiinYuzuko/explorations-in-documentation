@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-labelledby="t2 d2">
+  <title id="t2">Part II：納得と信頼の基盤（論理と必然性・誠実さと境界開示）</title>
+  <desc id="d2">左側に前提の不便（is）から設計・仕組みを経て条件付き因果（If-Then）へ繋ぎ、規範の押し付け（ought）を分離する論理構造。右側に片面提示・反論なし両面提示・反論あり両面提示（制約事実＋設計理由＋代替策）の対比とコスト高シグナルを図解。</desc>
+  <defs>
+    <style>
+      .f { font-family: "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", sans-serif; }
+      .mono { font-family: "Consolas", "DejaVu Sans Mono", monospace; }
+      .kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; fill: #B5B8C0; }
+      .title { font-size: 17px; font-weight: 700; fill: #F2F2F5; }
+      .sec-tag { font-size: 11px; font-weight: 700; fill: #70A6FF; }
+      .sec-title { font-size: 14.5px; font-weight: 700; fill: #F2F2F5; }
+      .lbl { font-size: 12px; font-weight: 700; fill: #F2F2F5; }
+      .sub { font-size: 11px; font-weight: 500; fill: #B5B8C0; }
+      .accent { font-size: 11.5px; font-weight: 700; fill: #70A6FF; }
+      .err { font-size: 11.5px; font-weight: 700; fill: #FF8585; }
+      .caption { font-size: 11.5px; font-weight: 600; fill: #F2F2F5; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#F2F2F5" /></marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="400" fill="#111318" />
+  <text x="32" y="36" class="mono kicker">PART II — LOGIC, INTEGRITY &amp; BOUNDARIES</text>
+  <text x="32" y="60" class="f title">納得と信頼の基盤：因果の骨格とコスト高シグナル</text>
+  <line x1="32" y1="74" x2="928" y2="74" stroke="#767A86" stroke-width="1.2" />
+
+  <g transform="translate(32, 96)">
+    <g transform="translate(0,2) scale(0.7500)" fill="none" stroke="#70A6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18" /><path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /><path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /><path d="M7 21h10" /></g>
+    <text x="26" y="16" class="mono sec-tag">PILLAR 4</text>
+    <text x="96" y="16" class="f sec-title">論理と必然性の骨格</text>
+
+    <rect x="0" y="32" width="424" height="168" rx="8" fill="#161920" stroke="#767A86" stroke-width="1.2" />
+    <rect x="16" y="48" width="112" height="72" rx="8" fill="#1D212B" stroke="#767A86" stroke-width="1.3" />
+    <text x="72" y="76" text-anchor="middle" class="f lbl">前提の不便</text>
+    <text x="72" y="96" text-anchor="middle" class="mono sub">Fact (is)</text>
+    <line x1="128" y1="84" x2="152" y2="84" stroke="#F2F2F5" stroke-width="1.4" marker-end="url(#arr)" />
+
+    <rect x="156" y="48" width="112" height="72" rx="8" fill="#1D212B" stroke="#767A86" stroke-width="1.3" />
+    <text x="212" y="76" text-anchor="middle" class="f lbl">設計・仕組み</text>
+    <text x="212" y="96" text-anchor="middle" class="mono sub">Mechanism</text>
+    <line x1="268" y1="84" x2="292" y2="84" stroke="#F2F2F5" stroke-width="1.4" marker-end="url(#arr)" />
+
+    <rect x="296" y="48" width="112" height="72" rx="8" fill="#13223D" stroke="#70A6FF" stroke-width="1.5" />
+    <text x="352" y="76" text-anchor="middle" class="f accent">条件付き因果</text>
+    <text x="352" y="96" text-anchor="middle" class="mono accent">If-Then</text>
+
+    <line x1="16" y1="138" x2="408" y2="138" stroke="#FF8585" stroke-width="1.2" stroke-dasharray="5 3" />
+    <rect x="16" y="148" width="392" height="38" rx="6" fill="#2A1519" stroke="#FF8585" stroke-width="1.2" />
+    <g transform="translate(28,159) scale(0.6667)" fill="none" stroke="#FF8585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M4.929 4.929 19.07 19.071" /></g>
+    <text x="54" y="172" class="f err">「〜すべきである (ought)」は事実単体から導かない</text>
+
+    <text x="0" y="226" class="f caption">背理法（論理的矛盾）と結果論証（トレードオフ）を区別する</text>
+    <text x="0" y="246" class="f sub">行動の最終選択は読者の自律性に委ねる（ヒュームのギロチン）</text>
+  </g>
+
+  <line x1="480" y1="96" x2="480" y2="360" stroke="#767A86" stroke-width="1" stroke-dasharray="4 4" />
+
+  <g transform="translate(504, 96)">
+    <g transform="translate(0,2) scale(0.7500)" fill="none" stroke="#70A6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></g>
+    <text x="26" y="16" class="mono sec-tag">PILLAR 5</text>
+    <text x="96" y="16" class="f sec-title">信頼・誠実さと境界開示</text>
+
+    <rect x="0" y="32" width="424" height="44" rx="8" fill="#161920" stroke="#767A86" stroke-width="1.2" />
+    <text x="16" y="59" class="f lbl">片面提示</text>
+    <text x="96" y="59" class="f sub">良いことだけを書く → 宣伝文句として警戒されやすい</text>
+
+    <rect x="0" y="84" width="424" height="44" rx="8" fill="#2A1519" stroke="#FF8585" stroke-width="1.2" stroke-dasharray="4 3" />
+    <g transform="translate(14,98) scale(0.6667)" fill="none" stroke="#FF8585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="8" y2="12" /><line x1="12" x2="12.01" y1="16" y2="16" /></g>
+    <text x="38" y="111" class="f err">反論なし両面</text>
+    <text x="134" y="111" class="f sub">弱点の羅列だけ → 片面より説得力が低下</text>
+
+    <rect x="0" y="136" width="424" height="64" rx="8" fill="#13223D" stroke="#70A6FF" stroke-width="1.6" />
+    <g transform="translate(14,147) scale(0.6667)" fill="none" stroke="#70A6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="m16 9-5.5 5.5L8 12" /></g>
+    <text x="38" y="160" class="f accent">反論あり両面提示（3点セット）</text>
+    <text x="16" y="184" class="f lbl">1. 制約事実   ＋   2. 設計上の理由   ＋   3. 代替・回避策</text>
+
+    <text x="0" y="226" class="f caption">チープトークではなく「コスト高シグナル」を添える</text>
+    <text x="0" y="246" class="f sub">比較基準と測定環境 / 再現コマンド / 具体的な値域と動的I/O例</text>
+  </g>
+</svg>
