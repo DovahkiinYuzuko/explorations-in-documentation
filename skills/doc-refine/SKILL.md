@@ -40,7 +40,7 @@ description: Writes, expands, restructures, and refines text-based documentation
 
 ### Stage 2: 文脈・種判定と「裸の最小構成ブループリント」＋ 合意（Hard Stop）
 
-いきなり流暢な文章を書き始める前に、[references/context-adaptation.md](references/context-adaptation.md) と [references/logic-and-credibility.md](references/logic-and-credibility.md) を参照し、論理と情報の骨格を丸裸にします。
+いきなり流暢な文章を書き始める前に、[references/context-profiles.md](references/context-profiles.md)、[references/structure-and-layout.md](references/structure-and-layout.md)、および [references/logic-and-credibility.md](references/logic-and-credibility.md)（コード・API・CLI・仕様書を伴う文書では加えて [references/spec-and-boundaries.md](references/spec-and-boundaries.md)）を参照し、論理と情報の骨格を丸裸にします（文体リズムの [references/prose-and-rhythm.md](references/prose-and-rhythm.md) や具体例集の [references/examples.md](references/examples.md) はこの段階では読み込みません）。
 
 1. **文脈・読者層・種（Seed）の特定**:
    - 文書種別・媒体（GitHub README、内部設計書・RFC、APIガイド、技術解説記事、プレーンテキスト、コードコメント等）、想定読者の熟練度（専門外読者か保守担当者か）、および書き手固有の動機・ユーモア・語り口・外部記事導線といった **「種（Seed）」** を特定します。
@@ -72,7 +72,7 @@ description: Writes, expands, restructures, and refines text-based documentation
 
 ### Stage 3: 自然言語化と形式実装（ドラフト執筆）
 
-ユーザーの承認と回答を受けたら、確定した最小構成ブループリントとファクトリストを土台に、[references/structure-and-rhythm.md](references/structure-and-rhythm.md) と [references/context-adaptation.md](references/context-adaptation.md)（および Stage 2 で参照した [references/logic-and-credibility.md](references/logic-and-credibility.md)、絵文字抑制オプトイン時は [references/emoji-control.md](references/emoji-control.md)）に沿ってドキュメント本文を書き起こします。
+ユーザーの承認と回答を受けたら、確定した最小構成ブループリントとファクトリストを土台に、Stage 2 で参照した設計原則に加えて [references/prose-and-rhythm.md](references/prose-and-rhythm.md)（および変換イメージの確認が必要な場合のみ [references/examples.md](references/examples.md)、絵文字抑制オプトイン時は [references/emoji-control.md](references/emoji-control.md)）に沿ってドキュメント本文を書き起こします。
 
 - Stage 2 で確定した事実・論理・境界・有益な詳細を削らずに配置します（情報の非圧縮）。
 - ここで初めて、書き手の「種（Seed）」の温度感を乗せ、構造化形式（箇条書き・文見出し・表・説明的図解）の使い分け、コードと出力・解説の空間的近接、黙読の一呼吸と文長の緩急を整えます。
@@ -84,10 +84,10 @@ description: Writes, expands, restructures, and refines text-based documentation
 
 1. **2系統の次元別監査**:
    - **監査パスA（Part I：知覚・空間構造・リズム）**:
-     - [references/structure-and-rhythm.md](references/structure-and-rhythm.md) **のみ** を参照し、対象ドラフトおよび Stage 2 の文脈・種メモ（あえて控える要素を含む）に対して点検します。
+     - [references/structure-and-layout.md](references/structure-and-layout.md) と [references/prose-and-rhythm.md](references/prose-and-rhythm.md) **のみ** を参照し、対象ドラフトおよび Stage 2 の文脈・種メモ（あえて控える要素を含む）に対して点検します。
      - 観点：初動1画面・Why/When・偽の床／3〜5チャンク・空間近接・段階的開示・形式選択（箇条書き平坦化／文見出し／表／図解）／黙読の一呼吸・係り受けと短文化の罠（語彙密度過多）・並列構文と散文ゆらぎ・5種のスタイル欠陥・問いかけ頻度・装飾記号の負荷。
    - **監査パスB（Part II：論理・誠実さ・境界・実装整合）**:
-     - [references/logic-and-credibility.md](references/logic-and-credibility.md) **のみ** と Stage 1 のファクトリスト、および Stage 2 の文脈・種メモ（あえて控える要素を含む）を参照し、対象ドラフトに対して点検します。
+     - [references/logic-and-credibility.md](references/logic-and-credibility.md)（およびコード・API・CLI・仕様書を伴う文書では [references/spec-and-boundaries.md](references/spec-and-boundaries.md)）**のみ** と Stage 1 のファクトリスト、および Stage 2 の文脈・種メモ（あえて控える要素を含む）を参照し、対象ドラフトに対して点検します。
      - 観点：既知から未知への因果鎖・迂回除去・未定義語彙・構造的一致／背理法・対偶とトレードオフの峻別／規範語（`〜すべき` / `should`）の排除／無根拠な誇張・比較基準・フォーマット装飾バイアス／反論あり両面提示／曖昧制約（`invalid` 等）の排除と具体的な値域境界・動的I/O具体例／ファクトリストとの実装整合・追試コマンド／スキル内部用語や論文名の露出有無。
    - **実行方式（ツール非依存）**:
      - **Full かつ独立コンテキスト（サブエージェント等）が利用できる環境**: 監査パスAと監査パスBをそれぞれ別の独立コンテキストへ委譲し（可能なら並列実行）、「問題箇所・理由・修正案」の指摘リストを受け取ります。
@@ -113,11 +113,14 @@ description: Writes, expands, restructures, and refines text-based documentation
 
 ## リファレンス一覧（On-Demand References）
 
-各リファレンスは必要なフェーズでのみ読み込み、コンテキストの希釈を防ぎます。
+各リファレンスは必要なフェーズおよび対象文書種別に応じてオンデマンドで読み込み、一気読みによるコンテキストの希釈を防ぎます。
 
-| ファイル | 主な参照タイミング | 役割 |
+| ファイル | 主な参照タイミング / 条件 | 役割 |
 | :--- | :--- | :--- |
-| [references/context-adaptation.md](references/context-adaptation.md) | Stage 2, Stage 3 | 文書種別・読者層ごとの重み付け、「種」の保護基準、Before / After 具体例。 |
-| [references/structure-and-rhythm.md](references/structure-and-rhythm.md) | Stage 3, Stage 4（監査パスA） | Part I：視線と初動、空間構造・段階的開示・形式選択、文章のリズムと呼吸・スタイル欠陥・問いかけ境界。 |
-| [references/logic-and-credibility.md](references/logic-and-credibility.md) | Stage 2, Stage 3, Stage 4（監査パスB） | Part II：論理の連鎖・正規化・背理法/対偶/トレードオフ・規範語転換、比較基準・両面提示・値域制約・動的I/O例・実装整合。 |
+| [references/context-profiles.md](references/context-profiles.md) | Stage 2 のみ | Part III-A：文書種別・読者層ごとの重み付け、「種」の保護基準。 |
+| [references/structure-and-layout.md](references/structure-and-layout.md) | Stage 2（骨格）, Stage 3, Stage 4（監査パスA） | Part I-A：視線と初動、空間構造・3層段階的開示・形式選択・説明的図解と視覚負荷。 |
+| [references/prose-and-rhythm.md](references/prose-and-rhythm.md) | Stage 3（執筆）, Stage 4（監査パスA）のみ | Part I-B：黙読の一呼吸・係り受けと短文化の罠・並列構文/散文ゆらぎ・5種スタイル欠陥・問いかけ境界。 |
+| [references/logic-and-credibility.md](references/logic-and-credibility.md) | Stage 2, Stage 3, Stage 4（監査パスB） | Part II-A：論理の連鎖・正規化・背理法/対偶/トレードオフ・規範語転換、比較基準・誇張排除・反論あり両面提示（全ジャンル共通）。 |
+| [references/spec-and-boundaries.md](references/spec-and-boundaries.md) | コード・API・CLI・仕様書を伴う文書の Stage 2, Stage 3, Stage 4（監査パスB）のみ | Part II-B：曖昧制約排除と具体的な値域境界・動的I/O具体例・実装整合と追試コマンド（非仕様系文書では読み込まない）。 |
+| [references/examples.md](references/examples.md) | 任意参照（Stage 3 等で変換例を確認したい場合のみ） | Part III-B：原則適用の Before / After 具体例 9パターン（毎回全文ロードせず必要箇所のみ参照）。 |
 | [references/emoji-control.md](references/emoji-control.md) | Stage 3, Stage 4（オプトイン該当時のみ） | 絵文字を含めない方針・検査依頼時のみ参照する抑制および `scripts/detect_emoji.py` 実行手順。 |
