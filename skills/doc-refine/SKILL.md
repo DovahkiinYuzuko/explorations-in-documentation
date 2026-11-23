@@ -1,9 +1,9 @@
 ---
 name: doc-refine
-description: Writes, expands, restructures, and refines technical documentation—including READMEs, architecture specifications, API guides, technical articles, and plain-text notes. Use when creating or improving documentation, eliminating promotional hype, organizing complex information for cognitive clarity, improving reading rhythm and API boundary clarity, or strengthening logical coherence and credibility without losing the author's original voice.
+description: Writes, expands, restructures, and refines text-based documentation—including READMEs, architecture specifications, API guides, agent skill docs, operational manuals, proposals, articles, and plain-text notes. Use when creating or improving documentation, eliminating promotional hype, organizing complex information for cognitive clarity, improving reading rhythm and boundary clarity, or strengthening logical coherence and credibility without losing the author's original voice.
 ---
 
-# Technical Documentation Design & Refinement (`doc-refine`)
+# Documentation Design & Refinement (`doc-refine`)
 
 このスキルは、固定の見出しテンプレートで文書を画一化するのではなく、対象文書の目的・想定読者・書き手の動機（種：Seed）を活かしながら、読者がつまずきやすい **3つの摩擦** を解消するための段階的ドキュメント設計プロトコルです。
 
@@ -21,7 +21,7 @@ description: Writes, expands, restructures, and refines technical documentation�
 
 | モード | 適用対象の例 | 実行の粒度 |
 | :--- | :--- | :--- |
-| **Full** | README の新規作成・全面改稿、設計書・仕様書・RFC、技術解説記事全体 | Stage 1〜4 をフル実行。Stage 1（事実調査）と Stage 4（Part I / Part II の2系統監査）は、利用可能であれば独立コンテキスト（サブエージェント等）へ委譲する。 |
+| **Full** | README の新規作成・全面改稿、設計書・仕様書・RFC、解説記事・手順書・企画書全体 | Stage 1〜4 をフル実行。Stage 1（事実調査）と Stage 4（Part I / Part II の2系統監査）は、利用可能であれば独立コンテキスト（サブエージェント等）へ委譲する。 |
 | **Lite** | 既存文書の1セクション追記、PR説明、短い `.txt` メモ、コード内コメント | Stage 1 のファクト抽出と Stage 2 の裸の最小構成を数行に簡略化し、Stage 4 は同一コンテキスト内で「Part I のみ → Part II のみ」の2パス順次点検として軽量に回す。 |
 
 ---
@@ -30,13 +30,12 @@ description: Writes, expands, restructures, and refines technical documentation�
 
 ### Stage 1: 事実・実装・周辺制約の収集（ファクトリスト化）
 
-細部のコード照合で認知予算を使い切って構造の問い直しが抜ける現象（アンカリング）を防ぐため、最初に機械的・事実的な確認を切り出します。
+細部の照合で認知予算を使い切って構造の問い直しが抜ける現象（アンカリング）を防ぐため、最初に機械的・事実的な確認を切り出します。
 
-- 対象リポジトリの実装・設定・テスト（`package.json`, `Cargo.toml`, `pyproject.toml`, CLIパーサー定義、テストスイート等）から、以下の **ファクトリスト** を収集します：
-  - 記載コマンド・引数・設定キー・パスと実装の一致／矛盾、再現コマンドの有無
-  - パラメータの具体的な型・値域・デフォルト値・境界値・エラー挙動、および確認できる具体的な入出力例
-  - ビルド／監査／配布スクリプト等が見出し階層やファイル構成に課す周辺制約
-  - 既存文書内の規範表現（`〜すべき` / `should` 等）や無根拠な誇張の候補
+- 対象リポジトリの実装・設定・テスト（`package.json`, `Cargo.toml`, `pyproject.toml`, `SKILL.md`, CLIパーサー定義、テストスイート等）、または対象文書の前提資料・既存記述から、以下の **ファクトリスト** を収集します：
+  - **コード・実装を伴う文書の場合**: 記載コマンド・引数・設定キー・パスと実装の一致／矛盾、実行主体（人間が直接叩くCLIか、エージェント等が内部実行するスクリプトか）の区別、パラメータの型・値域・デフォルト値・境界値・エラー挙動・具体的な入出力例、およびビルド／監査スクリプト等が課す周辺制約
+  - **コードを持たない一般テキスト文書の場合**: 前提となる事実・数値・成立条件、対象範囲と対象外の境界、手続の順序や例外時の対処条件
+  - **共通**: 既存文書内の規範表現（`〜すべき` / `should` 等）や無根拠な誇張の候補
 - **実行方式**: Full かつ独立コンテキスト（サブエージェント等）が利用できる環境では、この調査を独立した調査エージェントへ委譲します。非対応環境または Lite では、まずファクトリストだけを簡潔に抜き出してから Stage 2 へ切り替えます。
 
 ### Stage 2: 文脈・種判定と「裸の最小構成ブループリント」＋ 合意（Hard Stop）

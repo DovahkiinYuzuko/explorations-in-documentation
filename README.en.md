@@ -7,9 +7,9 @@
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-doc--refine-blue?style=flat-square&logo=markdown&logoColor=white)](./skills/doc-refine/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=opensourceinitiative&logoColor=white)](./LICENSE.MIT)
 
-This repository houses an independent exploratory study on *"What makes good technical documentation?"* ([**`PAPER.md`**](./PAPER.md)) and the `doc-refine` agent skill implementing its design principles. Synthesizing primary literature across formal logic, cognitive science, advertising engineering, and psycholinguistics, it proposes a unified hypothesis model free of hype and unverified claims.
+This repository houses an independent exploratory study on *"What makes good documentation?"* ([**`PAPER.md`**](./PAPER.md)) and the `doc-refine` agent skill implementing its text-based information design principles. Synthesizing primary literature across formal logic, cognitive science, advertising engineering, and psycholinguistics, it proposes a unified hypothesis model free of hype and unverified claims.
 
-Generative AI (LLMs) often inflate technical writing with unsubstantiated hyperbole while skipping mechanical verification. Rather than offering superficial grammar checks or rigid fill-in-the-blank templates, this repository provides an information-design lens applicable to READMEs, specifications, architecture guides, and technical articles.
+Generative AI (LLMs) often inflate documentation with unsubstantiated hyperbole while skipping mechanical verification. Rather than offering superficial grammar checks or rigid fill-in-the-blank templates, this repository provides an information-design lens applicable across text-based documents—from READMEs, specifications, and architecture guides to operational manuals, articles, and plain-text notes.
 
 ## Table of Contents
 - [Repository Document Architecture](#repository-document-architecture)
@@ -24,7 +24,7 @@ This repository separates documents by role. To read the main body of the study,
 
 | Document | Role | Description |
 | :--- | :--- | :--- |
-| **[`PAPER.md`](./PAPER.md)** | **[Main Paper] Synthesis of the Study** | The comprehensive monograph integrating interdisciplinary literature and primary citations into a 3-Part, 5-Pillar hypothesis model of technical documentation. While `PAPER.md` is the Single Source of Truth (SSoT), a direct PDF build (`PAPER.pdf`) is also available on [GitHub Releases](https://github.com/DovahkiinYuzuko/explorations-in-documentation/releases) for readers who prefer PDF. |
+| **[`PAPER.md`](./PAPER.md)** | **[Main Paper] Synthesis of the Study** | The comprehensive monograph integrating interdisciplinary literature and primary citations into a 3-Part, 5-Pillar hypothesis model of documentation design. While `PAPER.md` is the Single Source of Truth (SSoT), a direct PDF build (`PAPER.pdf`) is also available on [GitHub Releases](https://github.com/DovahkiinYuzuko/explorations-in-documentation/releases) for readers who prefer PDF. |
 | **[`PHILOSOPHY.md`](./PHILOSOPHY.md)** | **[Why] Origins & Philosophy** | The motivation behind the study, the hybrid approach combining formal logic with advertising techniques, and core guiding attitudes. |
 | **[`ARCHITECTURE.md`](./ARCHITECTURE.md)** | **[How] Skill Architecture** | Architectural guide mapping each component of `doc-refine` to the underlying theories and empirical findings from cited literature and specifications. |
 | **[`REFERENCES.md`](./REFERENCES.md)** | **[Sources] Official Bibliography** | Bibliographic records (DOIs, venues, authors) for the cited literature and their mapping to the chapters of `PAPER.md`. |
@@ -50,7 +50,7 @@ In **[`PAPER.md`](./PAPER.md)**, the hypothesis model is organized into three pa
 
 ### Part III: Context Adaptation and Model Boundaries
 6. **A "Lens for Thinking" Rather Than a Rigid Template (Chapter 7)**:
-   Imposing fixed fill-in-the-blank forms or blanket bans undermines a document's purpose and authorial voice. Instead, each principle is weighted flexibly according to the medium, audience expertise, and project nature—ranging from production CLI tools and libraries to internal specifications, casual web toys, and plain-text notes.
+   Imposing fixed fill-in-the-blank forms or blanket bans undermines a document's purpose and authorial voice. Instead, each principle is weighted flexibly according to the medium, audience expertise, and project nature—ranging from production CLI tools, libraries, and Agent Skills to internal specifications, general manuals, casual web toys, and plain-text notes.
 
 ## Installing and Using the `doc-refine` Agent Skill
 
